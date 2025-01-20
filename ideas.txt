@@ -1,0 +1,34 @@
+1)Memory Tile Game: 
+A board consists of tiles, each holding an audio snippet. 
+At the start, the tiles are visible for a brief period, revealing the numbers that correspond to each snippet. 
+Once the tiles flip over, the player must select the tiles in the correct order based on the audio snippet sequence.
+
+The goal is to remember the number order of the tiles and select them in the correct sequence. 
+
+When a tile is clicked in the correct order, the corresponding audio snippet plays.
+
+If the wrong tile is selected, the player must retry the sequence from the beginning. 
+
+add a timer to make the game more challenging. 
+The faster the player completes the game, the higher their score.
+Increase the number of tiles as the player progresses, adding more snippets to remember.
+
+2) Indian Cab Driver Simulation(silly idea yet a game)
+
+The game simulates the life of a cab driver navigating the chaotic roads of an Indian city. Players must drive through traffic, pick up passengers, and drop them off at their destinations while avoiding obstacles and managing time. The game is set in a dynamic 2D environment, with realistic road behavior, varying traffic patterns, and passenger interactions that mimic real-life driving scenarios in India.
+
+
+Players control the cab using the arrow keys (or WASD keys), steering the car around the map to pick up and drop off passengers.
+The game world consists of roads, intersections, and random obstacles (like potholes, traffic signals, and other vehicles).
+Other vehicles such as cars, motorcycles, and rickshaws move randomly on the roads. Players must navigate around them to avoid collisions.
+Passenger Pick-Up/Drop-Off: Passengers randomly appear at different locations. Players need to pick them up and drive them to their drop-off locations. The player earns money based on distance traveled and time taken.
+
+The goal of the game is to earn as much money as possible by completing passenger trips without accidents. Players must manage time, traffic, and their passengers' needs while avoiding damage to the car and ensuring smooth driving.
+ 
+Additionally, weather effects like rain or fog add a layer of difficulty.(this takes time though)
+The roads are busy with traffic, and players must deal with random events such as pedestrians crossing the road, sudden roadblocks, or vehicle breakdowns.The game includes a time system, where different times of day (morning, afternoon, night) affect traffic behavior.
+
+
+
+
+
