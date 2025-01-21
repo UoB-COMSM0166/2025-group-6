@@ -6,18 +6,18 @@
 
 Link to your game [PLAY HERE](https://peteinfo.github.io/COMSM0166-project-template/)
 
-Your game lives in the [/docs](/docs) folder, and is published using Github pages to the link above.
+Your game lives in the [/docs](/docs) f older, and is published using Github pages to the link above.
 
 Include a demo video of your game here (you don't have to wait until the end, you can insert a work in progress video)
 
 ## Your Group
 
-Add a group photo here!
+Add a group photo here!   
 
 | Group Member | Name                     | Email                 | Role | GitHub Username                    |
 |--------------|--------------------------|-----------------------|------|------------------------------------|
 | 1            | Saquib Sayeed Kazi       | jh24162@bristol.ac.uk | TBD  | [@Saqsy](https://github.com/Saqsy) |
-| 2            | Balachander Raja         | js24503@bristol.ac.uk | TBD  |                                    |
+| 2            | Balachander Raja         | js24503@bristol.ac.uk | TBD  |  [@Saqsy](https://github.com/Saqsy)                                  |
 | 3            | Rohit Bhagatkar          | np24437@bristol.ac.uk | TBD  |                                    |
 | 4            | Adwaith Syam Sundar      | ie24068@bristol.ac.uk | TBD  |                                    |
 | 5            | Nilay Murlidhar Bhaisare | dh24552@bristol.ac.uk | TBD  |                                    |
