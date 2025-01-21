@@ -17,7 +17,7 @@ Add a group photo here!
 - Group member 2, Balachander Raja, js24503@bristol.ac.uk, role
 - Group member 3, Rohit Bhagatkar, np24437@bristol.ac.uk, role
 - Group member 4, Adwaith Syam Sundar, ie24068@bristol.ac.uk, role
-- Group member 5, Nilay Murlidhar Bhaisare, dh24552@@bristol.ac.uk, role
+- Group member 5, Nilay Murlidhar Bhaisare, dh24552@bristol.ac.uk, role
 - Group member 6, Nishtha Singh, ga23124@bristol.ac.uk, role
 
 ## Project Report
