@@ -1,0 +1,91 @@
+1)Memory Tile Game: 
+A board consists of tiles, each holding an audio snippet. 
+At the start, the tiles are visible for a brief period, revealing the numbers that correspond to each snippet. 
+Once the tiles flip over, the player must select the tiles in the correct order based on the audio snippet sequence.
+
+The goal is to remember the number order of the tiles and select them in the correct sequence. 
+
+When a tile is clicked in the correct order, the corresponding audio snippet plays.
+
+If the wrong tile is selected, the player must retry the sequence from the beginning. 
+
+add a timer to make the game more challenging. 
+The faster the player completes the game, the higher their score.
+Increase the number of tiles as the player progresses, adding more snippets to remember.
+
+2) Indian Cab Driver Simulation(silly idea yet a game)
+
+The game simulates the life of a cab driver navigating the chaotic roads of an Indian city. Players must drive through traffic, pick up passengers, and drop them off at their destinations while avoiding obstacles and managing time. The game is set in a dynamic 2D environment, with realistic road behavior, varying traffic patterns, and passenger interactions that mimic real-life driving scenarios in India.
+
+
+Players control the cab using the arrow keys (or WASD keys), steering the car around the map to pick up and drop off passengers.
+The game world consists of roads, intersections, and random obstacles (like potholes, traffic signals, and other vehicles).
+Other vehicles such as cars, motorcycles, and rickshaws move randomly on the roads. Players must navigate around them to avoid collisions.
+Passenger Pick-Up/Drop-Off: Passengers randomly appear at different locations. Players need to pick them up and drive them to their drop-off locations. The player earns money based on distance traveled and time taken.
+
+The goal of the game is to earn as much money as possible by completing passenger trips without accidents. Players must manage time, traffic, and their passengers' needs while avoiding damage to the car and ensuring smooth driving.
+ 
+Additionally, weather effects like rain or fog add a layer of difficulty.(this takes time though)
+The roads are busy with traffic, and players must deal with random events such as pedestrians crossing the road, sudden roadblocks, or vehicle breakdowns.The game includes a time system, where different times of day (morning, afternoon, night) affect traffic behavior.
+
+
+3) Flappy bird - but Flappy Airplane
+Core Features:
+    i) Airplane Theme:
+        Replace the bird character with a small airplane.
+        Adjust the animation to simulate an airplane's movement to be streamlined.
+
+    ii) Environment:
+        Replace pipes with air-themed obstacles like Flock of birds, thunderclouds etc.
+        Use a sky-themed background with *moving* clouds to give a sense of motion.
+
+    iii)Mechanics:
+        Change to hold-to-give-cruise mechanic, but adjust physics to feel heavier, like a plane.
+        Add subtle sound effects like propeller noises or jet whooshes.
+
+    iv) Score System:
+        Increment score for each obstacle passed.
+        *Optionally, add collectible stars or fuel tanks for bonus points.*
+
+    v)  Game Over Conditions:
+        Collision with obstacles or the ground.
+        *Optionally, add a "fuel gauge" mechanic where fuel depletes over time, and refills with collectibles.*
+
+Advanced Features:
+    i) Power-Ups:
+        *Turbo Boost: Temporarily increases speed and makes the plane invincible.*
+        Shield: Protects the plane from one collision.
+
+    ii) Weather Effects:
+        *Randomly introduce weather conditions like rain, snow, or turbulence to increase difficulty.*
+
+    iii) Customization:
+         *Allow players to choose different airplane designs or colors.*
+    iv) Fire functionality:
+          Fire to destroy obstacles in the path but for a limited time.
+
+4) Space invader - Fire functions should be multiple bullets
+    Core Features:
+    i) Multiple Bullet Functionality:
+    - Allow the player to fire multiple bullets simultaneously, without waiting for the previous bullet to disappear.
+    - *Introduce a cooldown system to balance rapid firing.*
+
+    ii) Bullet Management:
+    - *Maintain a pool or list of bullets, with each bullet independently tracked.*
+    - Bullets are removed from the screen when they move off-screen or hit an enemy.
+
+    iii) Enemy Collision Detection:
+    - Each bullet checks for collisions with enemies and deactivates upon impact.
+    - Enemies hit by bullets are destroyed and contribute to the player's score.
+
+    iv) Game Over Conditions:
+    - The player loses if his 1 life is depleted or enemies reach the bottom of the screen.
+
+    v) Score System:
+    - Award points for every enemy destroyed.
+
+    Advanced Features:
+    i) Power-Ups:
+    - Temporary shields to protect the player from enemy fire.
+
+
