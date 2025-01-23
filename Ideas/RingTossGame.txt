@@ -1,0 +1,8 @@
+Title -         Ring Toss Game
+Description -   This game brings the classic water ring toss to life in a 3D environment using p5.js.
+                Players control two water jets using keyboard buttons to propel floating rings onto pegs inside a
+                transparent water tank.
+                The realistic water physics and immersive 3D visuals create a challenging and engaging experience,
+                blending nostalgia with modern gameplay mechanics.
+Challenges -    3D environment, complex game physics (Gravity, Acceleration, Force)
+Play Settings - Two Keyboard keys to propel rings using water jets and mouse to control the rotation of the screen.
