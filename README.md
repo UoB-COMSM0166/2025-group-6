@@ -12,7 +12,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 ## Your Group
 
-![IMG_2111](https://github.com/user-attachments/assets/8ebd4457-6124-4e18-9d72-9eabe6e7746d)
+![Group-6-Banner](https://github.com/user-attachments/assets/c66c5311-e353-4e56-97a1-68db2eae6cd6)
 
 | Group Member | Name                     | Email                 | Role | GitHub Username                    |
 |--------------|--------------------------|-----------------------|------|------------------------------------|
