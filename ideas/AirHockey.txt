@@ -1,0 +1,6 @@
+Description - A modern take on the classic air hockey game implemented in a web browser. 
+Player and CPU control circular mallets on opposite sides of a smooth, low-friction virtual table, engaging in lightning-fast exchanges with a lightweight puck. 
+Random power-ups occur during gameplay that can temporarily modify mallet size, puck speed, or add special effects like creating a vision blind for the opponent. 
+The difficulty increases as levels progress, with the CPU becoming more aggressive and size of net decreasing.
+Challenges - puck physics (Velocity, Spin, Bounce angles)
+Play Settings - Mouse/keyboard movement to control mallet position, optional power shots using spacebar, and adjustable game speed/difficulty settings
