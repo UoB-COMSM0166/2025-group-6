@@ -1,5 +1,4 @@
 
-
 export class GameObject {
     constructor(x, y, shape) {
         this.x = x;
