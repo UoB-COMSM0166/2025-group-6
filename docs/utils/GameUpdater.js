@@ -15,12 +15,7 @@ export function updateGame() {
 
     // Player 2 movement
     if (gameState.gameMode === 'multi') {
-        if (mouseX > width/2) { // Only allow movement on right side
-            gameState.player2.move(
-                constrain(mouseX, width/2 + gameState.player2.shape.width/2, width - gameState.margin - gameState.player2.shape.width/2),
-                constrain(mouseY, gameState.margin + gameState.player2.shape.height/2, height - gameState.margin - gameState.player2.shape.height/2)
-            );
-        }
+         // mutliplayer logic to be added here
     } else {
         updateCPU();
     }

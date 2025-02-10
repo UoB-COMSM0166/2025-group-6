@@ -17,7 +17,7 @@ export class Puck extends GameObject {
     update() {
         super.update();
 
-        // // Add friction
+        // Add friction
         // this.velocity.x *= 0.99;
         // this.velocity.y *= 0.99;
 

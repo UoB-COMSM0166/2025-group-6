@@ -5,5 +5,5 @@
   "include": [
     "*.js",
     "**/*.js"
-  ]
+, "docs/utils", "docs/utils"  ]
 }
