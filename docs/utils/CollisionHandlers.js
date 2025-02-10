@@ -65,12 +65,12 @@ export function handleMalletPuckCollision(mallet, puck) {
     let spinEffect = (relativeY / (mallet.shape.height/2)) * 0.5; // -0.5 to 0.5
     angle += spinEffect;
     
-    const maxSpeed = 15;
+    const maxSpeed = 20;
     const boost = 1.05; // Boost factor for mallet collisions
     
     // Transfer momentum with a boost applied to the calculated speed
-    puck.velocity.x = cos(angle) * min(speed + 5, maxSpeed) * boost;
-    puck.velocity.y = sin(angle) * min(speed + 5, maxSpeed) * boost;
+    puck.velocity.x = cos(angle) * min(speed + 15, maxSpeed) * boost;
+    puck.velocity.y = sin(angle) * min(speed + 15, maxSpeed) * boost;
 }
 
 export function handleCollisions() {

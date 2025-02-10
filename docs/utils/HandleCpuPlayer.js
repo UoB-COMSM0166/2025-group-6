@@ -33,11 +33,11 @@ export function updateCPU() {
         const aggressiveness = 0.8; // Now 80% of max speed for quicker adjustments
         const maxSpeed = 25;
         
+        // Calculate direction to target
         let dx = targetX - gameState.player2.x;
         let dy = targetY - gameState.player2.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
         let speed = Math.min(distance, maxSpeed * aggressiveness);  // Use consistent calculated speed
-
         // Move towards target at calculated speed
         if (dx !== 0 || dy !== 0) {
             let angle = Math.atan2(dy, dx);
