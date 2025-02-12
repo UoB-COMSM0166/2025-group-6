@@ -14,14 +14,14 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 ![Group-6-Banner](https://github.com/user-attachments/assets/c66c5311-e353-4e56-97a1-68db2eae6cd6)
 
-| Group Member | Name                     | Email                 | Role | GitHub Username                    |
-|--------------|--------------------------|-----------------------|------|------------------------------------|
-| 1            | Saquib Sayeed Kazi       | jh24162@bristol.ac.uk | TBD  | [@Saqsy](https://github.com/Saqsy) |
-| 2            | Balachander Raja         | js24503@bristol.ac.uk | TBD  |                                    |
-| 3            | Rohit Bhagatkar          | np24437@bristol.ac.uk | TBD  |                                    |
-| 4            | Adwaith Syam Sundar      | ie24068@bristol.ac.uk | TBD  |                                    |
-| 5            | Nilay Murlidhar Bhaisare | dh24552@bristol.ac.uk | TBD  |                                    |
-| 6            | Nishtha Singh            | ga23124@bristol.ac.uk | TBD  |                                    |
+| Group Member | Name                     | Email                 | Role                       | GitHub Username                                  |
+|--------------|--------------------------|-----------------------|----------------------------|--------------------------------------------------|
+| 1            | Saquib Sayeed Kazi       | jh24162@bristol.ac.uk | Developer/ Project Manager | [@Saqsy](https://github.com/Saqsy)               |
+| 2            | Balachander Raja         | js24503@bristol.ac.uk | Developer/Sound Artist     | [@B-alachander](https://github.com/B-alachander) |
+| 3            | Rohit Bhagatkar          | np24437@bristol.ac.uk | Developer/ Game Mechanics  | [@ro-grafd](https://github.com/ro-grafd)         |
+| 4            | Adwaith Syam Sundar      | ie24068@bristol.ac.uk | Developer/ Game Mechanics  | [@adwaith911](https://github.com/adwaith911)     |
+| 5            | Nilay Murlidhar Bhaisare | dh24552@bristol.ac.uk | Developer/ Scrum Master    | [@NMB99](https://github.com/NMB99)               |
+| 6            | Nishtha Singh            | ga23124@bristol.ac.uk | Developer/ UI/UX Designer  | [@ananishtha98](https://github.com/ananishtha98) |
 
 ## Project Report
 
