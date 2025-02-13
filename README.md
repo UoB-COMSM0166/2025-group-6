@@ -34,7 +34,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 - 15% ~750 words
 - Use case diagrams, user stories. Early stages design. Ideation process. How did you decide as a team what to develop?
-1. Ideation Process
+## 1. Ideation Process
 
 The idea for Puck Power Clash emerged from brainstorming sessions where we explored different concepts for a 2D game. 
 Our primary goal was to create a game that is simple to learn but has engaging mechanics to keep players interested. 
@@ -48,9 +48,10 @@ As a team, we debated different features and gameplay mechanics. We used collabo
 to map out ideas and discuss feasibility. Each team member contributed ideas, and we voted on which mechanics to 
 implement in our first version.
 
-2. Early Stages of Design
-   ![Logo](/docs/ppc/assets/images/Initialdesign.png)
+## 2. Early Stages of Design
+
 In the early design phase, we focused on:
+![](/docs/ppc/assets/images/Initialdesign.png)
 - Defining core mechanics: paddle movement, puck physics, and scoring system. 
 - Introducing power-ups: speed boost, reverse puck direction, and freeze opponent’s paddle. 
 - Adding dynamic obstacles like rotating barriers to increase challenge. 
