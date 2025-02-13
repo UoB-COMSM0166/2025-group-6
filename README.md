@@ -34,7 +34,30 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 - 15% ~750 words
 - Use case diagrams, user stories. Early stages design. Ideation process. How did you decide as a team what to develop?
+1. Ideation Process
 
+The idea for Puck Power Clash emerged from brainstorming sessions where we explored different concepts for a 2D game. 
+Our primary goal was to create a game that is simple to learn but has engaging mechanics to keep players interested. 
+We considered various arcade-style games and ultimately chose an air hockey-inspired game because it offers:
+- Fast-paced gameplay that keeps players engaged. 
+- A well-known concept that can be easily adapted.
+
+Opportunities to introduce novel elements like power-ups and dynamic obstacles and goal posts.
+
+As a team, we debated different features and gameplay mechanics. We used collaborative tools like Miro and Google Docs 
+to map out ideas and discuss feasibility. Each team member contributed ideas, and we voted on which mechanics to 
+implement in our first version.
+
+2. Early Stages of Design
+   ![Logo](/docs/ppc/assets/images/Initialdesign.png)
+In the early design phase, we focused on:
+- Defining core mechanics: paddle movement, puck physics, and scoring system. 
+- Introducing power-ups: speed boost, reverse puck direction, and freeze opponent’s paddle. 
+- Adding dynamic obstacles like rotating barriers to increase challenge. 
+- Establishing a simple, visually appealing UI using p5.js.
+
+To visualize these concepts, we created rough sketches and flowcharts to represent the game logic. 
+We also developed wireframes to define the layout of the game elements on the screen.
 ### Design
 
 - 15% ~750 words
