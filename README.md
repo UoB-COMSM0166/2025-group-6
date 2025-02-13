@@ -34,7 +34,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 - 15% ~750 words
 - Use case diagrams, user stories. Early stages design. Ideation process. How did you decide as a team what to develop?
-## 1. Ideation Process
+#### 1. Ideation Process
 
 The idea for Puck Power Clash emerged from brainstorming sessions where we explored different concepts for a 2D game. 
 Our primary goal was to create a game that is simple to learn but has engaging mechanics to keep players interested. 
@@ -48,7 +48,7 @@ As a team, we debated different features and gameplay mechanics. We used collabo
 to map out ideas and discuss feasibility. Each team member contributed ideas, and we voted on which mechanics to 
 implement in our first version.
 
-## 2. Early Stages of Design
+#### 2. Early Stages of Design
 
 In the early design phase, we focused on:
 ![](/docs/ppc/assets/images/Initialdesign.png)
@@ -59,6 +59,26 @@ In the early design phase, we focused on:
 
 To visualize these concepts, we created rough sketches and flowcharts to represent the game logic. 
 We also developed wireframes to define the layout of the game elements on the screen.
+#### 3. User Stories
+We defined the following user stories to guide development:
+As a player, I want to:
+- Move my paddle smoothly using keyboard controls so I can intercept the puck. 
+- Strike the puck with different angles and speeds to outmaneuver my opponent. 
+- Collect power-ups that provide temporary advantages to make gameplay more strategic. 
+- Score goals by getting the puck into the opponent’s goal area to win points. 
+- Play against a friend in a local multiplayer mode for a competitive experience. 
+- Restart the game easily after a match so I can play multiple rounds without reloading.
+![](/docs/ppc/assets/images/Board.png)
+![](/docs/ppc/assets/images/Jira.png)
+
+#### 4 .Next Steps
+
+With these requirements outlined, our next steps are:
+- Developing a prototype to test paddle movement and physics. 
+- Implementing core game mechanics before integrating power-ups. 
+- Refining UI design and adding visual effects for a polished look. 
+- Playtesting to gather feedback and adjust mechanics accordingly.
+
 ### Design
 
 - 15% ~750 words
