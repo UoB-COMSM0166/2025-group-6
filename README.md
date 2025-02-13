@@ -65,7 +65,12 @@ We also developed wireframes to define the layout of the game elements on the sc
 
 
 ##### Paper Prototype
+
+- During the initial design phase, we developed a paper prototype of the game to visualize and test the core gameplay mechanics. 
+- This hands-on approach allowed us to simulate player interactions and experiment with different game elements before moving to digital implementation.
 ![](/paper-prototype/paper-prototype.gif)
+
+
 
 
 #### 3. User Stories
