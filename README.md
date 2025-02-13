@@ -1,6 +1,8 @@
 # 2025-group-6
 
 2025 COMSM0166 group 6
+# Puck Power Clash
+
 
 ## Your Game
 
@@ -51,6 +53,7 @@ implement in our first version.
 #### 2. Early Stages of Design
 
 In the early design phase, we focused on:
+
 ![](/docs/ppc/assets/images/Initialdesign.png)
 - Defining core mechanics: paddle movement, puck physics, and scoring system. 
 - Introducing power-ups: speed boost, reverse puck direction, and freeze opponent’s paddle. 
@@ -67,7 +70,8 @@ As a player, I want to:
 - Collect power-ups that provide temporary advantages to make gameplay more strategic. 
 - Score goals by getting the puck into the opponent’s goal area to win points. 
 - Play against a friend in a local multiplayer mode for a competitive experience. 
-- Restart the game easily after a match so I can play multiple rounds without reloading.
+- Restart the game easily after a match, so I can play multiple rounds without reloading.
+
 ![](/docs/ppc/assets/images/Board.png)
 ![](/docs/ppc/assets/images/Jira.png)
 
@@ -77,7 +81,7 @@ With these requirements outlined, our next steps are:
 - Developing a prototype to test paddle movement and physics. 
 - Implementing core game mechanics before integrating power-ups. 
 - Refining UI design and adding visual effects for a polished look. 
-- Playtesting to gather feedback and adjust mechanics accordingly.
+- Play-testing to gather feedback and adjust mechanics accordingly.
 
 ### Design
 
