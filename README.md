@@ -62,6 +62,17 @@ In the early design phase, we focused on:
 
 To visualize these concepts, we created rough sketches and flowcharts to represent the game logic. 
 We also developed wireframes to define the layout of the game elements on the screen.
+
+
+##### Paper Prototype
+
+- During the initial design phase, we developed a paper prototype of the game to visualize and test the core gameplay mechanics. 
+- This hands-on approach allowed us to simulate player interactions and experiment with different game elements before moving to digital implementation.
+![](/paper-prototype/paper-prototype.gif)
+
+
+
+
 #### 3. User Stories
 We defined the following user stories to guide development:
 As a player, I want to:
