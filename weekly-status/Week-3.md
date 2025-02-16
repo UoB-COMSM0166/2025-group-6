@@ -8,7 +8,8 @@ In Week 3, we refined our game concepts from Week 1 by focusing on two potential
   - Developed detailed paper prototypes for both game ideas.  
   - Created sketches, recorded short video demonstrations, and gathered inspiration images.
 - **Documentation:**  
-  - Uploaded all prototypes, videos, images, and initial ideas to our GitHub repository.  
+  - Uploaded all prototypes, videos, images, and initial ideas to our GitHub repository. 
+  -[Protype](https://github.com/UoB-COMSM0166/2025-group-6/blob/main/paper-prototype/paper-prototype.gif)
   - Updated the team page with our names, a team photo, and the complete list of game inspirations.  
 - **Discussion:**  
   - Conducted meetings to discuss the creative potential and development challenges of each idea.  
