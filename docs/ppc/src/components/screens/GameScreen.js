@@ -1,8 +1,8 @@
 import game from "../../core/Game.js";
 
+// Game screen will be a singleton class
 export class GameScreen {
     constructor() {
-        // Initialize any screen-specific properties
         this.backgroundColor = 255; // white background
     }
 

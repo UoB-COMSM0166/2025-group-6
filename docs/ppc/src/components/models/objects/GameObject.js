@@ -4,7 +4,7 @@ import game from "../../../core/Game.js";
 
 /**
  Blueprint for all objects in the game , all objects need to extend this class
- * Shape object is injected into GameObject to able to change shape of objects easily
+ * Shape object is injected into GameObjects so that object shape can be changed easily
  */
 export class GameObject {
     constructor(x, y, shape) {
@@ -22,19 +22,23 @@ export class GameObject {
         this.x += this.velocity.x;
         this.y += this.velocity.y;
         
- 
+       const bounds = this.shape.getBounds();
         // all game objects must be constained within the board
         this.x = constrain(
             this.x, 
-            constants.Margin + halfWidth, 
-            game.board.width - constants.Margin - halfWidth
+            constants.margin + bounds.width/2, 
+            width -constants.margin - bounds.width/2
         );
         
         this.y = constrain(
             this.y, 
-            constants.Margin + halfHeight, 
-            game.board.height - constants.Margin - halfHeight
+            constants.margin + bounds.height/2, 
+            height - bounds.height/2 -constants.margin
         );
+    }
+
+    checkCollision(other) {
+        return this.shape.checkCollision(this.x, this.y, other.shape,other.x,other.y);
     }
     
 

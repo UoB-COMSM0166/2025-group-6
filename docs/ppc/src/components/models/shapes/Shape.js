@@ -1,6 +1,5 @@
 /**
  * Abstract base class for shapes.
- * This class should not be instantiated directly.
  * All shape classes must extend this class and implement its methods.
  */
 export class Shape {

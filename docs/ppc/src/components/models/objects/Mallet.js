@@ -1,46 +1,75 @@
-import game  from "../../../core/Game.js";
+import { constants } from "../../../core/config.js";
+import game from "../../../core/Game.js";
 import { RectShape } from "../shapes/RectShape.js";
 import { GameObject } from "./GameObject.js";
 
 export class Mallet extends GameObject {
   constructor(x, y) {
-    super(x, y, new RectShape(10, 80));
+    super(x, y, new RectShape(10, 120));
     this.score = 0;
     this.leftSide = true;
     this.isPlayerCpu = true;
+    this.moveSpeed = 10; 
   }
 
   /* overriding update method since mallet needs to constrained
   to either half the board */
   update() {
+    // Handle keyboard input
+    if (!this.isPlayerCpu) {
+      this.handleKeyboardInput();
+    }
+
     this.x += this.velocity.x;
     this.y += this.velocity.y;
 
+    const bounds = this.shape.getBounds();
     if (this.leftSide) {
       this.x = constrain(
         this.x,
-        this.margin + game.board.width / 2,
-        width / 2 - game.board.width / 2
+        constants.margin + bounds.width/2,
+        width/2 -bounds.width/2
       );
     } else {
       this.x = constrain(
         this.x,
-        width / 2,
-        width - this.margin - game.board.width / 2
+        width / 2 +bounds.width/2,
+        width - bounds.width/2
       );
     }
     this.y = constrain(
       this.y,
-      this.margin + game.board.height / 2,
-      height - this.margin - game.board.height / 2
+      constants.margin + bounds.height/2,
+      height - constants.margin - bounds.height/2
     );
   }
 
+  handleKeyboardInput() {
+    // Reset velocities by default
+    this.velocity.x = 0;
+    this.velocity.y = 0;
+
+    // Only set velocity when keys are pressed
+    if (keyIsDown(UP_ARROW)) {
+        this.velocity.y = -this.moveSpeed;
+    } else if (keyIsDown(DOWN_ARROW)) {
+        this.velocity.y = this.moveSpeed;
+    }
+
+    if (keyIsDown(LEFT_ARROW)) {
+        this.velocity.x = -this.moveSpeed;
+    } else if (keyIsDown(RIGHT_ARROW)) {
+        this.velocity.x = this.moveSpeed;
+    }
+}
+
+  // for cpu controlled mallet
   move(targetX, targetY) {
-    // Smooth movement towards target
-    let dx = targetX - this.x;
-    let dy = targetY - this.y;
-    this.velocity.x = dx * 0.2;
-    this.velocity.y = dy * 0.2;
+
+      let dx = targetX - this.x;
+      let dy = targetY - this.y;
+      this.velocity.x = dx * 0.2;
+      this.velocity.y = dy * 0.2;
+
   }
 }
