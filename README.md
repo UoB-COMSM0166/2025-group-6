@@ -29,8 +29,15 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 ### Introduction
 
-- 5% ~250 words
-- Describe your game, what is based on, what makes it novel?
+Puck Power Clash is an exhilarating, high-energy arcade game that takes the classic air hockey experience and adds unique twists to make every match more thrilling. While it preserves the core idea of scoring by striking a puck across a frictionless table, the game introduces a series of innovative features to increase excitement and challenge.
+
+A standout feature is the power-up system, where special items randomly appear on the table. When a player’s puck collides with their opponent’s paddle, they gain a temporary boost, such as increased speed, enhanced hitting power, or a shield for brief defence. These power-ups force players to make strategic decisions, weighing the value of offense versus defence in the heat of the moment.
+
+Random obstacles also add unpredictability, altering the puck’s trajectory and requiring players to constantly adjust their positioning. These obstacles break away from typical gameplay patterns, demanding quick reflexes and creative thinking.
+
+The adjustable goalpost system further intensifies the action. If a player scores two consecutive points, their opponent’s goal expands, making it easier for the leading player to score but also placing more pressure on the defender. This dynamic change rewards aggressive play and punishes defenders who concede too many points in quick succession.
+
+With its vibrant neon artwork and dynamic sound design, Puck Power Clash immerses players in a fast-paced, futuristic atmosphere. It’s a game that challenges both reflexes and strategy, where every second on the table matters.
 
 ### Requirements
 
