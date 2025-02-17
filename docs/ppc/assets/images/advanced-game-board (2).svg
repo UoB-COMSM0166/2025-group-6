@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1367 602" width="100%" height="100%">
+  <defs>
+    <!-- Grid texture pattern -->
+    <pattern id="gridPattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#1a1a2e"/>
+      <line x1="0" y1="0" x2="40" y2="0" stroke="#2a2a4e" stroke-width="0.5"/>
+      <line x1="0" y1="0" x2="0" y2="40" stroke="#2a2a4e" stroke-width="0.5"/>
+    </pattern>
+    
+    <!-- Circuit board pattern -->
+    <pattern id="circuitPattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M10 10 h30 v30 h-30 Z" fill="none" stroke="#3a3a6e" stroke-width="0.5" opacity="0.3"/>
+      <path d="M60 60 h20 v20 h-20 Z" fill="none" stroke="#3a3a6e" stroke-width="0.5" opacity="0.3"/>
+      <path d="M10 60 l20 20" stroke="#3a3a6e" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="80" cy="20" r="5" fill="none" stroke="#3a3a6e" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+    
+    <!-- Gradient overlays -->
+    <linearGradient id="tableGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF00FF;stop-opacity:0.2"/>
+      <stop offset="50%" style="stop-color:#00FFFF;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#FF00FF;stop-opacity:0.2"/>
+    </linearGradient>
+    
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#00FFFF;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#120424;stop-opacity:0"/>
+    </radialGradient>
+    
+    <filter id="boardBlur">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Base layer with grid texture -->
+  <rect width="100%" height="100%" fill="url(#gridPattern)"/>
+  
+  <!-- Circuit pattern overlay -->
+  <rect width="100%" height="100%" fill="url(#circuitPattern)" opacity="0.5"/>
+  
+  <!-- Gradient overlay -->
+  <rect width="100%" height="100%" fill="url(#tableGradient)"/>
+  
+  <!-- Playing field border (widened to fill more space) -->
+  <rect x="20" y="20" width="1327" height="560" fill="none" stroke="#00FFFF" stroke-width="4" rx="30" filter="url(#boardBlur)">
+    <animate attributeName="stroke-opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Center line with texture -->
+  <line x1="683" y1="20" x2="683" y2="580" stroke="#FF00FF" stroke-width="4" stroke-dasharray="20,10" filter="url(#boardBlur)"/>
+  
+  <!-- Center circle with glow -->
+  <circle cx="683" cy="300" r="80" fill="url(#centerGlow)" opacity="0.3"/>
+  <circle cx="683" cy="300" r="80" fill="none" stroke="#00FFFF" stroke-width="4" filter="url(#boardBlur)"/>
+  <circle cx="683" cy="300" r="20" fill="none" stroke="#FF00FF" stroke-width="3">
+    <animate attributeName="r" values="20;25;20" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Goals with texture (shifted to fill more space) -->
+  <rect x="0" y="200" width="40" height="200" fill="url(#gridPattern)" stroke="#FF00FF" stroke-width="4" filter="url(#boardBlur)"/>
+  <rect x="1327" y="200" width="40" height="200" fill="url(#gridPattern)" stroke="#FF00FF" stroke-width="4" filter="url(#boardBlur)"/>
+  
+  <!-- Corner decorations -->
+  <g filter="url(#boardBlur)">
+    <!-- Top left -->
+    <path d="M60 60 L160 60 L160 160" fill="none" stroke="#00FFFF" stroke-width="4"/>
+    <path d="M70 70 L150 70 L150 150" fill="none" stroke="#00FFFF" stroke-width="2" opacity="0.5"/>
+    
+    <!-- Top right -->
+    <path d="M1287 60 L1177 60 L1177 160" fill="none" stroke="#00FFFF" stroke-width="4"/>
+    <path d="M1277 70 L1187 70 L1187 150" fill="none" stroke="#00FFFF" stroke-width="2" opacity="0.5"/>
+    
+    <!-- Bottom left -->
+    <path d="M60 540 L160 540 L160 440" fill="none" stroke="#00FFFF" stroke-width="4"/>
+    <path d="M70 530 L150 530 L150 450" fill="none" stroke="#00FFFF" stroke-width="2" opacity="0.5"/>
+    
+    <!-- Bottom right -->
+    <path d="M1287 540 L1177 540 L1177 440" fill="none" stroke="#00FFFF" stroke-width="4"/>
+    <path d="M1277 530 L1187 530 L1187 450" fill="none" stroke="#00FFFF" stroke-width="2" opacity="0.5"/>
+  </g>
+  
+  <!-- Additional textured elements -->
+  <circle cx="683" cy="300" r="150" fill="none" stroke="#FF00FF" stroke-width="2" opacity="0.3" stroke-dasharray="10,5"/>
+  <circle cx="683" cy="300" r="200" fill="none" stroke="#00FFFF" stroke-width="2" opacity="0.2" stroke-dasharray="15,5"/>
+</svg>
