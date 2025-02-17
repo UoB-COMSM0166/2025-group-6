@@ -10,6 +10,7 @@ export class CircleShape extends Shape {
     }
 
     draw(x, y) {
+        fill(0);
         circle(x, y, this.radius * 2);
     }
 

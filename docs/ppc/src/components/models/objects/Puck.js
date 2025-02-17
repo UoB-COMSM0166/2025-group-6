@@ -3,7 +3,7 @@ import { CircleShape } from '../shapes/CircleShape.js';
 
 export class Puck extends GameObject {
     constructor() {
-        super(width / 2, height / 2, new CircleShape(10)); // Puck radius of 15
+        super(width / 2, height / 2, new CircleShape(10)); 
         this.reset();
     }
 
@@ -16,9 +16,5 @@ export class Puck extends GameObject {
 
     update() {
         super.update();
-
-        // Add friction -- will adjust later
-        // this.velocity.x *= 0.99;
-        // this.velocity.y *= 0.99;
     }
 }
