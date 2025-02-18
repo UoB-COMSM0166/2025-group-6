@@ -23,7 +23,7 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 | 3            | Rohit Bhagatkar          | np24437@bristol.ac.uk | Developer/ Game Mechanics  | [@ro-grafd](https://github.com/ro-grafd)         |
 | 4            | Adwaith Syam Sundar      | ie24068@bristol.ac.uk | Developer/ Game Mechanics  | [@adwaith911](https://github.com/adwaith911)     |
 | 5            | Nilay Murlidhar Bhaisare | dh24552@bristol.ac.uk | Developer/ Scrum Master    | [@NMB99](https://github.com/NMB99)               |
-| 6            | Nishtha Singh            | ga23124@bristol.ac.uk | Developer/ UI/UX Designer  | [@ananishtha98](https://github.com/ananishtha98) |
+| 6            | Nishtha Singh            | ga23124@bristol.ac.uk | Developer/ UI/UX Designer  | [@ananish](https://github.com/ananish)           |
 
 ## Project Report
 
@@ -81,7 +81,7 @@ We also developed wireframes to define the layout of the game elements on the sc
 
 
 #### 3. User Stories
-We defined the following user stories to guide development:
+Wewq defined the following user stories to guide development:
 As a player, I want to:
 - Move my paddle smoothly using keyboard controls so I can intercept the puck. 
 - Strike the puck with different angles and speeds to outmaneuver my opponent. 
