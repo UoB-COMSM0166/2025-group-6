@@ -97,8 +97,8 @@ export default class CollisionHandler {
     } else if (puck.x + puck.shape.radius >= width - constants.margin) {
       // Check if puck is within goal height
       if (
-        puck.y < game.board.goalPost.goalY ||
-        puck.y > game.board.goalPost.goalY + game.board.goalPost.goalHeight
+        puck.y < game.board.goalPost.goalY - game.board.goalPost.goalHeight/2||
+        puck.y > game.board.goalPost.goalY + game.board.goalPost.goalHeight/2
       ) {
         // Prevent sticking by moving puck just outside boundary
         puck.x = width - constants.margin - puck.shape.radius - 1;
