@@ -9,6 +9,7 @@ export default class CPUHandler {
     this.maxSpeed = 25;
     this.defaultX = width * 0.75;
     this.minDistance = 30; 
+    this.offsetScale = 50;
   }
 
   update() {
@@ -45,9 +46,9 @@ export default class CPUHandler {
         );
 
         if (this.game.puck.velocity.x > 0) {
-          this.game.aiOffset = random(-offsetScale, offsetScale);
+          this.game.aiOffset = random(-this.offsetScale, this.offsetScale);
         } else {
-          this.game.aiOffset = random(-offsetScale/2, offsetScale/2);
+          this.game.aiOffset = random(-this.offsetScale/2, this.offsetScale/2);
         }
         
         targetY = constrain(
