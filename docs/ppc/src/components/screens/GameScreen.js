@@ -25,6 +25,9 @@ export class GameScreen {
         fill(255);
         ellipseMode(RADIUS);
         game.puck.draw();
+
+        // Draw Scoreboard
+        game.scoreBoard.draw();
     }
 
 }
