@@ -3,13 +3,13 @@ import { constants } from "../core/config.js";
 export default class CPUHandler {
   constructor(game) {
     this.game = game;
-    this.reactionDelay = 0.30;
-    this.predictionError = 0.1;
-    this.aggressiveness = 0.8;
-    this.maxSpeed = 25;
+    this.reactionDelay = 0.70;
+    this.aggressiveness = 0.75;
+    this.maxSpeed = 30;
     this.defaultX = width * 0.75;
-    this.minDistance = 30; 
-    this.offsetScale = 50;
+    this.minDistance = 5; 
+    this.offsetScale = 5;
+    this.aioffset = 5;
   }
 
   update() {
@@ -17,7 +17,7 @@ export default class CPUHandler {
       let targetX = this.defaultX;
       let targetY = this.game.puck.y;
 
-      if (this.game.puck.x > width / 2) {
+      if (this.game.puck.x > width / 2 && this.game.puck.x < this.game.player2.x) {
         // Enhanced prediction based on puck velocity and position
         const puckSpeed = Math.sqrt(
           this.game.puck.velocity.x ** 2 + 
@@ -26,19 +26,8 @@ export default class CPUHandler {
         
         const predictionScale = map(puckSpeed, 0, 10, 1, 2);
         
-        let predictedX = this.game.puck.x + 
-          this.game.puck.velocity.x * predictionScale * 
-          (1 + (random() - 0.5) * this.predictionError);
+        let predictedX = this.game.puck.x + (this.game.puck.velocity.x * predictionScale);
 
-        // Dynamic positioning based on puck threat level
-        const threatLevel = map(
-          abs(this.game.puck.velocity.x), 
-          0, 
-          10, 
-          0.7, 
-          0.85
-        );
-        
         targetX = constrain(
           predictedX + this.minDistance,
           width / 2,
@@ -46,20 +35,19 @@ export default class CPUHandler {
         );
 
         if (this.game.puck.velocity.x > 0) {
-          this.game.aiOffset = random(-this.offsetScale, this.offsetScale);
+          this.aiOffset = random(-this.offsetScale, this.offsetScale);
         } else {
-          this.game.aiOffset = random(-this.offsetScale/2, this.offsetScale/2);
+          this.aiOffset = random(-this.offsetScale/2, this.offsetScale/2);
         }
         
         targetY = constrain(
-          this.game.puck.y + this.game.aiOffset,
+          this.game.puck.y + this.aiOffset,
           constants.margin + this.game.player2.shape.height/2,
           height - constants.margin - this.game.player2.shape.height/2
         );
       } else {
-        // Defensive positioning with slight randomness
-        targetX = width * (0.7 + random(0.1));
-        targetY = height / 2 + random(-50, 50);
+        targetX = width * 0.75;
+        targetY = height / 2 ;
       }
 
       this.moveTowardsTarget(targetX, targetY);
@@ -85,7 +73,7 @@ export default class CPUHandler {
       this.maxSpeed * puckThreat
     );
 
-    if (distance > 1) { // Add small threshold to prevent jittering
+    if (distance > 1) { 
       const angle = Math.atan2(dy, dx);
       this.game.player2.move(
         this.game.player2.x + Math.cos(angle) * speed,

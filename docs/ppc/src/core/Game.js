@@ -11,7 +11,6 @@ class Game {
     this.player2 = undefined;
     this.puck = undefined;
     this.board = undefined;
-    this.aiOffset = 0;
     this.gameEngine = undefined;
   }
 
