@@ -1,4 +1,4 @@
 // define all game constants here
 export const constants = {
-    margin: 20,
+    margin: 40,
 }

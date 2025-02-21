@@ -19,6 +19,7 @@ export function updateDimensions() {
     game.board.centerCircleRadius = min(width, height) * 0.1;
     game.board.goalPost.goalHeight = height * 0.25;
     game.board.goalPost.goalY = height / 2 ;
+    game.scoreBoard.update();
 }
 
 window.windowResized = windowResized;

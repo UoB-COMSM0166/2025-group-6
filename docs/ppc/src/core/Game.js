@@ -1,6 +1,7 @@
 import { GameBoard } from "../components/models/GameBoard.js";
 import { Mallet } from "../components/models/objects/Mallet.js";
 import { Puck } from "../components/models/objects/Puck.js";
+import { ScoreBoard } from "../components/models/ScoreBoard.js";
 import { GameEngine } from "../handlers/GameEngine.js";
 
 // Singleton class which serves as the central hub of the game
@@ -12,6 +13,7 @@ class Game {
     this.puck = undefined;
     this.board = undefined;
     this.gameEngine = undefined;
+    this.scoreBoard = undefined;
   }
 
   initializeGame() {
@@ -23,6 +25,7 @@ class Game {
     this.puck = new Puck();
     this.board = new GameBoard();
     this.gameEngine = new GameEngine(this);
+    this.scoreBoard = new ScoreBoard(this);
   }
    
   updateGame(){
