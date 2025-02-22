@@ -1,4 +1,5 @@
 import { constants } from "../../core/config.js";
+import  StreakTracker  from "./StreakTracker.js";
 
 export class ScoreBoard {
   constructor(game) {
@@ -11,6 +12,7 @@ export class ScoreBoard {
     this.width = game.board.boardWidth * 0.25;
     this.height = constants.margin;
     this.game = game;
+    this.streakTracker = new StreakTracker();
   }
 
   draw() {
