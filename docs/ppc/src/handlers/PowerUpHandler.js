@@ -1,6 +1,6 @@
 import { constants } from "../core/config.js";
 
-/* This Class handles how powerup is getting activated and deactiavted 
+/* This Class handles how powerup is getting activated and deactivated 
 and also how its effect is enabled and disabled */
 export default class PowerupHandler {
   constructor(game) {
@@ -51,21 +51,23 @@ export default class PowerupHandler {
     this.game.firePowerUp.active = true;
     this.powerupActiveTimer = Date.now();
     this.isTimerActive = true;
+    const currentStreak = this.game.scoreBoard.streakTracker.getCurrentStreak();
+    this.game.firePowerUp.leftSide = currentStreak.player.leftSide;
   }
 
   enablePowerUpEffect() {
-    const currentStreak = this.game.scoreBoard.streakTracker.getCurrentStreak();
+    
     this.game.firePowerUp.effect = true;
-    this.game.firePowerUp.leftSide = currentStreak.player.leftSide;
+    // this.game.firePowerUp.leftSide = currentStreak.player.leftSide;
     // checking player side and making sure that double powerup is not applied to same goalpost
     if (
-      currentStreak.player.leftSide &&
+      this.game.firePowerUp.leftSide &&
       this.game.board.goalPost.goalHeightTwo <= height * 0.25
     ) {
       this.game.board.goalPost.goalHeightTwo *= constants.goalSizeIncFactor;
       this.game.board.goalPost.colorTwo = "red";
     } else if (
-      !currentStreak.player.leftSide &&
+      !this.game.firePowerUp.leftSide &&
       this.game.board.goalPost.goalHeightOne <= height * 0.25
     ) {
       this.game.board.goalPost.goalHeightOne *= constants.goalSizeIncFactor;
