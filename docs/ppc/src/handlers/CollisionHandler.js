@@ -13,10 +13,10 @@ export default class CollisionHandler {
 
   checkMalletPuckCollisions() {
     // Check collisions between mallets and puck
-    if (this.game.player1.checkCollision(this.game.puck) && !this.game.player1.onFire) {
+    if (this.game.player1.checkCollision(this.game.puck)) {
       this.handleMalletPuckCollision(this.game.player1, this.game.puck);
     }
-    if (this.game.player2.checkCollision(this.game.puck) && !this.game.player2.onFire) {
+    if (this.game.player2.checkCollision(this.game.puck)){
       this.handleMalletPuckCollision(this.game.player2, this.game.puck);
     }
   }
