@@ -1,22 +1,22 @@
 import { constants } from "../core/config.js";
-import game from "../core/Game.js";
 
 export default class CollisionHandler {
   constructor(game) {
-    this.game=game;
+    this.game = game;
   }
 
   update() {
     this.checkMalletPuckCollisions();
     this.checkWallCollisions(this.game.puck);
+    this.checkPowerUpCollosions(this.game.firePowerUp);
   }
 
   checkMalletPuckCollisions() {
     // Check collisions between mallets and puck
     if (this.game.player1.checkCollision(this.game.puck)) {
-      this.handleMalletPuckCollision(this.game.player1, game.puck);
+      this.handleMalletPuckCollision(this.game.player1, this.game.puck);
     }
-    if (this.game.player2.checkCollision(this.game.puck)) {
+    if (this.game.player2.checkCollision(this.game.puck)){
       this.handleMalletPuckCollision(this.game.player2, this.game.puck);
     }
   }
@@ -82,8 +82,12 @@ export default class CollisionHandler {
     if (puck.x - puck.shape.radius <= constants.margin) {
       // Check if puck is within goal height
       if (
-        puck.y < game.board.goalPost.goalY - game.board.goalPost.goalHeight/2||
-        puck.y > game.board.goalPost.goalY + game.board.goalPost.goalHeight/2
+        puck.y <
+          this.game.board.goalPost.goalY -
+            this.game.board.goalPost.goalHeightOne / 2 ||
+        puck.y >
+          this.game.board.goalPost.goalY +
+            this.game.board.goalPost.goalHeightOne / 2
       ) {
         // Prevent sticking by moving puck just outside boundary
         puck.x = constants.margin + puck.shape.radius + 1;
@@ -91,14 +95,19 @@ export default class CollisionHandler {
         puck.velocity.y *= friction * boost;
       } else {
         // Goal scored for player 2
-        game.player2.score++;
+        this.game.scoreBoard.streakTracker.addScore(this.game.player2);
+        this.game.player2.score++;
         puck.reset();
       }
     } else if (puck.x + puck.shape.radius >= width - constants.margin) {
       // Check if puck is within goal height
       if (
-        puck.y < game.board.goalPost.goalY - game.board.goalPost.goalHeight/2||
-        puck.y > game.board.goalPost.goalY + game.board.goalPost.goalHeight/2
+        puck.y <
+          this.game.board.goalPost.goalY -
+            this.game.board.goalPost.goalHeightTwo / 2 ||
+        puck.y >
+          this.game.board.goalPost.goalY +
+            this.game.board.goalPost.goalHeightTwo / 2
       ) {
         // Prevent sticking by moving puck just outside boundary
         puck.x = width - constants.margin - puck.shape.radius - 1;
@@ -106,8 +115,23 @@ export default class CollisionHandler {
         puck.velocity.y *= friction * boost;
       } else {
         // Goal scored for player 1
-        game.player1.score++;
+        this.game.scoreBoard.streakTracker.addScore(this.game.player1);
+        this.game.player1.score++;
         puck.reset();
+      }
+    }
+  }
+
+  checkPowerUpCollosions(powerUp) {
+    if (this.game.firePowerUp.active == true) {
+      const currentStreak =
+        this.game.scoreBoard.streakTracker.getCurrentStreak();
+        if (
+          this.game.player1.checkCollision(powerUp) ||
+          this.game.player2.checkCollision(powerUp)
+        ) {
+          this.game.gameEngine.powerUpHandler.enablePowerUpEffect();
+          this.game.gameEngine.powerUpHandler.deactivatePowerup();
       }
     }
   }

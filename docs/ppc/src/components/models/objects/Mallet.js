@@ -1,15 +1,15 @@
 import { constants } from "../../../core/config.js";
-import game from "../../../core/Game.js";
 import { RectShape } from "../shapes/RectShape.js";
 import { GameObject } from "./GameObject.js";
 
 export class Mallet extends GameObject {
-  constructor(x, y) {
+  constructor(x, y,leftside) {
     super(x, y, new RectShape(10, 120));
     this.score = 0;
-    this.leftSide = true;
+    this.leftSide = leftside;
     this.isPlayerCpu = true;
-    this.moveSpeed = 10; 
+    this.moveSpeed = 15;
+
   }
 
   /* overriding update method since mallet needs to constrained

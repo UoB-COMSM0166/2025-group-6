@@ -9,15 +9,16 @@ export class RectShape extends Shape {
   }
 
   draw(x, y) {
-    rectMode(CENTER);
-    rect(x, y, this.width, this.height);
+      rectMode(CENTER);
+      rect(x, y, this.width, this.height);
+
   }
   checkCollision(x1, y1, other, x2, y2) {
     if (other.constructor.name === "CircleShape") {
        return collisionUtils.circleToRect(x1, y1, this, x2, y2, other);
     }
     if (other.constructor.name === "RectShape") {
-      // to be implemented later if needed
+      return collisionUtils.rectToRect(x1, y1, this, x2, y2, other);
     }
     return false;
   }
