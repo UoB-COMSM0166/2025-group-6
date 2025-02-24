@@ -68,7 +68,7 @@ export default class CPUHandler {
       1
     );
     
-    const speed = Math.min(
+    const speed = Math.max(
       distance, 
       this.maxSpeed * puckThreat
     );

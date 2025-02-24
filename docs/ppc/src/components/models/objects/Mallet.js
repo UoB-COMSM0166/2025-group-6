@@ -8,7 +8,7 @@ export class Mallet extends GameObject {
     this.score = 0;
     this.leftSide = leftside;
     this.isPlayerCpu = true;
-    this.moveSpeed = 20;
+    this.moveSpeed = 30;
 
   }
 
