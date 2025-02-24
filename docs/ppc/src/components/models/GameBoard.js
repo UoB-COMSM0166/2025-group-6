@@ -32,6 +32,7 @@ export class GameBoard {
     strokeWeight(4);
     stroke(0, 255, 255); // Electric Blue
     noFill();
+    rectMode(CENTER);
     rect(width / 2, height / 2, this.boardWidth, this.boardHeight, 20);
 
     // Draw Center Line
