@@ -20,59 +20,64 @@ export class CircleShape extends Shape {
     push();
     if (this.type == "puck") {
       translate(x, y);
-
+      
       // Update glow intensity dynamically
       this.glowAlpha = map(sin(millis() / 800), -1, 1, 100, 255);
       this.rotationAngle += this.rotationSpeed; // Rotate puck dynamically
-
       rotate(this.rotationAngle); // Apply rotation
-
+      
+      // Calculate scaling factor to ensure all elements fit within radius
+      // Since the outermost element was at 2.8 * this.radius, we need to scale down
+      const scaleFactor = 1 / 2.8;
+      
       // ** Base Circle (Dark Background) **
       noStroke();
       fill(50, 90, 120); // Deep teal color for contrast
-      circle(0, 0, this.radius * 1.4);
-
+      circle(0, 0, this.radius * 1.4 * scaleFactor * 2);
+      
       // ** Apply Glow Effect **
-      drawingContext.shadowBlur = 50 + sin(millis() / 500) * 20;
+      // Reduce glow blur to keep visual within radius boundaries
+      drawingContext.shadowBlur = (15 + sin(millis() / 500) * 5) * scaleFactor;
       drawingContext.shadowColor = this.currentColor;
-
+      
       // ** Outer Glow Layers (Segmented Rings) **
       noFill();
-      strokeWeight(12);
+      strokeWeight(6 * scaleFactor);
       stroke(
         this.currentColor.levels[0],
         this.currentColor.levels[1],
         this.currentColor.levels[2],
         this.glowAlpha - 50
       );
-      this.drawSegmentedRing(0, 0, this.radius * 2.8, 8, PI / 6);
-
-      strokeWeight(10);
+      // This was the outermost element at 2.8 * radius, now scaled to fit within radius
+      this.drawSegmentedRing(0, 0, this.radius * 2, 8, PI / 6);
+      
+      strokeWeight(5 * scaleFactor);
       stroke(
         this.currentColor.levels[0],
         this.currentColor.levels[1],
         this.currentColor.levels[2],
         this.glowAlpha
       );
-      this.drawSegmentedRing(0, 0, this.radius * 2.3, 10, PI / 10);
-
+      this.drawSegmentedRing(0, 0, this.radius * 1.8, 10, PI / 10);
+      
       // ** Inner Glow Rings (Neon Flicker Effect) **
-      strokeWeight(6);
+      strokeWeight(3 * scaleFactor);
       stroke(
         this.currentColor.levels[0],
         this.currentColor.levels[1],
         this.currentColor.levels[2],
         this.glowAlpha + random(-20, 20)
       );
-      circle(0, 0, this.radius * 2.0);
       circle(0, 0, this.radius * 1.6);
-
+      circle(0, 0, this.radius * 1.3);
+      
       // ** Rotating Arc Segments **
-      strokeWeight(4);
+      strokeWeight(2 * scaleFactor);
       let numArcs = 6;
       for (let i = 0; i < numArcs; i++) {
         let angle = (TWO_PI / numArcs) * i + millis() / 800;
-        let arcRadius = this.radius * 1.3;
+        let arcRadius = this.radius * 0.9;
         stroke(
           this.currentColor.levels[0],
           this.currentColor.levels[1],
@@ -81,12 +86,12 @@ export class CircleShape extends Shape {
         );
         arc(0, 0, arcRadius * 2, arcRadius * 2, angle, angle + PI / 10);
       }
-
+      
       // ** Glowing Central Hexagon Core **
-      this.drawGlowingHexagon(0, 0, this.radius * 0.5);
-
+      this.drawGlowingHexagon(0, 0, this.radius * 0.4);
+      
       // ** Radial Energy Lines **
-      strokeWeight(2);
+      strokeWeight(1 * scaleFactor);
       stroke(
         this.currentColor.levels[0],
         this.currentColor.levels[1],
@@ -96,19 +101,18 @@ export class CircleShape extends Shape {
       let numLines = 16;
       for (let i = 0; i < numLines; i++) {
         let angle = (TWO_PI / numLines) * i;
-        let x1 = cos(angle) * this.radius * 0.6;
-        let y1 = sin(angle) * this.radius * 0.6;
-        let x2 = cos(angle) * this.radius * 1.4;
-        let y2 = sin(angle) * this.radius * 1.4;
+        let x1 = cos(angle) * this.radius * 0.4;
+        let y1 = sin(angle) * this.radius * 0.4;
+        let x2 = cos(angle) * this.radius * 0.9;
+        let y2 = sin(angle) * this.radius * 0.9;
         line(x1, y1, x2, y2);
       }
     } else {
       circle(x, y, this.radius * 2);
     }
-
+    
     pop();
   }
-
   // ** Function to Draw Segmented Rings **
   drawSegmentedRing(x, y, diameter, segments, gap) {
     for (let i = 0; i < segments; i++) {
