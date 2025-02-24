@@ -5,7 +5,7 @@ import { updateDimensions } from "./src/utils/windowResizer.js";
 let gameBackImg;
 
 function preload() {
-  gameBackImg = loadImage("./assets/images/main_page_2.jpg");
+  gameBackImg = loadImage("./assets/images/bg12.jpg");
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
