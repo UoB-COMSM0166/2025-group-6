@@ -22,34 +22,17 @@ export default class CollisionHandler {
   }
 
   handleMalletPuckCollision(mallet, puck) {
-    let closestX = constrain(
-      puck.x,
-      mallet.x - mallet.shape.width / 2,
-      mallet.x + mallet.shape.width / 2
-    );
-    let closestY = constrain(
-      puck.y,
-      mallet.y - mallet.shape.height / 2,
-      mallet.y + mallet.shape.height / 2
-    );
-
+ 
     // Calculate collision angle from closest point
-    let dx = puck.x - closestX;
-    let dy = puck.y - closestY;
+    let dx = puck.x - mallet.x;
+    let dy = puck.y - mallet.y;
     let angle = atan2(dy, dx);
 
     // Calculate mallet's effective speed at the collision point
-    let relativeX = closestX - mallet.x;
-    let relativeY = closestY - mallet.y;
     let speed = sqrt(
       mallet.velocity.x * mallet.velocity.x +
         mallet.velocity.y * mallet.velocity.y
     );
-
-    // Add rotational effect based on where the puck hits the paddle
-    let spinEffect = (relativeY / (mallet.shape.height / 2)) * 0.5; // -0.5 to 0.5
-    angle += spinEffect;
-
     const maxSpeed = 20;
     const boost = 1.05; // Boost factor for mallet collisions
 

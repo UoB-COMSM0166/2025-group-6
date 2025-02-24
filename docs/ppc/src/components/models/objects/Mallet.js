@@ -1,14 +1,14 @@
 import { constants } from "../../../core/config.js";
-import { RectShape } from "../shapes/RectShape.js";
+import { CircleShape } from "../shapes/CircleShape.js";
 import { GameObject } from "./GameObject.js";
 
 export class Mallet extends GameObject {
   constructor(x, y,leftside) {
-    super(x, y, new RectShape(10, 120));
+    super(x, y, new CircleShape(20,"mallet"));
     this.score = 0;
     this.leftSide = leftside;
     this.isPlayerCpu = true;
-    this.moveSpeed = 15;
+    this.moveSpeed = 20;
 
   }
 

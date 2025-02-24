@@ -38,7 +38,7 @@ export class GameObject {
     }
 
     checkCollision(other) {
-        return this.shape.checkCollision(this.x, this.y, other.shape,other.x,other.y);
+        return this.shape.checkCollision(this.x, this.y,this.velocity, other.shape,other.x,other.y,other.velocity);
     }
     
 
