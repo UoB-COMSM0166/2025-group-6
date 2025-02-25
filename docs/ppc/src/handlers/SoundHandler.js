@@ -1,4 +1,4 @@
-export class SoundManager {
+export class SoundHandler {
     constructor() {
       this.sounds = {}; // Store all sounds in an object
     }

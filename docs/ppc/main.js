@@ -6,24 +6,16 @@ let gameBackImg;
 
 function preload() {
   gameBackImg = loadImage("./assets/images/bg12.jpg");
-  game.soundManager.loadSound("paddle","./assets/sounds/puck_paddle (mp3cut.net).mp3");
-  game.soundManager.loadSound("board","./assets/sounds/puck_board (mp3cut.net).mp3");
-  game.soundManager.loadSound("powerup","./assets/sounds/powerup3 (mp3cut.net).mp3");
-  game.soundManager.loadSound("goal","./assets/sounds/goal_1 (mp3cut.net).wav");
-
-
-
+  game.gameEngine.soundHandler.loadSound("paddle", "./assets/sounds//puck_paddle (mp3cut.net).mp3");
+  game.gameEngine.soundHandler.loadSound("powerUp", "./assets/sounds/powerup3 (mp3cut.net).mp3");
+  game.gameEngine.soundHandler.loadSound("goal", "./assets/sounds/goal_1 (mp3cut.net).wav");
+  game.gameEngine.soundHandler.loadSound("board", "./assets/sounds/puck_board (mp3cut.net).mp3");
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
   game.initializeGame();
   game.board.gameBackImg = gameBackImg;
   updateDimensions();
-  game.soundManager.setVolume("paddle", 0.5);
-  game.soundManager.setVolume("board", 0.1);
-  game.soundManager.setVolume("powerup", 0.1);
-  game.soundManager.setVolume("goal", 0.1);
-
 
 }
 
