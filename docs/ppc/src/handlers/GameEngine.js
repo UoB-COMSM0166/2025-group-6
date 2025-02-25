@@ -1,6 +1,8 @@
 import CPUHandler  from './CPUHandler.js';
 import  CollisionHandler  from './CollisionHandler.js';
+import MouseHandler from './MouseHandler.js';
 import PowerupHandler from './PowerUpHandler.js';
+import ScreenHandler from './ScreenHandler.js';
 import { SoundHandler } from './SoundHandler.js';
 
 export class GameEngine {
@@ -10,10 +12,13 @@ export class GameEngine {
         this.collisionHandler = new CollisionHandler(this.game);
         this.powerUpHandler = new PowerupHandler(this.game);
         this.soundHandler = new SoundHandler(this.game);
+        this.screenHandler = new ScreenHandler(this.game);
+        this.mouseHandler = new MouseHandler(this.game);
     }
 
 
     updateGame(){
+        this.screenHandler.update();
         this.cpuHandler.update();
         this.collisionHandler.update();
         this.powerUpHandler.update();
