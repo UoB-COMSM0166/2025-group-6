@@ -15,9 +15,11 @@ export default class CollisionHandler {
     // Check collisions between mallets and puck
     if (this.game.player1.checkCollision(this.game.puck)) {
       this.handleMalletPuckCollision(this.game.player1, this.game.puck);
+       this.game.soundManager.playSound("paddle"); 
     }
     if (this.game.player2.checkCollision(this.game.puck)){
       this.handleMalletPuckCollision(this.game.player2, this.game.puck);
+       this.game.soundManager.playSound("paddle"); 
     }
   }
 
@@ -53,11 +55,15 @@ export default class CollisionHandler {
       puck.y = constants.margin + puck.shape.radius + 1;
       puck.velocity.y = -puck.velocity.y * restitution * boost;
       puck.velocity.x *= friction * boost;
+       this.game.soundManager.playSound("board"); 
+
     } else if (puck.y + puck.shape.radius >= height - constants.margin) {
       // Prevent sticking by moving puck just outside boundary
       puck.y = height - constants.margin - puck.shape.radius - 1;
       puck.velocity.y = -puck.velocity.y * restitution * boost;
       puck.velocity.x *= friction * boost;
+      this.game.soundManager.playSound("board"); 
+
     }
 
     // Scoring logic is implemented , can be moved late to appropriate place
@@ -81,6 +87,7 @@ export default class CollisionHandler {
         this.game.scoreBoard.streakTracker.addScore(this.game.player2);
         this.game.player2.score++;
         puck.reset();
+      this.game.soundManager.playSound("goal"); 
       }
     } else if (puck.x + puck.shape.radius >= width - constants.margin) {
       // Check if puck is within goal height
@@ -101,6 +108,7 @@ export default class CollisionHandler {
         this.game.scoreBoard.streakTracker.addScore(this.game.player1);
         this.game.player1.score++;
         puck.reset();
+      this.game.soundManager.playSound("goal"); 
       }
     }
   }
@@ -115,6 +123,7 @@ export default class CollisionHandler {
         ) {
           this.game.gameEngine.powerUpHandler.enablePowerUpEffect();
           this.game.gameEngine.powerUpHandler.deactivatePowerup();
+          this.game.soundManager.playSound("powerup");
       }
     }
   }

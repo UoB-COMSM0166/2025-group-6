@@ -5,6 +5,7 @@ import { ScoreBoard } from "../components/models/ScoreBoard.js";
 import { GameEngine } from "../handlers/GameEngine.js";
 import { FirePowerUp } from "../components/models/objects/powerUps/FirePowerUp.js";
 import { RectShape } from "../components/models/shapes/RectShape.js";
+import { SoundManager } from "../components/models/objects/SoundManager.js";
 
 // Singleton class which serves as the central hub of the game
 class Game {
@@ -17,6 +18,7 @@ class Game {
     this.gameEngine = undefined;
     this.scoreBoard = undefined;
     this.firePowerUp = undefined;
+    this.soundManager = new SoundManager();
   }
 
   initializeGame() {
@@ -29,7 +31,6 @@ class Game {
     this.scoreBoard = new ScoreBoard(this);
     // eventhough firepowerup is not a recatangle,considering it as a rectangle for easier collition detection
     this.firePowerUp = new FirePowerUp(width* 0.20,height *0.20,width * 0.05,height*0.10, new RectShape(width * 0.05,height*0.10))
-    
   }
    
   updateGame(){
