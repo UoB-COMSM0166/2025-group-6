@@ -5,7 +5,7 @@ export class SoundHandler {
   
     // Method to load a sound
     loadSound(name, path) {
-      this.sounds[name] = loadSound(path);
+      this.sounds[name] = path;
     }
   
     // Method to play a sound
@@ -36,5 +36,15 @@ export class SoundHandler {
       if (this.sounds[name] && this.sounds[name].isLoaded()) {
         this.sounds[name].loop();
       }
+    }
+
+    setVolumeAll(){
+      this.setVolume("backgorundSound",0.04);
+      this.setVolume("paddleSound",0.05);
+      this.setVolume("boardSound",0.5);
+      this.setVolume("goalSound",0.3);
+      this.setVolume("powerupSound",0.3);
+
+
     }
   }

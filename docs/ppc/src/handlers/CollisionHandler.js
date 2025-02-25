@@ -121,7 +121,7 @@ export default class CollisionHandler {
         ) {
           this.game.gameEngine.powerUpHandler.enablePowerUpEffect();
           this.game.gameEngine.powerUpHandler.deactivatePowerup();
-          this.game.soundHandler.playSound("powerup");
+          this.game.gameEngine.soundHandler.playSound("powerup");
       }
     }
   }

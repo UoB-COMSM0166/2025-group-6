@@ -16,7 +16,7 @@ export class GameEngine {
     updateGame(){
         this.cpuHandler.update();
         this.collisionHandler.update();
-        this.powerUpHandler.update()
+        this.powerUpHandler.update();
     }
 }
     
