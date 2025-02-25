@@ -11,10 +11,10 @@ let backgroundSound;
 
 function preload() {
   gameBackImg = loadImage("./assets/images/bg12.jpg");
-  paddleSound = loadSound( "./assets/sounds//puck_paddle (mp3cut.net).mp3");
-  powerupSound = loadSound( "./assets/sounds/powerup2.mp3");
-  goalSound = loadSound( "./assets/sounds/goal_1 (mp3cut.net).wav");
-  boardSound = loadSound( "./assets/sounds/puck_board (mp3cut.net).mp3");
+  paddleSound = loadSound( "./assets/sounds/puck_paddle.mp3");
+  powerupSound = loadSound( "./assets/sounds/powerup3.mp3");
+  goalSound = loadSound( "./assets/sounds/goal_1.wav");
+  boardSound = loadSound( "./assets/sounds/puck_board.mp3");
   backgroundSound = loadSound( "./assets/sounds/backgound.mp3");
 
 }
