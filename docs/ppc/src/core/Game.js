@@ -5,7 +5,9 @@ import { ScoreBoard } from "../components/models/ScoreBoard.js";
 import { GameEngine } from "../handlers/GameEngine.js";
 import { FirePowerUp } from "../components/models/objects/powerUps/FirePowerUp.js";
 import { RectShape } from "../components/models/shapes/RectShape.js";
+import LandingPage from "../components/models/LandingPage.js";
 // Singleton class which serves as the central hub of the game
+
 class Game {
   constructor() {
     this.gameState = "welcome";
@@ -16,6 +18,7 @@ class Game {
     this.gameEngine = undefined;
     this.scoreBoard = undefined;
     this.firePowerUp = undefined;
+    this.landingPage = undefined;
   }
 
   initializeGame() {
@@ -23,6 +26,7 @@ class Game {
     this.player1.isPlayerCpu = false;
     this.player2 = new Mallet(width * 0.75, height / 2, false);
     this.puck = new Puck();
+    this.landingPage = new LandingPage(this);
     this.board = new GameBoard();
     this.gameEngine = new GameEngine(this);
     this.scoreBoard = new ScoreBoard(this);

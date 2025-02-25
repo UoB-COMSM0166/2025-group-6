@@ -8,8 +8,10 @@ let boardSound;
 let goalSound;
 let powerupSound;
 let backgroundSound;
+let welcomeImg;
 
 function preload() {
+  welcomeImg = loadImage("./assets/images/welcome.jpg");
   gameBackImg = loadImage("./assets/images/bg12.jpg");
   paddleSound = loadSound( "./assets/sounds/puck_paddle.mp3");
   powerupSound = loadSound( "./assets/sounds/powerup3.mp3");
@@ -21,6 +23,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   game.initializeGame();
+  game.landingPage.welcomeImg = welcomeImg;
   game.board.gameBackImg = gameBackImg;
   game.gameEngine.soundHandler.loadSound("paddle", paddleSound);
   game.gameEngine.soundHandler.loadSound("board", boardSound);
@@ -35,7 +38,7 @@ function setup() {
 function draw() {
   game.updateGame();
   // game.gameEngine.soundHandler.playSound("backgroundSound");
-  gameScreen.draw();
+  // gameScreen.draw();
 }
 
 window.setup = setup;
