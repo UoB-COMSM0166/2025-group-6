@@ -1,6 +1,4 @@
 import game from "./src/core/Game.js";
-import { constants } from "./src/core/config.js";
-import gameScreen from "./src/components/screens/GameScreen.js";
 import { updateDimensions } from "./src/utils/windowResizer.js";
 let gameBackImg;
 let paddleSound;

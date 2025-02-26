@@ -1,10 +1,9 @@
-class Button {
+import Button from "./Button.js";
+import game from "../../../../core/Game.js";
+class StartGameButton extends Button {
     constructor(x, y, w, h, label) {
-      this.x = x;
-      this.y = y;
-      this.w = w;
-      this.h = h;
-      this.label = label;
+        super(x, y, w, h, label);
+ 
     }
     
     draw() {
@@ -40,8 +39,14 @@ class Button {
       );
     }
 
+    handleClick() {
+        if (this.isMouseOver()) {
+            game.gameState= "gameboard";
+        }
+    }
+
 
   }
   
-  export default Button;
+  export default StartGameButton;
   

@@ -6,6 +6,7 @@ import { GameEngine } from "../handlers/GameEngine.js";
 import { FirePowerUp } from "../components/models/objects/powerUps/FirePowerUp.js";
 import { RectShape } from "../components/models/shapes/RectShape.js";
 import LandingPage from "../components/models/LandingPage.js";
+import GamePage from "../components/models/GamePage.js";
 // Singleton class which serves as the central hub of the game
 
 class Game {
@@ -19,6 +20,8 @@ class Game {
     this.scoreBoard = undefined;
     this.firePowerUp = undefined;
     this.landingPage = undefined;
+    this.gamePage = undefined;
+    this.gamePaused = false;
   }
 
   initializeGame() {
@@ -27,19 +30,22 @@ class Game {
     this.player2 = new Mallet(width * 0.75, height / 2, false);
     this.puck = new Puck();
     this.landingPage = new LandingPage(this);
+    this.gamePage = new GamePage(this);
     this.board = new GameBoard();
     this.gameEngine = new GameEngine(this);
     this.scoreBoard = new ScoreBoard(this);
-    this.firePowerUp = new FirePowerUp(width * 0.20, height * 0.20, width * 0.05, height * 0.10, new RectShape(width * 0.05, height * 0.10));
+    this.firePowerUp = new FirePowerUp(
+      width * 0.2,
+      height * 0.2,
+      width * 0.05,
+      height * 0.1,
+      new RectShape(width * 0.05, height * 0.1)
+    );
     this.gameEngine.soundHandler.setVolumeAll();
-
   }
 
   updateGame() {
-    this.gameEngine.updateGame();
-    this.player1.update();
-    this.player2.update();
-    this.puck.update();
+      this.gameEngine.updateGame();
   }
 }
 

@@ -1,10 +1,13 @@
 import game from "../../core/Game.js";
+import PauseButton  from "../models/ui/buttons/PauseButton.js";
+import { constants } from "../../core/config.js";
 
 // Game screen will be a singleton class
 export class GameScreen {
   constructor() {
     this.backgroundColor = 255; // white background
   }
+
 
   draw() {
     // Clear and set background
@@ -29,9 +32,15 @@ export class GameScreen {
     // Draw Scoreboard
     game.scoreBoard.draw();
 
+    game.gamePage.draw();
+
     if (game.firePowerUp.active) {
       game.firePowerUp.draw();
     }
+  }
+
+  checkButtonClicks() {
+    game.gamePage.checkButtonClicks();
   }
 }
 

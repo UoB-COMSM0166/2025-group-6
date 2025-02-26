@@ -16,7 +16,7 @@ export default class MouseHandler {
         if (this.game.gameState === "welcome") {
             landingScreen.checkButtonClicks();
         } else if (this.game.gameState === "gameboard") {
-            // to be implemented
+            gameScreen.checkButtonClicks();
         }
     }
 }
