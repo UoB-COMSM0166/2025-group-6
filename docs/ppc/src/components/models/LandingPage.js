@@ -18,7 +18,7 @@ class LandingPage {
     }
 
     checkButtonClicks(){
-         if(this.button.isMouseOver){
+         if(this.button.isMouseOver()){
             this.game.gameState= "gameboard";
          }
     }
