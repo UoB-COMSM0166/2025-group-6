@@ -1,9 +1,8 @@
 import Button from "./Button.js";
-import game from "../../../../core/Game.js";
-class StartGameButton extends Button {
+
+class SettingsButton extends Button {
     constructor(x, y, w, h, label) {
         super(x, y, w, h, label);
- 
     }
     
     isMouseOver() {
@@ -17,9 +16,9 @@ class StartGameButton extends Button {
 
     handleClick() {
         if (this.isMouseOver()) {
-            game.gameState= "gameboard";
+            this.showDialogBox = true;
         }
     }
 }
   
-export default StartGameButton;  
+export default SettingsButton;

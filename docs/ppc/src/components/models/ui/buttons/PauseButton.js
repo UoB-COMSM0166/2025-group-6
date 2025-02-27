@@ -65,7 +65,6 @@ class PauseButton extends Button {
       game.gamePaused = this.isPaused;
     }
   }
-  
 
   resize() {
     this.x = width * 0.7;    
