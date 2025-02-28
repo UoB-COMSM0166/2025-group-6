@@ -1,30 +1,31 @@
 import Button from "./Button.js";
 
-
 class InstructionsButton extends Button {
-    constructor(x, y, w, h, label) {
-        super(x, y, w, h, label);
-    }
+  constructor(x, y, w, h, label) {
+    super(x, y, w, h, label);
+  }
 
-    isMouseOver() {
-        return (
-            mouseX > this.x - this.w / 2 &&
-            mouseX < this.x + this.w / 2 &&
-            mouseY > this.y - this.h / 2 &&
-            mouseY < this.y + this.h / 2
-        );
+  handleClick() {
+    if (this.isMouseOver()) {
+      this.loadInstructions();
+      this.dialogBox.visible = true;
     }
+    if (this.dialogBox.visible) {
+      this.dialogBox.handleClick();
+    }
+  }
 
-    handleClick() {
-        if (this.isMouseOver()) {
-            this.loadInstructions();
-        }
-    }
+  loadInstructions() {
+    this.dialogBox.content = loadStrings("./assets/textFiles/Instructions.txt"); // Synchronous file read
+  }
 
-    loadInstructions() {
-        this.content = loadStrings("./assets/textFiles/Instructions.txt"); // Synchronous file read
-        this.showDialogBox = true;
-    }
+  reset() {
+    this.x = width / 2;
+    this.y = height / 2 + height * 0.07 + 10; // Original positioning from LandingPage
+    this.w = width * 0.15;
+    this.h = height * 0.07;
+    this.dialogBox.reset();
+  }
 }
 
 export default InstructionsButton;

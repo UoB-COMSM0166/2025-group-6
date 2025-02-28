@@ -66,7 +66,7 @@ class PauseButton extends Button {
     }
   }
 
-  resize() {
+  reset() {
     this.x = width * 0.7;    
     this.y = constants.margin / 2;    
     this.w = width * 0.05;    
