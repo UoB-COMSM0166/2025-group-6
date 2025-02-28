@@ -20,7 +20,8 @@ export function updateDimensions() {
     game.board.goalPost.goalHeight = height * 0.25;
     game.board.goalPost.goalY = height / 2 ;
     game.scoreBoard.update();
-    game.gamePage.pauseButton.resize();
+    game.gamePage.pauseButton.reset();
+    game.landingPage.reset();
 }
 
 window.windowResized = windowResized;

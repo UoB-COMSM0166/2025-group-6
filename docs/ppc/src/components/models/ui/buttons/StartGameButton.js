@@ -1,25 +1,26 @@
 import Button from "./Button.js";
 import game from "../../../../core/Game.js";
 class StartGameButton extends Button {
-    constructor(x, y, w, h, label) {
-        super(x, y, w, h, label);
- 
-    }
-    
-    isMouseOver() {
-      return (
-        mouseX > this.x - this.w / 2 &&
-        mouseX < this.x + this.w / 2 &&
-        mouseY > this.y - this.h / 2 &&
-        mouseY < this.y + this.h / 2
-      );
-    }
-
-    handleClick() {
-        if (this.isMouseOver()) {
-            game.gameState= "gameboard";
-        }
-    }
-}
+  constructor(x, y, w, h, label) {
+    super(x, y, w, h, label);
+  }
   
-export default StartGameButton;  
+  handleClick() {
+    if (this.isMouseOver()) {
+      game.gameState = "gameboard";
+    }
+    if (this.dialogBox.visible) {
+      this.dialogBox.handleClick();
+    }
+  }
+
+  reset() {
+    this.x = width / 2;
+    this.y = height / 2; // Original positioning from LandingPage
+    this.w = width * 0.15;
+    this.h = height * 0.07;
+    this.dialogBox.reset();
+  }
+}
+
+export default StartGameButton;

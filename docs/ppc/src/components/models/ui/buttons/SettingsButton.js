@@ -1,24 +1,33 @@
 import Button from "./Button.js";
+import { constants } from "../../../../core/config.js";
 
 class SettingsButton extends Button {
-    constructor(x, y, w, h, label) {
-        super(x, y, w, h, label);
-    }
-    
-    isMouseOver() {
-      return (
-        mouseX > this.x - this.w / 2 &&
-        mouseX < this.x + this.w / 2 &&
-        mouseY > this.y - this.h / 2 &&
-        mouseY < this.y + this.h / 2
-      );
-    }
+  constructor(x, y, w, h, label) {
+    super(x, y, w, h, label);
+  }
+  // temporary dialog box content
+  loadContent() {
+    this.dialogBox.content = constants.temporaryMsg;
+  }
 
-    handleClick() {
-        if (this.isMouseOver()) {
-            this.showDialogBox = true;
-        }
+  // temporary logic
+  handleClick() {
+    if (this.isMouseOver()) {
+      this.loadContent();
+      this.dialogBox.visible = true;
     }
+    if (this.dialogBox.visible) {
+      this.dialogBox.handleClick();
+    }
+  }
+
+  reset() {
+    this.x = width / 2;
+    this.y = height / 2 + 2 * height * 0.07 + 20;
+    this.w = width * 0.15;
+    this.h = height * 0.07;
+    this.dialogBox.reset();
+  }
 }
-  
+
 export default SettingsButton;
