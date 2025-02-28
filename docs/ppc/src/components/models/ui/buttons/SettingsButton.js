@@ -1,4 +1,5 @@
 import Button from "./Button.js";
+import { constants } from "../../../../core/config.js";
 
 class SettingsButton extends Button {
   constructor(x, y, w, h, label) {
@@ -6,7 +7,7 @@ class SettingsButton extends Button {
   }
   // temporary dialog box content
   loadContent() {
-    this.dialogBox.content = loadStrings("./assets/textFiles/tempText.txt"); // Synchronous file read
+    this.dialogBox.content = constants.temporaryMsg;
   }
 
   // temporary logic

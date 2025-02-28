@@ -28,6 +28,7 @@ class LandingPage {
       height * 0.07,
       "Settings"
     );
+    this.instructionContent=undefined;
   }
 
   draw() {

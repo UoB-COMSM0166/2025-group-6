@@ -2,5 +2,6 @@
 export const constants = {
         
     margin: 40,
-    goalSizeIncFactor: 1.8
+    goalSizeIncFactor: 1.8,
+    temporaryMsg: "Under Construction!!"
 }

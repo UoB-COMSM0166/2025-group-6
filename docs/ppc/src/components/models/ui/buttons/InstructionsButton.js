@@ -1,4 +1,5 @@
 import Button from "./Button.js";
+import game from "../../../../core/Game.js";
 
 class InstructionsButton extends Button {
   constructor(x, y, w, h, label) {
@@ -16,7 +17,7 @@ class InstructionsButton extends Button {
   }
 
   loadInstructions() {
-    this.dialogBox.content = loadStrings("./assets/textFiles/Instructions.txt"); // Synchronous file read
+    this.dialogBox.content = game.landingPage.instructionContent; // Synchronous file read
   }
 
   reset() {
