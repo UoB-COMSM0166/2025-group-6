@@ -7,6 +7,8 @@ import { FirePowerUp } from "../components/models/objects/powerUps/FirePowerUp.j
 import { RectShape } from "../components/models/shapes/RectShape.js";
 import LandingPage from "../components/models/LandingPage.js";
 import GamePage from "../components/models/GamePage.js";
+import WinnerPage from "../components/models/WinnerPage.js";
+
 // Singleton class which serves as the central hub of the game
 
 class Game {
@@ -22,6 +24,7 @@ class Game {
     this.landingPage = undefined;
     this.gamePage = undefined;
     this.gamePaused = false;
+    this.winnerPage = undefined;
   }
 
   initializeGame() {
@@ -31,6 +34,7 @@ class Game {
     this.puck = new Puck();
     this.landingPage = new LandingPage(this);
     this.gamePage = new GamePage(this);
+    this.winnerPage = new WinnerPage(this);
     this.board = new GameBoard();
     this.gameEngine = new GameEngine(this);
     this.scoreBoard = new ScoreBoard(this);
