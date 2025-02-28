@@ -28,7 +28,7 @@ class CloseButton extends DialogBoxButton {
     this.h = height * 0.05;
 
     this.x = width / 2 + width / 4 - 100;
-    this.y = height / 4 + 25;
+    this.y = height / 4 + 30;
   }
 }
 

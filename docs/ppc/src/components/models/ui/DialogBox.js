@@ -10,12 +10,7 @@ class DialogBox {
     this.boxY = height / 2;
     this.visible = false;
     this.margin = 20;
-    this.closeButton = new CloseButton(
-      width / 2 + width / 4 - 100,
-      height / 4 + 25,
-      width * 0.025,
-      height * 0.05
-    );
+    this.closeButton = new CloseButton(width / 2 + width / 4 - 100, height / 4 + 30, width * 0.025, height * 0.05);
   }
 
   draw() {
