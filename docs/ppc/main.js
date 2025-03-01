@@ -26,20 +26,23 @@ function setup() {
   game.landingPage.welcomeImg = welcomeImg;
   game.landingPage.instructionContent = instructionContent;
   game.board.gameBackImg = gameBackImg;
+
+  // Load sounds
   game.gameEngine.soundHandler.loadSound("paddle", paddleSound);
   game.gameEngine.soundHandler.loadSound("board", boardSound);
   game.gameEngine.soundHandler.loadSound("goal", goalSound);
   game.gameEngine.soundHandler.loadSound("powerup", powerupSound);
-  game.gameEngine.soundHandler.loadSound("backgroundSound",backgroundSound);
+  game.gameEngine.soundHandler.loadSound("backgroundSound", backgroundSound);
   game.gameEngine.soundHandler.loopSound("backgroundSound");
+
+
+  game.gameEngine.soundHandler.setVolumeAll();
+
+
   updateDimensions();
-
 }
-
 function draw() {
   game.updateGame();
-  // game.gameEngine.soundHandler.playSound("backgroundSound");
-  // gameScreen.draw();
 }
 
 window.setup = setup;
