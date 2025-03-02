@@ -63,6 +63,12 @@ class PauseButton extends Button {
       this.isPaused = !this.isPaused;
       this.label = this.isPaused ? "Play" : "Pause";
       game.gamePaused = this.isPaused;
+      if (this.isPaused) {
+        game.gameEngine.soundHandler.pauseAll();
+      } 
+      else {
+        game.gameEngine.soundHandler.resumeAll();
+      }
     }
   }
 
