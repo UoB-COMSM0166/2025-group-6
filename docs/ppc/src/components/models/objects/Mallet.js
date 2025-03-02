@@ -3,10 +3,11 @@ import { CircleShape } from "../shapes/CircleShape.js";
 import { GameObject } from "./GameObject.js";
 
 export class Mallet extends GameObject {
-  constructor(x, y,leftside) {
-    super(x, y, new CircleShape(20,"mallet"));
+  constructor(x, y,leftSide) {
+   // console.log(`Mallet Created - Left Side: ${leftSide}`);
+    super(x, y, new CircleShape(20,"mallet", leftSide));
     this.score = 0;
-    this.leftSide = leftside;
+    this.leftSide = leftSide;
     this.isPlayerCpu = true;
     this.moveSpeed = 30;
 

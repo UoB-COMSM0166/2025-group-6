@@ -4,12 +4,13 @@ import { Shape } from "./Shape.js";
 import { collisionUtils } from "../../../utils/collisionUtils.js";
 
 export class CircleShape extends Shape {
-  constructor(radius, type) {
+  constructor(radius, type,leftSide) {
     super();
     this.radius = radius;
     this.width = radius * 2;
     this.height = radius * 2;
     this.type = type;
+    this.leftSide= leftSide;
     this.rotationSpeed = 0.02; // Default rotation speed
     this.rotationAngle = 0;
     this.glowAlpha = 200; // Glow intensity
@@ -107,10 +108,57 @@ export class CircleShape extends Shape {
       let y2 = sin(angle) * this.radius * 0.9;
       line(x1, y1, x2, y2);
     }
-  } else {
-    circle(x, y, this.radius * 2);
-  }
-  
+  }else {
+    push();
+    translate(x, y);
+
+    // ** Set Glow Effect Based on Player **
+    let malletColor = this.leftSide ? color(255, 0, 150) : color(150, 0, 255); // Red for P1, Blue for P2
+    let glowColor = this.leftSide ? color(255, 100, 200) : color(180, 100, 255); // Softer glow variation
+
+    drawingContext.shadowBlur = 40; // Adjust glow intensity
+    drawingContext.shadowColor = glowColor; 
+
+    // ** Base Mallet Circle **
+    strokeWeight(4);
+    stroke(malletColor);
+    fill(malletColor.levels[0], malletColor.levels[1], malletColor.levels[2], 180); // Slightly transparent
+    circle(0, 0, this.radius * 1.6);
+
+    // ** Inner Mallet Core (Grip Section) **
+    drawingContext.shadowBlur = 20; // Reduce glow for the core
+    fill(30, 30, 30, 200); // Darker inner circle
+    noStroke();
+    circle(0, 0, this.radius * 1);
+
+   // ** Radial Energy Lines (Glowing Effect) **
+strokeWeight(2);
+stroke(malletColor.levels[0], malletColor.levels[1], malletColor.levels[2], 150);
+
+let numLines = 8; // Number of energy lines
+for (let i = 0; i < numLines; i++) {
+  let angle = (TWO_PI / numLines) * i;
+  let x1 = cos(angle) * this.radius * 0.4;
+  let y1 = sin(angle) * this.radius * 0.4;
+  let x2 = cos(angle) * this.radius * 0.9;
+  let y2 = sin(angle) * this.radius * 0.9;
+  line(x1, y1, x2, y2);
+}
+
+    // ** Raised Center Cap (Highlighting the Mallet Grip) **
+    fill(100, 100, 100, 220);
+    circle(0, 0, this.radius * 0.8);
+
+    // ** Reset Glow Effect **
+    drawingContext.shadowBlur = 0;
+
+
+
+    pop();
+}
+
+
+
   pop();
 }
   // ** Function to Draw Segmented Rings **
