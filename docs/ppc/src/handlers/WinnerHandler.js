@@ -2,7 +2,7 @@
 export default class WinnerHandler {
     constructor(game) {
         this.game = game;
-        this.winningScore = 2; // Default score needed to win
+        this.winningScore = 10; // Default score needed to win
         this.winner = null; // Will be 1 or 2 when someone wins
     }
 
