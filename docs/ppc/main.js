@@ -8,8 +8,11 @@ let powerupSound;
 let backgroundSound;
 let welcomeImg;
 let instructionContent;
+let celebrationImg;
+
 
 function preload() {
+  celebrationImg = loadImage("./assets/images/bg10.jpg");
   welcomeImg = loadImage("./assets/images/welcome.jpg");
   gameBackImg = loadImage("./assets/images/bg12.jpg");
   paddleSound = loadSound( "./assets/sounds/puck_paddle.mp3");
@@ -25,18 +28,25 @@ function setup() {
   game.initializeGame();
   game.landingPage.welcomeImg = welcomeImg;
   game.landingPage.instructionContent = instructionContent;
-  game.board.gameBackImg = gameBackImg;
+  game.winnerPage.celebrationImg = celebrationImg;
+  game.gameBackImg = gameBackImg;
 
   // Load sounds
-  game.gameEngine.soundHandler.loadSound("paddle", paddleSound);
-  game.gameEngine.soundHandler.loadSound("board", boardSound);
-  game.gameEngine.soundHandler.loadSound("goal", goalSound);
-  game.gameEngine.soundHandler.loadSound("powerup", powerupSound);
-  game.gameEngine.soundHandler.loadSound("backgroundSound", backgroundSound);
-  game.gameEngine.soundHandler.loopSound("backgroundSound");
+  game.sounds.paddle= paddleSound;
+  game.sounds.board = boardSound;
+  game.sounds.goal = goalSound;
+  game.sounds.powerup = powerupSound;
+  game.sounds.backgroundSound = backgroundSound;
+
+  // game.gameEngine.soundHandler.loadSound("paddle", paddleSound);
+  // game.gameEngine.soundHandler.loadSound("board", boardSound);
+  // game.gameEngine.soundHandler.loadSound("goal", goalSound);
+  // game.gameEngine.soundHandler.loadSound("powerup", powerupSound);
+  // game.gameEngine.soundHandler.loadSound("backgroundSound", backgroundSound);
+  // game.gameEngine.soundHandler.loopSound("backgroundSound");
 
 
-  game.gameEngine.soundHandler.setVolumeAll();
+  // game.gameEngine.soundHandler.setVolumeAll();
 
 
   updateDimensions();

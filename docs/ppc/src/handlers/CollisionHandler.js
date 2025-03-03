@@ -85,6 +85,8 @@ export default class CollisionHandler {
         this.game.scoreBoard.streakTracker.addScore(this.game.player2);
         this.game.player2.score++;
         puck.reset();
+        this.game.player2.reset();
+        this.game.player1.reset();
       this.game.gameEngine.soundHandler.playSound("goal"); 
       }
     } else if (puck.x + puck.shape.radius >= width - constants.margin) {
@@ -106,8 +108,11 @@ export default class CollisionHandler {
         this.game.scoreBoard.streakTracker.addScore(this.game.player1);
         this.game.player1.score++;
         puck.reset();
+        this.game.player1.reset();
+        this.game.player2.reset();
       this.game.gameEngine.soundHandler.playSound("goal"); 
       }
+      
     }
   }
 

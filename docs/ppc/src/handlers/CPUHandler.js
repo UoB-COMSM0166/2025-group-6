@@ -47,7 +47,7 @@ export default class CPUHandler {
         );
       } else {
         targetX = width * 0.75;
-        targetY = height / 2 ;
+        targetY = height / 4 ;
       }
 
       this.moveTowardsTarget(targetX, targetY);
@@ -68,7 +68,7 @@ export default class CPUHandler {
       1
     );
     
-    const speed = Math.max(
+    const speed = Math.min(
       distance, 
       this.maxSpeed * puckThreat
     );
