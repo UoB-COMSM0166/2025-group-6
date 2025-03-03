@@ -32,15 +32,21 @@ function setup() {
   game.gameBackImg = gameBackImg;
 
   // Load sounds
-  game.gameEngine.soundHandler.loadSound("paddle", paddleSound);
-  game.gameEngine.soundHandler.loadSound("board", boardSound);
-  game.gameEngine.soundHandler.loadSound("goal", goalSound);
-  game.gameEngine.soundHandler.loadSound("powerup", powerupSound);
-  game.gameEngine.soundHandler.loadSound("backgroundSound", backgroundSound);
-  game.gameEngine.soundHandler.loopSound("backgroundSound");
+  game.sounds.paddle= paddleSound;
+  game.sounds.board = boardSound;
+  game.sounds.goal = goalSound;
+  game.sounds.powerup = powerupSound;
+  game.sounds.backgroundSound = backgroundSound;
+
+  // game.gameEngine.soundHandler.loadSound("paddle", paddleSound);
+  // game.gameEngine.soundHandler.loadSound("board", boardSound);
+  // game.gameEngine.soundHandler.loadSound("goal", goalSound);
+  // game.gameEngine.soundHandler.loadSound("powerup", powerupSound);
+  // game.gameEngine.soundHandler.loadSound("backgroundSound", backgroundSound);
+  // game.gameEngine.soundHandler.loopSound("backgroundSound");
 
 
-  game.gameEngine.soundHandler.setVolumeAll();
+  // game.gameEngine.soundHandler.setVolumeAll();
 
 
   updateDimensions();

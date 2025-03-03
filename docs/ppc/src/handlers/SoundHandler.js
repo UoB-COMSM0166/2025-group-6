@@ -1,6 +1,6 @@
 export default class SoundHandler {
-  constructor() {
-    this.sounds = {}; // Store all sounds in an object
+  constructor(game) {
+    this.sounds = game.sounds; // Store all sounds in an object
   }
 
   // Method to load a sound

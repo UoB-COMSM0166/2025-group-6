@@ -26,6 +26,7 @@ class Game {
     this.gamePaused = false;
     this.winnerPage = undefined;
     this.gameBackImg = "";
+    this.sounds = {};
   }
 
   initializeGame() {
@@ -46,7 +47,8 @@ class Game {
       height * 0.1,
       new RectShape(width * 0.05, height * 0.1)
     );
-    this.gameEngine.soundHandler.setVolumeAll();
+    this.gameEngine.soundHandler.loopSound("backgroundSound");
+    // this.initSound();
   }
   reinitializeGame(){
     this.board = new GameBoard();
@@ -64,10 +66,24 @@ class Game {
       height * 0.1,
       new RectShape(width * 0.05, height * 0.1)
     );
+    this.gameEngine.soundHandler.loopSound("backgroundSound");
+    // this.initSound();
   }
   updateGame() {
       this.gameEngine.updateGame();
   }
+  // initSound()
+  // {
+  //   this.gameEngine.soundHandler.loadSound("paddle", paddleSound);
+  //   this.gameEngine.soundHandler.loadSound("board", boardSound);
+  //   this.gameEngine.soundHandler.loadSound("goal", goalSound);
+  //   this.gameEngine.soundHandler.loadSound("powerup", powerupSound);
+  //   this.gameEngine.soundHandler.loadSound("backgroundSound", backgroundSound);
+  //   this.gameEngine.soundHandler.loopSound("backgroundSound");
+    
+  //   this.gameEngine.soundHandler.sounds = this.sounds;
+  //   this.gameEngine.soundHandler.setVolumeAll();
+  // }
 }
 
 const game = new Game();
