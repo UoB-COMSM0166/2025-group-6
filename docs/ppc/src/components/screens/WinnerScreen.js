@@ -1,7 +1,7 @@
 import game from "../../core/Game.js";
 
 
-class WinnerScreen {
+export class WinnerScreen {
     constructor() {
         this.backgroundColor = 255; // white background
     }

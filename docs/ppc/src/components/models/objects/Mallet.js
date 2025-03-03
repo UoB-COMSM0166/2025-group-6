@@ -3,9 +3,10 @@ import { CircleShape } from "../shapes/CircleShape.js";
 import { GameObject } from "./GameObject.js";
 
 export class Mallet extends GameObject {
-  constructor(x, y,leftSide) {
-   // console.log(`Mallet Created - Left Side: ${leftSide}`);
+
+  constructor(x, y,leftSide, game) {
     super(x, y, new CircleShape(20,"mallet", leftSide));
+    this.game = game;
     this.score = 0;
     this.leftSide = leftSide;
     this.isPlayerCpu = true;
@@ -72,5 +73,17 @@ export class Mallet extends GameObject {
       this.velocity.x = dx * 0.2;
       this.velocity.y = dy * 0.2;
 
+  }
+  reset()
+  {
+    if(this.game.gameEngine.winnerHandler.winner != null){
+      this.score = 0;
+    }
+    if(this.leftSide){
+      this.x = width* 0.25;
+    }else if (!this.leftSide) {
+      this.x = width*0.75;
+    }
+    this.y = height / 2;
   }
 }

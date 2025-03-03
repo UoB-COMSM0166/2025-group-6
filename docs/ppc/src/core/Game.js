@@ -28,9 +28,9 @@ class Game {
   }
 
   initializeGame() {
-    this.player1 = new Mallet(width * 0.25, height / 2, true);
+    this.player1 = new Mallet(width * 0.25, height / 2, true, this);
     this.player1.isPlayerCpu = false;
-    this.player2 = new Mallet(width * 0.75, height / 2, false);
+    this.player2 = new Mallet(width * 0.75, height / 2, false, this);
     this.puck = new Puck();
     this.landingPage = new LandingPage(this);
     this.gamePage = new GamePage(this);
@@ -47,7 +47,13 @@ class Game {
     );
     this.gameEngine.soundHandler.setVolumeAll();
   }
-
+  reinitializeGame(){
+    this.gameEngine = new GameEngine(this);
+    this.player1 = new Mallet(width * 0.25, height / 2, true);
+    this.player1.isPlayerCpu = false;
+    this.player2 = new Mallet(width * 0.75, height / 2, false);
+    this.scoreBoard.resetScores();
+  }
   updateGame() {
       this.gameEngine.updateGame();
   }
