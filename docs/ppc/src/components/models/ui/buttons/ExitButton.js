@@ -9,15 +9,24 @@ class ExitButton extends Button {
 
     handleClick () {
         if (this.isMouseOver()) {
+            game.resetGame();
+            game.winner=null;
             game.gameState = "welcome";
         }
     }
 
-    reset() {
+    resetGameScreen() {
         this.x = width * 0.9;  
         this.y = constants.margin / 2;    
         this.w = width * 0.05;    
         this.h = height * 0.04;
+    }
+     
+    resetWinnerPage(){
+        this.x = width - width/3 - 10;
+        this.y = height / 2; 
+        this.w = width*0.15;
+        this.h = height * 0.07;
     }
 }
 

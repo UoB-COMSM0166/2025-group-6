@@ -6,7 +6,7 @@ class GamePage {
     constructor(game) {
       this.game = game;
       this.pauseButton = new PauseButton (width * 0.7, constants.margin / 2, width * 0.05, height * 0.05, "Pause");
-      this.exitButton = new ExitButton (width * 0.9, constants.margin / 2, width * 0.05, height * 0.04, "Exit");
+      this.exitButton = new ExitButton (width * 0.9, constants.margin / 2, width * 0.05, height * 0.04, "Quit");
     }
 
     draw() {
@@ -21,7 +21,7 @@ class GamePage {
 
     reset () {
       this.pauseButton.reset();
-      this.exitButton.reset();
+      this.exitButton.resetGameScreen();
     }
 }
   
