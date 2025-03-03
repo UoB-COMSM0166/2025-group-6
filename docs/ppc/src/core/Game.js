@@ -25,6 +25,7 @@ class Game {
     this.gamePage = undefined;
     this.gamePaused = false;
     this.winnerPage = undefined;
+    this.gameBackImg = "";
   }
 
   initializeGame() {
@@ -48,11 +49,21 @@ class Game {
     this.gameEngine.soundHandler.setVolumeAll();
   }
   reinitializeGame(){
+    this.board = new GameBoard();
     this.gameEngine = new GameEngine(this);
-    this.player1 = new Mallet(width * 0.25, height / 2, true);
+    this.player1 = new Mallet(width * 0.25, height / 2, true, this);
     this.player1.isPlayerCpu = false;
-    this.player2 = new Mallet(width * 0.75, height / 2, false);
+    this.player2 = new Mallet(width * 0.75, height / 2, false, this);
     this.scoreBoard.resetScores();
+    
+    this.scoreBoard.streakTracker.reset();
+    this.firePowerUp = new FirePowerUp(
+      width * 0.2,
+      height * 0.2,
+      width * 0.05,
+      height * 0.1,
+      new RectShape(width * 0.05, height * 0.1)
+    );
   }
   updateGame() {
       this.gameEngine.updateGame();

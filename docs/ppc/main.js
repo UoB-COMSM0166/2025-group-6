@@ -29,7 +29,7 @@ function setup() {
   game.landingPage.welcomeImg = welcomeImg;
   game.landingPage.instructionContent = instructionContent;
   game.winnerPage.celebrationImg = celebrationImg;
-  game.board.gameBackImg = gameBackImg;
+  game.gameBackImg = gameBackImg;
 
   // Load sounds
   game.gameEngine.soundHandler.loadSound("paddle", paddleSound);

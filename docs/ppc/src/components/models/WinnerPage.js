@@ -1,11 +1,12 @@
 import ExitButton from "./ui/buttons/ExitButton.js";
+import RestartGameButton from "./ui/buttons/RestartGameButton.js";
 import StartGameButton from "./ui/buttons/StartGameButton.js";
 
 class WinnerPage {
   constructor(game) {
     this.game = game;
     this.celebrationImg = "";
-    this.startGameButton = new StartGameButton(width/3 + 10, height/2, width*0.15,height*0.07,"Restart Game");
+    this.restartgameButton = new RestartGameButton(width/3 + 10, height/2, width*0.15,height*0.07,"Restart Game");
     this.exitButton = new ExitButton(width - width/3 - 10, height/2, width*0.15,height*0.07,"Quit");
   }
   
@@ -26,16 +27,16 @@ class WinnerPage {
     text(`${this.game.gameEngine.winnerHandler.winner} wins!`, width/2, height * 0.4);
     
     // Draw the buttons
-    this.startGameButton.draw();
+    this.restartgameButton.draw();
     this.exitButton.draw();
   }
   
   checkButtonClicks() {
-      this.startGameButton.handleClick();
+      this.restartgameButton.handleClick();
       this.exitButton.handleClick();
   }
   reset() {
-    this.startGameButton.reset();
+    this.restartgameButton.reset();
     this.exitButton.reset();
   }
 }

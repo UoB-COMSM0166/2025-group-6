@@ -1,5 +1,6 @@
 import Button from "./Button.js";
 import game from "../../../../core/Game.js";
+
 class RestartGameButton extends Button {
   constructor(x, y, w, h, label) {
     super(x, y, w, h, label);

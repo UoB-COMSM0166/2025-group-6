@@ -1,5 +1,7 @@
 import { constants } from "../../core/config.js";
 import GoalPost from "./GoalPost.js";
+import game from "../../core/Game.js";
+
 
 export class GameBoard {
   constructor() {
@@ -16,12 +18,12 @@ export class GameBoard {
     this.goalPost = new GoalPost();
 
     // Background image
-    this.gameBackImg = "";
+    
   }
 
   draw() {
-    if (this.gameBackImg) {
-      image(this.gameBackImg, 0, 0, width, height);
+    if (game.gameBackImg) {
+      image(game.gameBackImg, 0, 0, width, height);
     }
 
     // Apply glow effect for neon aesthetics
