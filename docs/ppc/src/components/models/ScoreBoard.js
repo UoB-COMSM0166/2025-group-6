@@ -32,13 +32,14 @@ export class ScoreBoard {
     // Draw scores
     const centerX = this.x ;
     const centerY = this.y ;
-    text(`${this.game.player1.score} - ${this.game.player2.score}`, centerX, centerY);
-    
+    text(`${this.game.player1.score.toString().padStart(2, '0')}`, centerX - this.width / 7, centerY);
+    text(`${this.game.player2.score.toString().padStart(2, '0')}`, centerX + this.width / 7, centerY);
+
     // Draw player labels
     textSize(this.fontSize * 0.5);
-    text("Player 1", centerX - 70, centerY + 10);
-    text("Player 2", centerX + 70, centerY + 10);
-    
+    text("Player 1", centerX - this.width / 3, centerY);
+    text("Player 2", centerX + this.width / 3, centerY);
+
     // Restore state
     pop();
   }
@@ -47,8 +48,8 @@ export class ScoreBoard {
     // Update the scores
     this.x = width / 2;
     this.y = constants.margin / 2 ;
-    this.width = this.game.board.boardWidth * 0.25;
-    this.height = constants.margin;
+    // this.width = this.game.board.boardWidth * 0.25;
+    // this.height = constants.margin;
   }
   
   // Method to increment scores
