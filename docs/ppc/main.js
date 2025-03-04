@@ -12,6 +12,7 @@ let instructionContent;
 let celebrationImg;
 let landingPageMusic;
 let buttonClickSound;
+let obstacleSound;
 
 function preload() {
   celebrationImg = loadImage("./assets/images/bg10.jpg");
@@ -23,7 +24,7 @@ function preload() {
   boardSound = loadSound( "./assets/sounds/puck_board.mp3");
   backgroundSound = loadSound( "./assets/sounds/backgound.mp3");
   instructionContent = loadStrings("./assets/textFiles/Instructions.txt");
-
+  obstacleSound = loadSound("./assets/sounds/obstacle.mp3");
 }
 
 function setup() {
@@ -41,6 +42,7 @@ function setup() {
   game.sounds.goal = goalSound;
   game.sounds.powerup = powerupSound;
   game.sounds.backgroundSound = backgroundSound;
+  game.sounds.obstacleSound = obstacleSound;
 
   // game.gameEngine.soundHandler.loadSound("paddle", paddleSound);
   // game.gameEngine.soundHandler.loadSound("board", boardSound);

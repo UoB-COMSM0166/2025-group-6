@@ -6,6 +6,7 @@ import ScreenHandler from './ScreenHandler.js';
 import SoundHandler from './SoundHandler.js';
 import WinnerHandler from './WinnerHandler.js';
 import LevelHandler from './LevelHandler.js';
+import ObstacleHandler from "./ObstacleHandler.js";
 
 export class GameEngine {
     constructor(game) {
@@ -18,6 +19,7 @@ export class GameEngine {
         this.mouseHandler = new MouseHandler(this.game);
         this.winnerHandler = new WinnerHandler(this.game);
         this.levelHandler = new LevelHandler(this.game);
+        this.obstacleHandler = new ObstacleHandler(this.game);
     }
 
 
@@ -32,6 +34,7 @@ export class GameEngine {
         this.powerUpHandler.update();
         this.winnerHandler.update();
         this.levelHandler.update();
+        this.obstacleHandler.updateObstacles(!this.game.gamePaused);
        }
     }
 }
