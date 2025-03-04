@@ -21,7 +21,7 @@ class GamePage {
 
     reset () {
       this.pauseButton.reset();
-      this.exitButton.reset();
+      this.exitButton.resetGameScreen();
     }
 }
   
