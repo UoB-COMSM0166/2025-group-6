@@ -20,10 +20,13 @@ export default class CPUHandler {
     if (random() < this.reactionDelay) {
       let targetX = this.defaultX;
       let targetY = this.game.puck.y;
+     
+      if(this.game.firePowerUp.active && this.game.firePowerUp.x > width/2){
+       targetX = this.game.firePowerUp.x
+       targetY = this.game.firePowerUp.y;
+      }
 
-
-
-      if (this.game.puck.x > width / 2 && this.game.puck.x < this.game.player2.x) {
+      else if (this.game.puck.x > width / 2 && this.game.puck.x < this.game.player2.x) {
         // Enhanced prediction based on puck velocity and position
         const puckSpeed = Math.sqrt(
           this.game.puck.velocity.x ** 2 + 
