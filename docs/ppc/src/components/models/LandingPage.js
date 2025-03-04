@@ -1,33 +1,14 @@
 import StartGameButton from "./ui/buttons/StartGameButton.js";
 import InstructionsButton from "./ui/buttons/InstructionsButton.js";
 import SettingsButton from "./ui/buttons/SettingsButton.js";
-import DialogBox from "./ui/DialogBox.js";
 
 class LandingPage {
   constructor(game) {
     this.game = game;
-    this.startGameButton = new StartGameButton(
-      width / 2,
-      height / 2,
-      width * 0.15,
-      height * 0.07,
-      "Start Game"
-    );
-    this.instructionsButton = new InstructionsButton(
-      width / 2,
-      height / 2 + height * 0.07 + 10,
-      width * 0.15,
-      height * 0.07,
-      "Instructions"
-    );
-    this.settingsButton = new SettingsButton(
-      width / 2,
-      height / 2 + 2 * height * 0.07 + 20,
-      width * 0.15,
-      height * 0.07,
-      "Settings"
-    );
-    this.instructionContent=undefined;
+    this.startGameButton = new StartGameButton(width / 2, height / 2, width * 0.15, height * 0.07, "Start Game");
+    this.instructionsButton = new InstructionsButton(width / 2, height / 2 + height * 0.07 + 15, width * 0.15, height * 0.07, "Instructions");
+    this.settingsButton = new SettingsButton(width / 2, height / 2 + 2 * height * 0.07 + 30, width * 0.15, height * 0.07, "Settings");
+    this.instructionContent = undefined;
   }
 
   draw() {
@@ -93,6 +74,9 @@ class LandingPage {
       this.startGameButton.dialogBox.draw();
       this.instructionsButton.dialogBox.draw();
       this.settingsButton.dialogBox.draw();
+      if (this.settingsButton.dialogBox.visible) {
+        this.settingsButton.drawButtons();
+      }
     } else {
       background(200);
     }
@@ -107,12 +91,16 @@ class LandingPage {
       this.startGameButton.handleClick();
       this.instructionsButton.handleClick();
       this.settingsButton.handleClick();
+    } else if (this.settingsButton.dialogBox.visible) {
+      this.settingsButton.dialogBox.handleClick();
+      this.settingsButton.musicButton.handleClick();
+      this.settingsButton.clickSoundButton.handleClick();
     } else {
       this.startGameButton.dialogBox.handleClick();
       this.instructionsButton.dialogBox.handleClick();
-      this.settingsButton.dialogBox.handleClick();
     }
   }
+
   reset() {
     this.startGameButton.reset();
     this.instructionsButton.reset();

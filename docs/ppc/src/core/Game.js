@@ -11,7 +11,6 @@ import WinnerPage from "../components/models/WinnerPage.js";
 import { LevelBox } from "../components/models/LevelBox.js";
 
 // Singleton class which serves as the central hub of the game
-
 class Game {
   constructor() {
     this.gameState = "welcome";
@@ -44,9 +43,8 @@ class Game {
     this.winnerPage = new WinnerPage(this);
     this.scoreBoard = new ScoreBoard(this);
     this.levelBox = new LevelBox(this);
-    
-    
   }
+
   resetGame(){
     this.initObjects();
     this.scoreBoard.resetScores();
@@ -55,12 +53,12 @@ class Game {
     this.player2.reset();
     this.puck.reset();
   }
+
   updateGame() {
       this.gameEngine.updateGame();
   }
 
   initObjects(){
-
     this.board = new GameBoard();
     this.gameEngine = new GameEngine(this);
     this.landingPage = new LandingPage(this);
@@ -72,7 +70,6 @@ class Game {
       new RectShape(width * 0.05, height * 0.1)
     );
   }
-
 }
 
 const game = new Game();

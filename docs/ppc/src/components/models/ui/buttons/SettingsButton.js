@@ -1,23 +1,29 @@
 import Button from "./Button.js";
-import { constants } from "../../../../core/config.js";
+import MusicButton from "./settingsButtons/MusicButton.js";
+import ClickSoundButton from "./settingsButtons/ClickSoundButton.js";
 
 class SettingsButton extends Button {
   constructor(x, y, w, h, label) {
     super(x, y, w, h, label);
+
+    this.musicButton = new MusicButton(this.dialogBox.boxX, this.dialogBox.boxY - 40, 150, 50, "Music");
+    this.clickSoundButton = new ClickSoundButton(this.dialogBox.boxX, this.dialogBox.boxY + 40, 150, 50, "Click");
   }
-  // temporary dialog box content
-  loadContent() {
-    this.dialogBox.content = constants.temporaryMsg;
+
+  drawButtons () {
+    this.musicButton.draw(); // ✅ Draw Music Button inside dialog
+    this.clickSoundButton.draw(); // ✅ Draw Click Button inside dialog
   }
 
   // temporary logic
   handleClick() {
     if (this.isMouseOver()) {
-      this.loadContent();
       this.dialogBox.visible = true;
     }
-    if (this.dialogBox.visible) {
-      this.dialogBox.handleClick();
+
+    if (this.dialogBox.visible && this.isMouseOver()) {
+      this.musicButton.handleClick(); // ✅ Ensure clicks work
+      this.clickSoundButton.handleClick();
     }
   }
 

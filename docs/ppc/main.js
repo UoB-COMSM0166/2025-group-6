@@ -1,5 +1,6 @@
 import game from "./src/core/Game.js";
 import { updateDimensions } from "./src/utils/windowResizer.js";
+
 let gameBackImg;
 let paddleSound;
 let boardSound;
@@ -9,7 +10,8 @@ let backgroundSound;
 let welcomeImg;
 let instructionContent;
 let celebrationImg;
-
+let landingPageMusic;
+let buttonClickSound;
 
 function preload() {
   celebrationImg = loadImage("./assets/images/bg10.jpg");
@@ -23,6 +25,7 @@ function preload() {
   instructionContent = loadStrings("./assets/textFiles/Instructions.txt");
 
 }
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   game.initializeGame();

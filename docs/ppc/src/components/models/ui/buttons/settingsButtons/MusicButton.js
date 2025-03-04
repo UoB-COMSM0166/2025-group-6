@@ -22,11 +22,12 @@ class MusicButton extends DialogBoxButton {
     handleClick() {
         if (this.isMouseOver()) {
             isMusicOn = !isMusicOn;
-            if (isMusicOn) {
-                this.game.landingPageMusic.loop();
-            } else {
-                this.game.landingPageMusic.stop();
-            }
+            // need to implement music logic....
+            // if (isMusicOn) {
+            //     this.game.landingPageMusic.loop();
+            // } else {
+            //     this.game.landingPageMusic.stop();
+            // }
         }
     }
 
