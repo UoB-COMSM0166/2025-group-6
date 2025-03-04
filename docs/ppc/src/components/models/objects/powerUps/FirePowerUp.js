@@ -62,6 +62,14 @@ export class FirePowerUp extends PowerUps {
       this.x + centerOffsetX + adjustedWidth * 0.65, this.y + centerOffsetY + adjustedHeight * 0.7,
       this.x + centerOffsetX + adjustedWidth * 0.35, this.y + centerOffsetY + adjustedHeight * 0.7
     );
+
+     // Floating Sparks (Realistic embers)
+     for (let i = 0; i < 5; i++) {
+      fill(255, 100, 0, 150); // Orange-yellow sparks
+      let sparkX = random(-adjustedWidth / 2, adjustedWidth / 2);
+      let sparkY = random(-adjustedHeight / 2, adjustedHeight / 2);
+      ellipse(sparkX, sparkY, 3, 3); // Small floating fire embers
+    }
     
     pop();
   }
