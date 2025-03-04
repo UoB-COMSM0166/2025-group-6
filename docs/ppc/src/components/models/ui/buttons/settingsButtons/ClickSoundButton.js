@@ -26,7 +26,8 @@ class ClickButton extends DialogBoxButton {
 
         // Play a click sound if SFX is enabled
         if (isSFXOn) {
-            this.game.buttonClickSound.play();
+            // need to implement click sound logic...
+            // this.game.buttonClickSound.play();
         }
     }
 

@@ -8,7 +8,7 @@ class CloseButton extends DialogBoxButton {
   draw() {
     fill(200, 50, 50);
     rectMode(CENTER);
-    rect(this.x, this.y, this.w, this.h, 5);
+    rect(this.x, this.y, this.w, this.h, 10);
     fill(255);
     textSize(20);
     textAlign(CENTER, CENTER);
@@ -22,12 +22,10 @@ class CloseButton extends DialogBoxButton {
   }
 
   reset() {
-
-    this.w = width * 0.025;
-    this.h = height * 0.05;
-
-    this.x = width / 2 + width / 4 - 100;
-    this.y = height / 4 + 30;
+    this.x = width / 2 + width * 0.2 - 30;
+    this.y = height / 2 - height * 0.25 + 30;
+    // this.w = width * 0.025;
+    // this.h = width * 0.025;
   }
 }
 
