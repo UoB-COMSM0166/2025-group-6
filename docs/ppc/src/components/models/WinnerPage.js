@@ -24,7 +24,7 @@ class WinnerPage {
     text("CONGRATULATIONS!", width/2, height * 0.3);
     
     textSize(width * 0.04);
-    text(`${this.game.gameEngine.winnerHandler.winner} wins!`, width/2, height * 0.4);
+    text(` PLAYER ${this.game.winner} wins!`, width/2, height * 0.4);
     
     // Draw the buttons
     this.restartgameButton.draw();
@@ -37,7 +37,7 @@ class WinnerPage {
   }
   reset() {
     this.restartgameButton.reset();
-    this.exitButton.reset();
+    this.exitButton.resetWinnerPage();
   }
 }
 

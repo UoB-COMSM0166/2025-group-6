@@ -6,7 +6,6 @@ import DialogBox from "./ui/DialogBox.js";
 class LandingPage {
   constructor(game) {
     this.game = game;
-    this.welcomeImg = "";
     this.startGameButton = new StartGameButton(
       width / 2,
       height / 2,
@@ -32,8 +31,8 @@ class LandingPage {
   }
 
   draw() {
-    if (this.welcomeImg) {
-      image(this.welcomeImg, 0, 0, width, height);
+    if (this.game.welcomeImg) {
+      image(this.game.welcomeImg, 0, 0, width, height);
       textAlign(CENTER);
       textStyle(BOLD);
 
@@ -95,7 +94,7 @@ class LandingPage {
       this.instructionsButton.dialogBox.draw();
       this.settingsButton.dialogBox.draw();
     } else {
-      background(50);
+      background(200);
     }
   }
 

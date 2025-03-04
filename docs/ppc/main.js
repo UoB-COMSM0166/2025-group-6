@@ -30,6 +30,7 @@ function setup() {
   game.landingPage.instructionContent = instructionContent;
   game.winnerPage.celebrationImg = celebrationImg;
   game.gameBackImg = gameBackImg;
+  game.welcomeImg = welcomeImg; 
 
   // Load sounds
   game.sounds.paddle= paddleSound;

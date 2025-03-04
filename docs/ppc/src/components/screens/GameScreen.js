@@ -32,6 +32,8 @@ export class GameScreen {
     // Draw Scoreboard
     game.scoreBoard.draw();
 
+    game.levelBox.draw();
+
     game.gamePage.draw();
 
     if (game.firePowerUp.active) {

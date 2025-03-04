@@ -1,13 +1,15 @@
 import Button from "./Button.js";
 import game from "../../../../core/Game.js";
+import DialogBoxStartGame from "../DialogBoxStartGame.js";
 class StartGameButton extends Button {
   constructor(x, y, w, h, label) {
     super(x, y, w, h, label);
+    this.dialogBox = new DialogBoxStartGame();
   }
   
   handleClick() {
     if (this.isMouseOver()) {
-      game.gameState = "gameboard";
+      this.dialogBox.visible=true;
     }
     if (this.dialogBox.visible) {
       this.dialogBox.handleClick();

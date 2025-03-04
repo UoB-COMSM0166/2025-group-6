@@ -9,7 +9,6 @@ class CloseButton extends DialogBoxButton {
     fill(200, 50, 50);
     rectMode(CENTER);
     rect(this.x, this.y, this.w, this.h, 5);
-    console.log("Close Button:", this.w, this.h);
     fill(255);
     textSize(20);
     textAlign(CENTER, CENTER);

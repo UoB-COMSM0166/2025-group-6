@@ -8,6 +8,7 @@ import { RectShape } from "../components/models/shapes/RectShape.js";
 import LandingPage from "../components/models/LandingPage.js";
 import GamePage from "../components/models/GamePage.js";
 import WinnerPage from "../components/models/WinnerPage.js";
+import { LevelBox } from "../components/models/LevelBox.js";
 
 // Singleton class which serves as the central hub of the game
 
@@ -26,6 +27,10 @@ class Game {
     this.gamePaused = false;
     this.winnerPage = undefined;
     this.gameBackImg = "";
+    this.welcomeImg = "";
+    this.level = "normal";
+    this.levelBox = undefined;
+    this.winner=null;
     this.sounds = {};
   }
 
@@ -34,56 +39,40 @@ class Game {
     this.player1.isPlayerCpu = false;
     this.player2 = new Mallet(width * 0.75, height / 2, false, this);
     this.puck = new Puck();
-    this.landingPage = new LandingPage(this);
     this.gamePage = new GamePage(this);
+    this.initObjects();
     this.winnerPage = new WinnerPage(this);
-    this.board = new GameBoard();
-    this.gameEngine = new GameEngine(this);
     this.scoreBoard = new ScoreBoard(this);
-    this.firePowerUp = new FirePowerUp(
-      width * 0.2,
-      height * 0.2,
-      width * 0.05,
-      height * 0.1,
-      new RectShape(width * 0.05, height * 0.1)
-    );
-    this.gameEngine.soundHandler.loopSound("backgroundSound");
-    // this.initSound();
-  }
-  reinitializeGame(){
-    this.board = new GameBoard();
-    this.gameEngine = new GameEngine(this);
-    this.player1 = new Mallet(width * 0.25, height / 2, true, this);
-    this.player1.isPlayerCpu = false;
-    this.player2 = new Mallet(width * 0.75, height / 2, false, this);
-    this.scoreBoard.resetScores();
+    this.levelBox = new LevelBox(this);
     
+    
+  }
+  resetGame(){
+    this.initObjects();
+    this.scoreBoard.resetScores();
     this.scoreBoard.streakTracker.reset();
-    this.firePowerUp = new FirePowerUp(
-      width * 0.2,
-      height * 0.2,
-      width * 0.05,
-      height * 0.1,
-      new RectShape(width * 0.05, height * 0.1)
-    );
-    this.gameEngine.soundHandler.loopSound("backgroundSound");
-    // this.initSound();
+    this.player1.reset();
+    this.player2.reset();
+    this.puck.reset();
   }
   updateGame() {
       this.gameEngine.updateGame();
   }
-  // initSound()
-  // {
-  //   this.gameEngine.soundHandler.loadSound("paddle", paddleSound);
-  //   this.gameEngine.soundHandler.loadSound("board", boardSound);
-  //   this.gameEngine.soundHandler.loadSound("goal", goalSound);
-  //   this.gameEngine.soundHandler.loadSound("powerup", powerupSound);
-  //   this.gameEngine.soundHandler.loadSound("backgroundSound", backgroundSound);
-  //   this.gameEngine.soundHandler.loopSound("backgroundSound");
-    
-  //   this.gameEngine.soundHandler.sounds = this.sounds;
-  //   this.gameEngine.soundHandler.setVolumeAll();
-  // }
+
+  initObjects(){
+
+    this.board = new GameBoard();
+    this.gameEngine = new GameEngine(this);
+    this.landingPage = new LandingPage(this);
+    this.firePowerUp = new FirePowerUp(
+      width * 0.2,
+      height * 0.2,
+      width * 0.05,
+      height * 0.1,
+      new RectShape(width * 0.05, height * 0.1)
+    );
+  }
+
 }
 
 const game = new Game();

@@ -8,8 +8,8 @@ class RestartGameButton extends Button {
   
   handleClick() {
     if (this.isMouseOver()) {
+      game.winner = null;
       game.gameState = "gameboard";
-      game.reinitializeGame();
     }
     if (this.dialogBox.visible) {
       this.dialogBox.handleClick();
@@ -17,7 +17,7 @@ class RestartGameButton extends Button {
   }
 
   reset() {
-    this.x = width / 2;
+    this.x = width/3 + 10;
     this.y = height / 2; // Original positioning from LandingPage
     this.w = width * 0.15;
     this.h = height * 0.07;
