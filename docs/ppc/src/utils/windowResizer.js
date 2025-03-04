@@ -22,6 +22,7 @@ export function updateDimensions() {
     game.scoreBoard.update();
     game.gamePage.reset();
     game.landingPage.reset();
+    game.winnerPage.reset();
 }
 
 window.windowResized = windowResized;

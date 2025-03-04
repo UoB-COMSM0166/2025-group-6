@@ -10,7 +10,7 @@ export class Mallet extends GameObject {
     this.score = 0;
     this.leftSide = leftSide;
     this.isPlayerCpu = true;
-    this.moveSpeed = 30;
+    this.moveSpeed = 20;
 
   }
 
@@ -76,7 +76,7 @@ export class Mallet extends GameObject {
   }
   reset()
   {
-    if(this.game.gameEngine.winnerHandler.winner != null){
+    if(this.game.winner != null){
       this.score = 0;
     }
     if(this.leftSide){
