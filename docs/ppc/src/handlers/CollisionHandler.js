@@ -9,19 +9,20 @@ export default class CollisionHandler {
     this.checkMalletPuckCollisions();
     this.checkWallCollisions(this.game.puck);
     this.checkPowerUpCollosions(this.game.firePowerUp);
+    this.checkObstacleCollusion(this.game.gameEngine.obstacleHandler.obstacles);
   }
 
   checkMalletPuckCollisions() {
     // Check collisions between mallets and puck
     if (this.game.player1.checkCollision(this.game.puck)) {
-      this.handleMalletPuckCollision(this.game.player1, this.game.puck);
+      this.handleCircleGameObjectCollision(this.game.player1, this.game.puck);
       this.game.gameEngine.soundHandler.playSound("paddle");    }
     if (this.game.player2.checkCollision(this.game.puck)){
-      this.handleMalletPuckCollision(this.game.player2, this.game.puck);
+      this.handleCircleGameObjectCollision(this.game.player2, this.game.puck);
       this.game.gameEngine.soundHandler.playSound("paddle");    }
   }
 
-  handleMalletPuckCollision(mallet, puck) {
+  handleCircleGameObjectCollision(mallet, puck) {
  
     // Calculate collision angle from closest point
     let dx = puck.x - mallet.x;
@@ -127,6 +128,19 @@ export default class CollisionHandler {
           this.game.gameEngine.powerUpHandler.enablePowerUpEffect();
           this.game.gameEngine.powerUpHandler.deactivatePowerup();
           this.game.gameEngine.soundHandler.playSound("powerup");
+      }
+    }
+  }
+
+  /**
+   * Method to check collusion between obstacle and puck
+   * @param obstacles
+   */
+  checkObstacleCollusion(obstacles) {
+    for (let obstacle of obstacles) {
+      if(this.game.puck.checkCollision(obstacle)){
+        this.game.gameEngine.soundHandler.playSound("obstacleSound");
+        this.handleCircleGameObjectCollision(obstacle,this.game.puck);
       }
     }
   }

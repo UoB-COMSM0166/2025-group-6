@@ -39,6 +39,7 @@ export class GameScreen {
     if (game.firePowerUp.active) {
       game.firePowerUp.draw();
     }
+    game.gameEngine.obstacleHandler.drawObstacles();
   }
 
   checkButtonClicks() {

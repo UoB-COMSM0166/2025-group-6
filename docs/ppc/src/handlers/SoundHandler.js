@@ -45,6 +45,7 @@ export default class SoundHandler {
     this.setVolume("board", 1); // 100% volume
     this.setVolume("goal", 0.5); // 50% volume
     this.setVolume("powerup", 0.5); // 50% volume
+    this.setVolume("obstacleSound", 0.5); // 50% volume
   }
 
   // Pause all sounds
