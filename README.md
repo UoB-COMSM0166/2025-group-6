@@ -171,13 +171,67 @@ The game features a range of engaging gameplay elements designed to enhance the 
 
 ### Evaluation
 
-- 15% ~750 words
+To ensure that Puck Power Clash functions as intended and delivers a satisfying player experience, we employed both qualitative and quantitative evaluation methods. 
+These approaches allowed us to gather in-depth feedback on user interaction, gameplay mechanics, and overall usability.
 
-- One qualitative evaluation (your choice)
+#### Qualitative
+For the qualitative evaluation, we used the Think Aloud protocol, where participants were encouraged to verbalize their thoughts, decisions, and feelings in real-time while playing the game.
+This method helped us understand the players’ cognitive processes, strategies, and emotional responses, offering valuable insights into areas such as engagement, adaptability, and decision-making.
 
-- One quantitative evaluation (of your choice)
+<!-- ![](/assets/images/thinkaloudImage.jpeg) -->
 
-- Description of how code was tested.
+![](/assets/images/final1.png)
+
+Changes made:
+- Reduced the frequency of power-up spawns.
+- Adjusted power-up positions to be more accessible and strategically placed.
+- Added smoother animations and warning effects before environmental changes (e.g., flashing before goal size changes).
+- Reduced the spawn speed of certain high-impact obstacles to allow a more manageable reaction window.
+- Enhanced visual cues (like glowing outlines) to indicate the type and effect of power-ups, helping players make quicker, more informed choices.
+- Refined the UI to make score, time, and player status more visible without being distracting.
+- Balanced the intensity of neon lighting and visual effects to maintain immersion without overwhelming the player.
+- Made sound effects adaptive to game states (e.g., quieter during intense focus moments).
+- Designed early game rounds to encourage experimentation with low stakes, allowing players to discover strategies gradually.
+
+#### Quantitaive 
+For the quantitative evaluation, we employed the System Usability Scale (SUS), a widely recognized and reliable method for measuring the usability of interactive systems. 
+The SUS provides a quick and standardized way to assess user satisfaction by gathering responses to a ten-item questionnaire using a Likert scale.
+It is proven to deliver consistent and valid results across various domains, making it an ideal tool for evaluating the user experience of Puck Power Clash. 
+By using the SUS, we were able to quantify user perceptions of the game's ease of use, learnability, and overall satisfaction, complementing the insights gathered from our qualitative Think Aloud method.
+
+| Participant | Normal Mode Score | Hard Mode Score |
+|-------------|-------------------|-----------------|
+| P1          | 45.0              | 37.5            |
+| P2          | 47.5              | 52.5            |
+| P3          | 60.0              | 60.0            |
+| P4          | 47.5              | 52.5            |
+| P5          | 67.5              | 67.5            |
+| P6          | 67.5              | 67.5            |
+| P7          | 45.0              | 45.0            |
+| P8          | 67.5              | 72.5            |
+| P9          | 57.5              | 52.5            |
+| P10         | 37.5              | 62.5            |
+
+
+
+![](/assets/images/barchart.png)
+
+Our first method of quantitative analysis was the System Usability Scale (SUS). After interacting with both difficulty levels of the game, participants were asked to complete the SUS questionnaire, where they rated their agreement with ten standardized usability statements. These statements include perceptions of system complexity, ease of use, integration of functions, and user confidence, among others.
+
+![](/assets/images/line.png)
+The results indicated a slight difference in usability perception between the Normal and Hard modes. On average, the SUS score for Normal mode was 54.75, while the Hard mode had a slightly higher average of 56.75. Although this was contrary to our initial assumption that increased difficulty might reduce usability, the data suggested that the gameplay challenges in Hard mode did not significantly impact user satisfaction or experience. This could be attributed to the consistent UI design and responsive feedback mechanisms maintained across both modes. Overall, while both modes scored slightly below the general SUS benchmark of 68, the results highlighted areas for improvement and confirmed that users found the interface reasonably consistent, regardless of difficulty. The SUS analysis provided a solid foundation for iterative UI enhancements.
+
+Together, these two methods enabled a comprehensive assessment of both user experience and system performance, ensuring that the game met our design goals and provided meaningful, enjoyable gameplay.
+
+
+#### How code was tested.
+We adopted both black-box and white-box testing methodologies to ensure that the game behaved as expected and was free from major bugs.
+
+Black-box testing was primarily used during user playtesting and system-level evaluation. In this approach, testers interacted with the game without knowledge of the internal code structure. They verified functionality such as gameplay mechanics, scoring logic, user interface responsiveness, and transitions between game states (e.g., start, pause, game over). We evaluated the game’s behavior in response to various inputs and edge cases (e.g., no user input, maximum score, or invalid actions), ensuring that outputs and visual feedback matched expectations.
+
+White-box testing was performed during development by the team, focusing on internal code structure and logic. We reviewed and tested key functions, loops, and conditional branches to confirm they executed as intended. This included inspecting the game loop, input handling functions, collision detection algorithms, and state updates. Console logs and debugging tools were used to trace variable changes and logic flow. Functions were tested individually and then integrated to validate proper interaction across components.
+
+By combining both testing approaches, we achieved a robust, reliable game experience and were able to identify and fix critical issues early in the development process.
 
 ### Process
 
