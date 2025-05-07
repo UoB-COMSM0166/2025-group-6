@@ -1,15 +1,18 @@
-# 2025-group-6
+# 2025 Group-6
+
+---
 # 🏒 **Welcome to Puck Power Clash!** 🏒
 
-## Your Game
+---
 
 Link to your game [PLAY HERE](https://uob-comsm0166.github.io/2025-group-6/)
 
-Your game lives in the [/docs](/docs) folder, and is published using Github pages to the link above.
+The game lives in the [/docs/ppc](/docs/ppc) folder, and is published using Github pages with a workflow created using github 
+template [.github/workflows/jekyll-gh-pages.yml](.github/workflows/jekyll-gh-pages.yml).
 
-Include a demo video of your game here (you don't have to wait until the end, you can insert a work in progress video)
+---
 
-## Your Group
+## The Avengers
 
 ![Group-6-Banner](https://github.com/user-attachments/assets/c66c5311-e353-4e56-97a1-68db2eae6cd6)
 
@@ -22,7 +25,10 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 | 5            | Nilay Murlidhar Bhaisare | dh24552@bristol.ac.uk | Developer/ Scrum Master    | [@NMB99](https://github.com/NMB99)                       |
 | 6            | Nishtha Singh            | ga23124@bristol.ac.uk | Developer/ UI/UX Designer  | [@ananish](https://github.com/ananish)                   |
 
+---
 ## Project Report
+
+---
 
 ### Introduction
 
@@ -32,12 +38,15 @@ The adjustable goalpost 🥅 system adds an extra layer of strategy. If you scor
 
 🎯[Puck Power Clash Gameplay]![Game GIF](./assets/gif/game1-ezgif.com-video-to-gif-converter.gif)
 
-### Requirements
+---
+## Requirements
 
-#### Ideation & Concept Selection 🧠
+---
+
+### Ideation & Concept Selection 🧠
 In Week 1 our team brainstormed several 2D game concepts—using hand-written notes and sketches to capture ideas and assess feasibility. We paper-prototyped two finalists: a ring-toss physics game and **Power Puck Clash** (an air-hockey variant with power-ups and obstacles). The ring-toss concept proved too complex to simulate within our timeline, so we selected Power Puck Clash for its immediately graspable rules and straightforward p5.js implementation.
 
-#### Early Stage Design & Paper Prototyping 🎨1
+### Early Stage Design & Paper Prototyping 🎨1
 Before writing any code, we mapped out core gameplay flow and UI layouts by hand:
 
 - **Paddle movement:** smooth keyboard control for the left mallet; CPU control on the right  
@@ -59,7 +68,7 @@ In the early design phase, we focused on:
 2. Spawn zones just inside each half keep power-ups accessible but still challenging  
 3. Placing the scoreboard, pause, and quit controls above the playfield avoids obscuring the action  
 
-#### User Stories
+### User Stories
 To keep development user-focused, we distilled the following stories:
 
 ![Gameplay components](/assets/images/Board.png)  
@@ -72,7 +81,7 @@ To keep development user-focused, we distilled the following stories:
 - **As an audio-driven user**, I want independent toggles for background music and click-SFX  
 - **As a local multiplayer player**, I want to challenge a friend on the same machine
 
-#### Functional Requirements
+### Functional Requirements
 - **Core gameplay:** two mallets vs. one puck on a resizable board; left mallet under player control, right mallet under CPU or second player  
 - **Scoring & win condition:** first to 10 goals wins; a goal only counts if the puck fully crosses between the opponent’s goal posts  
 - **Streak-based power-up:** after three consecutive goals by one side, a Fire Power-Up icon spawns on that side, remains for 20 s, and—when collected—enlarges the opponent’s goal post for 10 s  
@@ -81,17 +90,20 @@ To keep development user-focused, we distilled the following stories:
 - **Sound management:** background music, paddle hits, board bounces, goals, power-up pickups, and UI click-SFX are each toggleable in Settings  
 - **Responsive design (planned):** canvas and game objects resize dynamically on window resize via the `updateDimensions()` utility  
 
-#### Non-Functional Requirements
+### Non-Functional Requirements
 - **Compatibility:** runs smoothly in all major desktop browsers (Chrome, Firefox, Edge)  
 - **Audio responsiveness:** toggling music or SFX takes effect immediately without requiring a page reload  
 
-#### Use-Case Diagram
+### Use-Case Diagram
 The diagram below illustrates the Player’s interactions:
 
 ![Use-Case Diagram for Power Puck Clash](/assets/images/UseCaseDiagram.png)  
 *UML Use-Case diagram detailing player flows from landing to match and winner screens.*
 
+---
 ## Stakeholders
+
+---
 Below is our stakeholder Onion Model (see accompanying image for layers):
 
 ![Stakeholder Onion Model](/assets/images/stakeholder_onion.png)  
@@ -106,54 +118,57 @@ Below is our stakeholder Onion Model (see accompanying image for layers):
 - **Course Staff**  
   • Instructor & Teaching Assistant (define requirements, provide feedback, and grade)
 
-### Design 🏗️
+---
+## Design 🏗️
 
-#### Core Architecture
+---
+
+### Core Architecture
 The game follows a classic game-loop/component-based architecture with clear separation of concerns:
 
-##### Game Class 
+### Game Class 
 The central controller that manages all game components and coordinates the overall game flow. It maintains references to core game objects (players, puck, board) , game features like powerups,obstacles and UI elemenst like (landing page, game page, winning page, butons etc).
 
-##### GameEngine
+### GameEngine
 Serves as the brain of the application, managing game logic through specialized handlers for different aspects of functionality. This follows the delegation pattern, where the engine delegates specific responsibilities to specialized components. 
 
-##### GameObject 
+### GameObject 
 Implements an inheritance hierarchy where all interactive elements (Mallet, Puck, PowerUp, Obstacle) inherit from a common GameObject base class. This helps us to implement polymorphism and reduce the usage of repetetive code and implies the behaviour
 of each and every object in the game.
 
-#### Class Diagram 
+### Class Diagram 
 
 ![](/assets/images/class-diagram-final-image.png)
 
-#### Sequence diagram
+### Sequence diagram
 
 Sequence diagram shows how the different objects in the game interact with each other to express behaviour during the lifecycle
 of the game
 
 ![](/assets/images/sequence-diagram-final.png)
 
-#### User Interface Design🎵
+### User Interface Design🎵
 
 The UI follows a screen-based approach with separate page classes for different game states:
 
-##### Landing Page 
+### Landing Page 
 The entry point with options to start the game, view instructions, or adjust settings.
 
 *landing page*
 ![](/assets/images/landingpage.png)
-##### Game Page 
+### Game Page 
 The main gameplay screen with pause and exit functionality.
 
 *game page*
 ![](/assets/images/gamescreen.png)
-##### Winner Page 
+### Winner Page 
 Displays when a player wins, with options to restart or quit and go back to main page.
 
 *winner page*
 ![](/assets/images/winnerscreen.png)
 The UI elements use an inheritance hierarchy for buttons, creating a consistent interaction model.
 
-#### Gameplay Features
+### Gameplay Features
 The game features a range of engaging gameplay elements designed to enhance the player experience. The CPUHandler provides AI-controlled opponents with adjustable difficulty settings such as reaction delay and aggressiveness. When a player achieves a three-goal streak, the Fire PowerUp activates, temporarily enlarging the opponent’s goalpost for 10 seconds to give the streaking player an advantage. The ObstacleHandler introduces dynamic obstacles during gameplay, adding unpredictability and challenge. A SoundHandler manages various audio effects and background music to create an immersive environment. Additionally, the game includes a level system with two difficulty modes— normal and hard indicated by a level box in the top-left corner of the screen.
 
 *the enlarged goalpost highlighted in red when firepowerup is activated*
@@ -165,7 +180,10 @@ The game features a range of engaging gameplay elements designed to enhance the 
 *level box on top left corner*
 ![](/assets/images/levelbox.png)
 
-### Implementation 🔧
+---
+## Implementation 🔧
+
+---
 
 Throughout development, three systems required particular focus due to their impact on gameplay: refining the puck’s physics for responsive and realistic movement, implementing scalable AI that adjusts to player skill levels, and designing a power-up and obstacle system that introduces variety and keeps matches unpredictable. Each of these elements played a key role in shaping the game’s fast pace, competitive balance, and replayability.
 
@@ -198,13 +216,15 @@ To add a little extra fun and unpredictability to the game, we’ve included pow
 - **Visual and Audio Feedback:** We made sure the game communicates clearly when power-ups are activated or about to expire. You’ll see icons and hear sound effects that let you know something important is happening, adding to the immersive feel of the game.
 - **State Management:** Power-ups and obstacles don’t last forever. Timers and flags are used to control how long they stay active, ensuring the gameplay doesn’t get too unbalanced. Every power-up has a limited window of opportunity, making them a strategic asset in the heat of the moment.
 
+---
+## Evaluation 📊
 
-### Evaluation 📊
+---
 
 To ensure that Puck Power Clash functions as intended and delivers a satisfying player experience, we employed both qualitative and quantitative evaluation methods. 
 These approaches allowed us to gather in-depth feedback on user interaction, gameplay mechanics, and overall usability.
 
-#### Qualitative
+### Qualitative
 For the qualitative evaluation, we used the Think Aloud protocol, where participants were encouraged to verbalize their thoughts, decisions, and feelings in real-time while playing the game.
 This method helped us understand the players’ cognitive processes, strategies, and emotional responses, offering valuable insights into areas such as engagement, adaptability, and decision-making.
 
@@ -223,7 +243,7 @@ Changes made:
 - Made sound effects adaptive to game states (e.g., quieter during intense focus moments).
 - Designed early game rounds to encourage experimentation with low stakes, allowing players to discover strategies gradually.
 
-#### Quantitaive 
+### Quantitative 
 For the quantitative evaluation, we employed the System Usability Scale (SUS), a widely recognized and reliable method for measuring the usability of interactive systems. 
 The SUS provides a quick and standardized way to assess user satisfaction by gathering responses to a ten-item questionnaire using a Likert scale.
 It is proven to deliver consistent and valid results across various domains, making it an ideal tool for evaluating the user experience of Puck Power Clash. 
@@ -254,21 +274,127 @@ The results indicated a slight difference in usability perception between the No
 Together, these two methods enabled a comprehensive assessment of both user experience and system performance, ensuring that the game met our design goals and provided meaningful, enjoyable gameplay.
 
 
-#### How code was tested.
+### How code was tested.
 We adopted both black-box and white-box testing methodologies to ensure that the game behaved as expected and was free from major bugs.
 
-Black-box testing was primarily used during user playtesting and system-level evaluation. In this approach, testers interacted with the game without knowledge of the internal code structure. They verified functionality such as gameplay mechanics, scoring logic, user interface responsiveness, and transitions between game states (e.g., start, pause, game over). We evaluated the game’s behavior in response to various inputs and edge cases (e.g., no user input, maximum score, or invalid actions), ensuring that outputs and visual feedback matched expectations.
+Black-box testing was primarily used during user playtesting and system-level evaluation. In this approach, testers interacted with the game without knowledge of the internal code structure. They verified functionality such as gameplay mechanics, scoring logic, user interface responsiveness, and transitions between game states (e.g. start, pause, game over). We evaluated the game’s behavior in response to various inputs and edge cases (e.g., no user input, maximum score, or invalid actions), ensuring that outputs and visual feedback matched expectations.
 
 White-box testing was performed during development by the team, focusing on internal code structure and logic. We reviewed and tested key functions, loops, and conditional branches to confirm they executed as intended. This included inspecting the game loop, input handling functions, collision detection algorithms, and state updates. Console logs and debugging tools were used to trace variable changes and logic flow. Functions were tested individually and then integrated to validate proper interaction across components.
 
 By combining both testing approaches, we achieved a robust, reliable game experience and were able to identify and fix critical issues early in the development process.
 
-### Process 📈 🤝
+---
+## Process
 
-- 15% ~750 words
+---
 
-- Teamwork. How did you work together, what tools did you use. Did you have team roles? Reflection on how you worked
-  together.
+### Initial Thoughts
+Our focus was to develop something unique, 
+so we initially conceived two game ideas. 
+The first was a 3D ring-and-cone game: players use two 
+buttons to blow air at rings, guiding them onto two vertical 
+cones. This concept is inspired by a beloved childhood 
+tabletop game that everyone loved. The second idea was a fun, 
+modernized version of a puck‑clash game. 
+In this one-on-one matchup, two players compete to score 
+a single puck into the opponent’s goal. 
+We discovered that the puck‑clash concept offers 
+significant extensibility and scalability, 
+numerous new features can be added, and the game can 
+evolve through an agile, iterative development process.
+
+
+### Game Concepts
+
+### 3D Ring‑and‑Cone Air Blower Game
+
+* **Concept**: Players use two air‑blowing buttons to propel 3D rings onto two vertical cones.
+* **Inspiration**: Modeled on a beloved childhood tabletop game.
+* **Core Mechanics**:
+
+  * **Air Blowers**: Two separate controls provide adjustable airflow.
+  * **Ring Physics**: Realistic trajectories, gravity effects, and collision handling.
+  * **Scoring**: Points awarded for each successfully landed ring; bonus for consecutive successes.
+* **Unique Appeal**: Combines tactile nostalgia with digital physics for a gratifying, skill‑based experience.
+
+### Puck‑Clash Game
+
+* **Concept**: A fast‑paced, two‑player puck game where each competitor attempts to score in the opposing goal.
+* **Scalability**:
+
+  * **Multiplayer Modes**: Potential to add local co‑op, online matchmaking, and tournament brackets.
+  * **Custom Arenas**: Themed boards, adjustable friction, and dynamic obstacles.
+  * **Power‑Ups & Upgrades**: Speed boosts, puck modifiers, and player cosmetics.
+* **Agile Potential**: Suited for iterative sprints, start with a bare‑bones MVP, then layer in new features based on player feedback.
+
+
+### Identifying our strengths
+
+We began by mapping out each of our six team members’ individual strengths, ranging from big‑picture vision to meticulous detail work, and deliberately assigned roles that played to those talents. As a result, everyone contributed equally to the creation of our game: one served as product owner, another as scrum master, two focused on graphic design, and the remaining two handled sound engineering and quality assurance. By aligning responsibilities with expertise, we not only balanced the workload but also maximised creativity and efficiency across the project.
+
+| Team Member | Strength                        | Assigned Role    |
+| ---------- |---------------------------------|------------------|
+| Saquib Sayeed Kazi   | Visionary & Product Strategy    | Product Owner    |
+| Nilay Murlidhar Bhaisare   | Process Facilitation            | Scrum Master     |
+| Adwaith Syam Sundar  | Coding                          | Game Mechanics   |
+| Nishtha Singh   | UI/UX & 2D Illustration         | Graphic Designer |
+| Balachander Raja  | Audio Production & Sound Design | Sound Engineer   |
+| Rohit Bhagatkar   | Technical                       | Game Mechanics   |
+
+> **Note:** Everyone contributed to coding and debugging, ensuring shared ownership of the development effort.
+
+
+### Tools & Technologies
+
+| Category             | Tool                                  |
+| -------------------- | ------------------------------------- |
+| **Communication**    | Microsoft Teams                       |
+| **Version Control**  | GitHub                                |
+| **Agile Management** | Jira, Confluence                      |
+| **IDE & Editors**    | Visual Studio Code, IntelliJ WebStorm |
+| **UI/UX Design**     | Canva                                 |
+
+
+### Development & Reflection
+
+1. **Minimum Viable Product (MVP)**
+
+  * Defined core mechanics for each game prototype.
+  * Prioritized must‑have features for initial sprint.
+  * The initial MVP was a simple prototype with only basic gameplay, it did not contain
+    a start page and scoring mechanism.
+  * We identified that the CPU was too aggressive and did not have any errors in striking the puck.
+
+![](/assets/gif/Initial_Prototype_1.gif)
+
+2. **Iterative Sprints**
+
+  * Held bi‑weekly planning, review, and retrospective sessions.
+  * Incorporated user testing feedback into feature roadmaps.
+  * We fixed the CPU made it more human, added graphics and power up features in sprints.
+
+![](/assets/gif/prototype_2.gif)
+
+3. **Collaboration & Continuous Improvement**
+
+  * Daily stand‑ups facilitated rapid issue resolution.
+  * Cross‑functional pairing enhanced knowledge sharing.
+
+![](/assets/images/img.png)
+
+> **Key Learnings:**
+>
+> * Aligning roles to individual strengths accelerates both creativity and throughput.
+> * Early MVP delivery enables meaningful, player‑centered refinements.
+> * Transparent communication and iterative development approach enabled us to get a working product
+early and progressive improve the game.
+
+---
+
+## 6. Conclusion
+
+By leveraging our collective expertise, clear role assignments, and an agile framework, we successfully laid the groundwork for two distinct, scalable game experiences. Moving forward, our plan is to select the concept with the strongest user engagement metrics and continue expanding its feature set in subsequent sprints.
+
 
 ### Conclusion 🎯
 
