@@ -13,6 +13,8 @@ let celebrationImg;
 let landingPageMusic;
 let buttonClickSound;
 let obstacleSound;
+let maxWidth = 1280;
+let maxHeight = 720;
 
 function preload() {
   celebrationImg = loadImage("./assets/images/bg10.jpg");
@@ -28,7 +30,9 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  let canvasWidth = min(windowWidth, maxWidth);
+  let canvasHeight = min(windowHeight, maxHeight);
+  createCanvas(canvasWidth, canvasHeight);
   game.initializeGame();
   game.landingPage.welcomeImg = welcomeImg;
   game.landingPage.instructionContent = instructionContent;
