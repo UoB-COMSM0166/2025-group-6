@@ -1,8 +1,5 @@
 # 2025-group-6
-
-2025 COMSM0166 group 6
-# Puck Power Clash
-
+# 🏒 **Welcome to Puck Power Clash!** 🏒
 
 ## Your Game
 
@@ -29,7 +26,6 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 ### Introduction
 
-# 🏒 **Welcome to Puck Power Clash!** 🏒
 **Puck Power Clash** is an electrifying, fast-paced arcade game that takes the classic air hockey experience to the next level. You can choose from two difficulty levels: **Normal**, for a balanced gameplay experience, and **Hard**, where your reflexes will be tested and every decision counts. The game features a fun power-up system, including the **Fire power-up**, which temporarily increases your opponent’s goalpost🥅. This risk-reward mechanic allows aggressive players to take advantage of the expanded goalpost to score more easily. Random obstacles, like stones, further complicate the gameplay by throwing off the puck’s path, requiring quick reflexes and smart strategies to avoid them. The game also introduces minimal friction, ensuring smooth and continuous gameplay, much like how real-world surfaces interact, keeping the puck gliding without stopping completely.
 
 The adjustable goalpost 🥅 system adds an extra layer of strategy. If you score **three consecutive points**, your opponent’s goalpost temporarily grows larger, making it easier for you to score. This mechanic is tied to the **Fire power-up** 🔥🔥, rewarding aggressive play and putting pressure on defenders. With vibrant neon visuals and dynamic sound effects, **Puck Power Clash** immerses players in a futuristic, high-energy world, challenging both reflexes and strategic thinking. Every second on the table can make or break the game.🏆
