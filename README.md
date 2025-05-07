@@ -36,17 +36,10 @@ The adjustable goalpost 🥅 system adds an extra layer of strategy. If you scor
 
 🎯[Puck Power Clash Gameplay]![Game GIF](./assets/gif/game1-ezgif.com-video-to-gif-converter.gif)
 
-
-
-
-
 ### Requirements
-
 
 #### Ideation & Concept Selection 🧠
 In Week 1 our team brainstormed several 2D game concepts—using hand-written notes and sketches to capture ideas and assess feasibility. We paper-prototyped two finalists: a ring-toss physics game and **Power Puck Clash** (an air-hockey variant with power-ups and obstacles). The ring-toss concept proved too complex to simulate within our timeline, so we selected Power Puck Clash for its immediately graspable rules and straightforward p5.js implementation.
-
----
 
 #### Early Stage Design & Paper Prototyping 🎨1
 Before writing any code, we mapped out core gameplay flow and UI layouts by hand:
@@ -70,11 +63,8 @@ In the early design phase, we focused on:
 2. Spawn zones just inside each half keep power-ups accessible but still challenging  
 3. Placing the scoreboard, pause, and quit controls above the playfield avoids obscuring the action  
 
----
-
 #### User Stories
 To keep development user-focused, we distilled the following stories:
-
 
 ![Gameplay components](/assets/images/Board.png)  
 ![Jira backlog overview](/assets/images/Jira.png)  
@@ -84,9 +74,7 @@ To keep development user-focused, we distilled the following stories:
 - **As a power-up enthusiast**, I want temporary goal-expansion boosts to add strategic depth  
 - **As a speed-runner**, I want to restart matches quickly without reloading the page  
 - **As an audio-driven user**, I want independent toggles for background music and click-SFX  
-- **As a local multiplayer player**, I want to challenge a friend on the same machine  
-
----
+- **As a local multiplayer player**, I want to challenge a friend on the same machine
 
 #### Functional Requirements
 - **Core gameplay:** two mallets vs. one puck on a resizable board; left mallet under player control, right mallet under CPU or second player  
@@ -97,22 +85,15 @@ To keep development user-focused, we distilled the following stories:
 - **Sound management:** background music, paddle hits, board bounces, goals, power-up pickups, and UI click-SFX are each toggleable in Settings  
 - **Responsive design (planned):** canvas and game objects resize dynamically on window resize via the `updateDimensions()` utility  
 
----
-
-
 #### Non-Functional Requirements
 - **Compatibility:** runs smoothly in all major desktop browsers (Chrome, Firefox, Edge)  
 - **Audio responsiveness:** toggling music or SFX takes effect immediately without requiring a page reload  
-
----
 
 #### Use-Case Diagram
 The diagram below illustrates the Player’s interactions:
 
 ![Use-Case Diagram for Power Puck Clash](/assets/images/UseCaseDiagram.png)  
 *UML Use-Case diagram detailing player flows from landing to match and winner screens.*
-
----
 
 ## Stakeholders
 Below is our stakeholder Onion Model (see accompanying image for layers):
@@ -129,7 +110,6 @@ Below is our stakeholder Onion Model (see accompanying image for layers):
 - **Course Staff**  
   • Instructor & Teaching Assistant (define requirements, provide feedback, and grade)
 
-
 ### Design 🏗️
 
 #### Core Architecture
@@ -142,14 +122,12 @@ The central controller that manages all game components and coordinates the over
 Serves as the brain of the application, managing game logic through specialized handlers for different aspects of functionality. This follows the delegation pattern, where the engine delegates specific responsibilities to specialized components. 
 
 ##### GameObject 
- Implements an inheritance hierarchy where all interactive elements (Mallet, Puck, PowerUp, Obstacle) inherit from a common GameObject base class. This helps us to implement polymorphism and reduce the usage of repetetive code and implies the behaviour
+Implements an inheritance hierarchy where all interactive elements (Mallet, Puck, PowerUp, Obstacle) inherit from a common GameObject base class. This helps us to implement polymorphism and reduce the usage of repetetive code and implies the behaviour
 of each and every object in the game.
 
 #### Class Diagram 
 
 ![](/assets/images/class-diagram-final-image.png)
-
-
 
 #### Sequence diagram
 
@@ -191,12 +169,7 @@ The game features a range of engaging gameplay elements designed to enhance the 
 *level box on top left corner*
 ![](/assets/images/levelbox.png)
 
-
 ### Implementation 🔧
-
-- 15% ~750 words
-
-- Describe implementation of your game, in particular highlighting the three areas of challenge in developing your game.
 
 Throughout development, three systems required particular focus due to their impact on gameplay: refining the puck’s physics for responsive and realistic movement, implementing scalable AI that adjusts to player skill levels, and designing a power-up and obstacle system that introduces variety and keeps matches unpredictable. Each of these elements played a key role in shaping the game’s fast pace, competitive balance, and replayability.
 
