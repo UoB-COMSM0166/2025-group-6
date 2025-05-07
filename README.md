@@ -29,21 +29,22 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 ### Introduction
 
-Puck Power Clash is an exhilarating, high-energy arcade game that takes the classic air hockey experience and adds unique twists to make every match more thrilling. While it preserves the core idea of scoring by striking a puck across a frictionless table, the game introduces a series of innovative features to increase excitement and challenge.
+# 🏒 **Welcome to Puck Power Clash!** 🏒
+**Puck Power Clash** is an electrifying, fast-paced arcade game that takes the classic air hockey experience to the next level. You can choose from two difficulty levels: **Normal**, for a balanced gameplay experience, and **Hard**, where your reflexes will be tested and every decision counts. The game features a fun power-up system, including the **Fire power-up**, which temporarily increases your opponent’s goalpost🥅. This risk-reward mechanic allows aggressive players to take advantage of the expanded goalpost to score more easily. Random obstacles, like stones, further complicate the gameplay by throwing off the puck’s path, requiring quick reflexes and smart strategies to avoid them. The game also introduces minimal friction, ensuring smooth and continuous gameplay, much like how real-world surfaces interact, keeping the puck gliding without stopping completely.
 
-A standout feature is the power-up system, where special items randomly appear on the table. When a player’s puck collides with their opponent’s paddle, they gain a temporary boost, such as increased speed, enhanced hitting power, or a shield for brief defence. These power-ups force players to make strategic decisions, weighing the value of offense versus defence in the heat of the moment.
+The adjustable goalpost 🥅 system adds an extra layer of strategy. If you score **three consecutive points**, your opponent’s goalpost temporarily grows larger, making it easier for you to score. This mechanic is tied to the **Fire power-up** 🔥🔥, rewarding aggressive play and putting pressure on defenders. With vibrant neon visuals and dynamic sound effects, **Puck Power Clash** immerses players in a futuristic, high-energy world, challenging both reflexes and strategic thinking. Every second on the table can make or break the game.🏆
 
-Random obstacles also add unpredictability, altering the puck’s trajectory and requiring players to constantly adjust their positioning. These obstacles break away from typical gameplay patterns, demanding quick reflexes and creative thinking.
+🎯[Puck Power Clash Gameplay]![Game GIF](./assets/gif/game1-ezgif.com-video-to-gif-converter.gif)
 
-The adjustable goalpost system further intensifies the action. If a player scores two consecutive points, their opponent’s goal expands, making it easier for the leading player to score but also placing more pressure on the defender. This dynamic change rewards aggressive play and punishes defenders who concede too many points in quick succession.
 
-With its vibrant neon artwork and dynamic sound design, Puck Power Clash immerses players in a fast-paced, futuristic atmosphere. It’s a game that challenges both reflexes and strategy, where every second on the table matters.
+
+
 
 ### Requirements
 
 - 15% ~750 words
 - Use case diagrams, user stories. Early stages design. Ideation process. How did you decide as a team what to develop?
-#### 1. Ideation Process
+#### 1. Ideation Process 🧠
 
 The idea for Puck Power Clash emerged from brainstorming sessions where we explored different concepts for a 2D game. 
 Our primary goal was to create a game that is simple to learn but has engaging mechanics to keep players interested. 
@@ -59,9 +60,9 @@ implement in our first version.
 
 #### 2. Early Stages of Design
 
-In the early design phase, we focused on:
+🎨In the early design phase, we focused on:
 
-![](/docs/ppc/assets/images/Initialdesign.png)
+🖌️![](/docs/ppc/assets/images/Initialdesign.png)
 - Defining core mechanics: paddle movement, puck physics, and scoring system. 
 - Introducing power-ups: speed boost, reverse puck direction, and freeze opponent’s paddle. 
 - Adding dynamic obstacles like rotating barriers to increase challenge. 
@@ -71,7 +72,7 @@ To visualize these concepts, we created rough sketches and flowcharts to represe
 We also developed wireframes to define the layout of the game elements on the screen.
 
 
-##### Paper Prototype
+##### Paper Prototype 🎨
 
 - During the initial design phase, we developed a paper prototype of the game to visualize and test the core gameplay mechanics. 
 - This hands-on approach allowed us to simulate player interactions and experiment with different game elements before moving to digital implementation.
@@ -80,7 +81,7 @@ We also developed wireframes to define the layout of the game elements on the sc
 
 
 
-#### 3. User Stories
+#### 3. User Stories🙋‍♂️
 Wewq defined the following user stories to guide development:
 As a player, I want to:
 - Move my paddle smoothly using keyboard controls so I can intercept the puck. 
@@ -93,7 +94,7 @@ As a player, I want to:
 ![](/docs/ppc/assets/images/Board.png)
 ![](/docs/ppc/assets/images/Jira.png)
 
-#### 4 .Next Steps
+#### 4 .Next Steps 🚀🔜
 
 With these requirements outlined, our next steps are:
 - Developing a prototype to test paddle movement and physics. 
@@ -101,7 +102,7 @@ With these requirements outlined, our next steps are:
 - Refining UI design and adding visual effects for a polished look. 
 - Play-testing to gather feedback and adjust mechanics accordingly.
 
-### Design
+### Design 🏗️
 
 #### Core Architecture
 The game follows a classic game-loop/component-based architecture with clear separation of concerns:
@@ -129,7 +130,7 @@ of the game
 
 ![](/assets/images/sequence-diagram-final.png)
 
-#### User Interface Design
+#### User Interface Design🎵
 
 The UI follows a screen-based approach with separate page classes for different game states:
 
@@ -163,13 +164,13 @@ The game features a range of engaging gameplay elements designed to enhance the 
 ![](/assets/images/levelbox.png)
 
 
-### Implementation
+### Implementation 🔧
 
 - 15% ~750 words
 
 - Describe implementation of your game, in particular highlighting the three areas of challenge in developing your game.
 
-### Evaluation
+### Evaluation 📊
 
 To ensure that Puck Power Clash functions as intended and delivers a satisfying player experience, we employed both qualitative and quantitative evaluation methods. 
 These approaches allowed us to gather in-depth feedback on user interaction, gameplay mechanics, and overall usability.
@@ -233,26 +234,26 @@ White-box testing was performed during development by the team, focusing on inte
 
 By combining both testing approaches, we achieved a robust, reliable game experience and were able to identify and fix critical issues early in the development process.
 
-### Process
+### Process 📈 🤝
 
 - 15% ~750 words
 
 - Teamwork. How did you work together, what tools did you use. Did you have team roles? Reflection on how you worked
   together.
 
-### Conclusion
+### Conclusion 🎯
 
 - 10% ~500 words
 
 - Reflect on project as a whole. Lessons learned. Reflect on challenges. Future work.
 
-### Contribution Statement
+### Contribution Statement 👥
 
 - Provide a table of everyone's contribution, which may be used to weight individual grades. We expect that the
   contribution will be split evenly across team-members in most cases. Let us know as soon as possible if there are any
   issues with teamwork as soon as they are apparent.
 
-### Additional Marks
+### Additional Marks 📜
 
 You can delete this section in your own repo, it's just here for information. in addition to the marks above, we will be
 marking you on the following two points:
