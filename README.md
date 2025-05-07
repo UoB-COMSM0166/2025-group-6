@@ -144,14 +144,14 @@ The main gameplay screen with pause and exit functionality.
 *game page*
 ![](/assets/images/gamescreen.png)
 ##### Winner Page 
-Displays when a player wins, with options to restart or go back to main page.
+Displays when a player wins, with options to restart or quit and go back to main page.
 
 *winner page*
 ![](/assets/images/winnerscreen.png)
 The UI elements use an inheritance hierarchy for buttons, creating a consistent interaction model.
 
 #### Gameplay Features
-The game features a range of engaging gameplay elements designed to enhance the player experience. The CPUHandler provides AI-controlled opponents with adjustable difficulty settings such as reaction delay and aggressiveness. When a player achieves a three-goal streak, the FirePowerUp activates, temporarily enlarging the opponent’s goalpost for 10 seconds to give the streaking player an advantage. The ObstacleHandler introduces dynamic obstacles during gameplay, adding unpredictability and challenge. A SoundHandler manages various audio effects and background music to create an immersive environment. Additionally, the game includes a level system with two difficulty modes—normal and hard—indicated by a level box in the top-left corner of the screen.
+The game features a range of engaging gameplay elements designed to enhance the player experience. The CPUHandler provides AI-controlled opponents with adjustable difficulty settings such as reaction delay and aggressiveness. When a player achieves a three-goal streak, the Fire PowerUp activates, temporarily enlarging the opponent’s goalpost for 10 seconds to give the streaking player an advantage. The ObstacleHandler introduces dynamic obstacles during gameplay, adding unpredictability and challenge. A SoundHandler manages various audio effects and background music to create an immersive environment. Additionally, the game includes a level system with two difficulty modes— normal and hard indicated by a level box in the top-left corner of the screen.
 
 *the enlarged goalpost highlighted in red when firepowerup is activated*
 ![](/assets/images/firepowerup.png)
@@ -161,18 +161,6 @@ The game features a range of engaging gameplay elements designed to enhance the 
 
 *level box on top left corner*
 ![](/assets/images/levelbox.png)
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ### Implementation
