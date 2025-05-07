@@ -120,10 +120,15 @@ of each and every object in the game.
 
 The UI follows a screen-based approach with separate page classes for different game states:
 
-##### LandingPage The entry point with options to start the game, view instructions, or adjust settings.
-##### GamePage The main gameplay screen with pause and exit functionality.
-##### WinnerPage Displays when a player wins, with options to restart or go back to main page.
-
+##### Landing Page The entry point with options to start the game, view instructions, or adjust settings.
+*landing page*
+![](/assets/images/landingpage.png)
+##### Game Page The main gameplay screen with pause and exit functionality.
+*game page*
+![](/assets/images/gamescreen.png)
+##### Winner Page Displays when a player wins, with options to restart or go back to main page.
+*winner page*
+![](/assets/images/winnerscreen.png)
 The UI elements use an inheritance hierarchy for buttons, creating a consistent interaction model.
 
 #### Gameplay Features
@@ -141,7 +146,7 @@ the opponents goal post being increased for 10 seconds giving an advantage to th
 The ObstacleHandler spawns and manages obstacles that appear during gameplay
 
 *obstacles during gameplay*
-![](/assets/images/obstacle-image.png)
+![](/assets/images/obstacle.png)
 ##### Sound System
 A comprehensive SoundHandler manages different audio effects and background music.
 ##### Level System
