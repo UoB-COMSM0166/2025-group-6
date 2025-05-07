@@ -116,44 +116,6 @@ Serves as the brain of the application, managing game logic through specialized 
  Implements an inheritance hierarchy where all interactive elements (Mallet, Puck, PowerUp, Obstacle) inherit from a common GameObject base class. This helps us to implement polymorphism and reduce the usage of repetetive code and implies the behaviour
 of each and every object in the game.
 
-#### User Interface Design
-
-The UI follows a screen-based approach with separate page classes for different game states:
-
-##### Landing Page The entry point with options to start the game, view instructions, or adjust settings.
-*landing page*
-![](/assets/images/landingpage.png)
-##### Game Page The main gameplay screen with pause and exit functionality.
-*game page*
-![](/assets/images/gamescreen.png)
-##### Winner Page Displays when a player wins, with options to restart or go back to main page.
-*winner page*
-![](/assets/images/winnerscreen.png)
-The UI elements use an inheritance hierarchy for buttons, creating a consistent interaction model.
-
-#### Gameplay Features
-The game includes several interesting gameplay mechanics:
-
-##### CPU Opponent
-The CPUHandler enables AI-controlled mallets with adjustable difficulty parameters (reactionDelay, aggressiveness etc).
-##### Power-ups
-The FirePowerUp which is a booster which is applied when a plyear achieves a goal streak of three which will lead to 
-the opponents goal post being increased for 10 seconds giving an advantage to the player with the streak
-
-*the enlarged goalpost highlighted in red when firepowerup is activated*
-![](/assets/images/firepowerup.png)
-##### Dynamic Obstacles
-The ObstacleHandler spawns and manages obstacles that appear during gameplay
-
-*obstacles during gameplay*
-![](/assets/images/obstacle.png)
-##### Sound System
-A comprehensive SoundHandler manages different audio effects and background music.
-##### Level System
-The game has two levels normal and hard which are indicated by a level box on top left corner of game screen
-
-*level box on top left corner*
-![](/assets/images/levelbox.png)
 #### Class Diagram 
 
 ![](/assets/images/class-diagram-final-image.png)
@@ -166,6 +128,40 @@ Sequence diagram shows how the different objects in the game interact with each 
 of the game
 
 ![](/assets/images/sequence-diagram-final.png)
+
+#### User Interface Design
+
+The UI follows a screen-based approach with separate page classes for different game states:
+
+##### Landing Page 
+The entry point with options to start the game, view instructions, or adjust settings.
+
+*landing page*
+![](/assets/images/landingpage.png)
+##### Game Page 
+The main gameplay screen with pause and exit functionality.
+
+*game page*
+![](/assets/images/gamescreen.png)
+##### Winner Page 
+Displays when a player wins, with options to restart or go back to main page.
+
+*winner page*
+![](/assets/images/winnerscreen.png)
+The UI elements use an inheritance hierarchy for buttons, creating a consistent interaction model.
+
+#### Gameplay Features
+The game features a range of engaging gameplay elements designed to enhance the player experience. The CPUHandler provides AI-controlled opponents with adjustable difficulty settings such as reaction delay and aggressiveness. When a player achieves a three-goal streak, the FirePowerUp activates, temporarily enlarging the opponent’s goalpost for 10 seconds to give the streaking player an advantage. The ObstacleHandler introduces dynamic obstacles during gameplay, adding unpredictability and challenge. A SoundHandler manages various audio effects and background music to create an immersive environment. Additionally, the game includes a level system with two difficulty modes—normal and hard—indicated by a level box in the top-left corner of the screen.
+
+*the enlarged goalpost highlighted in red when firepowerup is activated*
+![](/assets/images/firepowerup.png)
+
+*obstacles during gameplay*
+![](/assets/images/obstacle.png)
+
+*level box on top left corner*
+![](/assets/images/levelbox.png)
+
 
 
 
