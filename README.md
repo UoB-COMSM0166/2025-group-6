@@ -103,8 +103,48 @@ With these requirements outlined, our next steps are:
 
 ### Design
 
-- 15% ~750 words
-- System architecture. Class diagrams, behavioural diagrams.
+Core Architecture
+The game follows a classic component-based architecture with clear separation of concerns:
+
+Game Class: The central controller that manages all game components and coordinates the overall game flow. It maintains references to core game objects (players, puck, board) , game features like powerups,obstacles and UI elemenst like (landing page, game page, winning page, butons etc).
+
+GameEngine: Serves as the brain of the application, managing game logic through specialized handlers for different aspects of functionality. This follows the delegation pattern, where the engine delegates specific responsibilities to specialized components.
+
+GameObject Hierarchy: Implements an inheritance hierarchy where all interactive elements (Mallet, Puck, PowerUp, Obstacle) inherit from a common GameObject base class. This helps us to implement polymorphism and reduce the usage of repetetive code and implies the behaviour
+of each and every object in the game.
+
+User Interface Design
+
+The UI follows a screen-based approach with separate page classes for different game states:
+
+LandingPage: The entry point with options to start the game, view instructions, or adjust settings.
+GamePage: The main gameplay screen with pause and exit functionality.
+WinnerPage: Displays when a player wins, with options to restart.
+
+The UI elements use an inheritance hierarchy for buttons, creating a consistent interaction model.
+
+Gameplay Features
+The game includes several interesting gameplay mechanics:
+
+CPU Opponent: The CPUHandler enables AI-controlled mallets with adjustable difficulty parameters (reactionDelay, aggressiveness).
+Power-ups: The FirePowerUp class suggests special abilities that can be activated during gameplay.
+Dynamic Obstacles: The ObstacleHandler spawns and manages obstacles that appear during gameplay.
+Sound System: A comprehensive SoundHandler manages different audio effects and background music.
+Level System: The LevelBox and LevelHandler suggest progressive difficulty or different game modes.
+
+Class Diagram 
+
+![](/assets/images/class-diagram-final-image.png)
+
+Sequence diagram
+
+
+
+
+
+
+
+
 
 ### Implementation
 
