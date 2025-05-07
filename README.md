@@ -16,14 +16,14 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 ![Group-6-Banner](https://github.com/user-attachments/assets/c66c5311-e353-4e56-97a1-68db2eae6cd6)
 
-| Group Member | Name                     | Email                 | Role                       | GitHub Username                                  |
-|--------------|--------------------------|-----------------------|----------------------------|--------------------------------------------------|
-| 1            | Saquib Sayeed Kazi       | jh24162@bristol.ac.uk | Developer/ Project Manager | [@Saqsy](https://github.com/Saqsy)               |
-| 2            | Balachander Raja         | js24503@bristol.ac.uk | Developer/Sound Artist     | [@B-alachander](https://github.com/B-alachander) |
-| 3            | Rohit Bhagatkar          | np24437@bristol.ac.uk | Developer/ Game Mechanics  | [@ro-grafd](https://github.com/ro-grafd)         |
-| 4            | Adwaith Syam Sundar      | ie24068@bristol.ac.uk | Developer/ Game Mechanics  | [@adwaith911](https://github.com/adwaith911)     |
-| 5            | Nilay Murlidhar Bhaisare | dh24552@bristol.ac.uk | Developer/ Scrum Master    | [@NMB99](https://github.com/NMB99)               |
-| 6            | Nishtha Singh            | ga23124@bristol.ac.uk | Developer/ UI/UX Designer  | [@ananish](https://github.com/ananish)           |
+| Group Member | Name                     | Email                 | Role                       | GitHub Username                                          |
+|--------------|--------------------------|-----------------------|----------------------------|----------------------------------------------------------|
+| 1            | Saquib Sayeed Kazi       | jh24162@bristol.ac.uk | Developer/ Project Manager | [@Saqsy](https://github.com/Saqsy)                       |
+| 2            | Balachander Raja         | js24503@bristol.ac.uk | Developer/Sound Artist     | [@Balachander-raja](https://github.com/Balachander-Raja) |
+| 3            | Rohit Bhagatkar          | np24437@bristol.ac.uk | Developer/ Game Mechanics  | [@ro-grafd](https://github.com/ro-grafd)                 |
+| 4            | Adwaith Syam Sundar      | ie24068@bristol.ac.uk | Developer/ Game Mechanics  | [@adwaith911](https://github.com/adwaith911)             |
+| 5            | Nilay Murlidhar Bhaisare | dh24552@bristol.ac.uk | Developer/ Scrum Master    | [@NMB99](https://github.com/NMB99)                       |
+| 6            | Nishtha Singh            | ga23124@bristol.ac.uk | Developer/ UI/UX Designer  | [@ananish](https://github.com/ananish)                   |
 
 ## Project Report
 
@@ -42,65 +42,93 @@ The adjustable goalpost 🥅 system adds an extra layer of strategy. If you scor
 
 ### Requirements
 
-- 15% ~750 words
-- Use case diagrams, user stories. Early stages design. Ideation process. How did you decide as a team what to develop?
-#### 1. Ideation Process 🧠
 
-The idea for Puck Power Clash emerged from brainstorming sessions where we explored different concepts for a 2D game. 
-Our primary goal was to create a game that is simple to learn but has engaging mechanics to keep players interested. 
-We considered various arcade-style games and ultimately chose an air hockey-inspired game because it offers:
-- Fast-paced gameplay that keeps players engaged. 
-- A well-known concept that can be easily adapted.
+#### Ideation & Concept Selection 🧠
+In Week 1 our team brainstormed several 2D game concepts—using hand-written notes and sketches to capture ideas and assess feasibility. We paper-prototyped two finalists: a ring-toss physics game and **Power Puck Clash** (an air-hockey variant with power-ups and obstacles). The ring-toss concept proved too complex to simulate within our timeline, so we selected Power Puck Clash for its immediately graspable rules and straightforward p5.js implementation.
 
-Opportunities to introduce novel elements like power-ups and dynamic obstacles and goal posts.
+---
 
-As a team, we debated different features and gameplay mechanics. We used collaborative tools like Miro and Google Docs 
-to map out ideas and discuss feasibility. Each team member contributed ideas, and we voted on which mechanics to 
-implement in our first version.
+#### Early Stage Design & Paper Prototyping 🎨1
+Before writing any code, we mapped out core gameplay flow and UI layouts by hand:
 
-#### 2. Early Stages of Design
+- **Paddle movement:** smooth keyboard control for the left mallet; CPU control on the right  
+- **Puck physics:** elastic collisions with walls, paddles, and obstacles  
+- **Scoring:** first to ten goals wins; only counts when the puck fully crosses between goal posts  
+- **Power-up spawn zones:** two marked areas where Fire Power-Ups appear after a three-goal streak  
+- **Obstacles:** rotating circular barriers that spawn randomly and expire after ten seconds  
 
-🎨In the early design phase, we focused on:
+![Initial board layout](/assets/images/Initialdesign.png)  
+*Prototype playfield sketch, indicating goal posts, spawn zones, and obstacle areas.*  
 
-🖌️![](/docs/ppc/assets/images/Initialdesign.png)
-- Defining core mechanics: paddle movement, puck physics, and scoring system. 
-- Introducing power-ups: speed boost, reverse puck direction, and freeze opponent’s paddle. 
-- Adding dynamic obstacles like rotating barriers to increase challenge. 
-- Establishing a simple, visually appealing UI using p5.js.
+In the early design phase, we focused on:
 
-To visualize these concepts, we created rough sketches and flowcharts to represent the game logic. 
-We also developed wireframes to define the layout of the game elements on the screen.
+![Paper prototype animation](/paper-prototype/paper-prototype.gif)  
+*Animated paper prototype demonstrating puck movement, power-up spawn, and scoring.*
 
+**Key insights:**  
+1. 20 s on-board lifespan for power-ups gives players enough reaction time  
+2. Spawn zones just inside each half keep power-ups accessible but still challenging  
+3. Placing the scoreboard, pause, and quit controls above the playfield avoids obscuring the action  
 
-##### Paper Prototype 🎨
+---
 
-- During the initial design phase, we developed a paper prototype of the game to visualize and test the core gameplay mechanics. 
-- This hands-on approach allowed us to simulate player interactions and experiment with different game elements before moving to digital implementation.
-![](/paper-prototype/paper-prototype.gif)
+#### User Stories
+To keep development user-focused, we distilled the following stories:
 
 
+![Gameplay components](/assets/images/Board.png)  
+![Jira backlog overview](/assets/images/Jira.png)  
+
+- **As a casual player**, I want smooth paddle control so I can intercept the puck reliably  
+- **As a competitive gamer**, I want a Hard mode with faster CPU reactions for a steeper challenge  
+- **As a power-up enthusiast**, I want temporary goal-expansion boosts to add strategic depth  
+- **As a speed-runner**, I want to restart matches quickly without reloading the page  
+- **As an audio-driven user**, I want independent toggles for background music and click-SFX  
+- **As a local multiplayer player**, I want to challenge a friend on the same machine  
+
+---
+
+#### Functional Requirements
+- **Core gameplay:** two mallets vs. one puck on a resizable board; left mallet under player control, right mallet under CPU or second player  
+- **Scoring & win condition:** first to 10 goals wins; a goal only counts if the puck fully crosses between the opponent’s goal posts  
+- **Streak-based power-up:** after three consecutive goals by one side, a Fire Power-Up icon spawns on that side, remains for 20 s, and—when collected—enlarges the opponent’s goal post for 10 s  
+- **Obstacles:** circular obstacles spawn randomly via `ObstacleHandler`, persist 10 s, and deflect the puck with bounce physics and sound feedback  
+- **Power-Up pickup:** a mallet–power-up collision triggers `enablePowerUpEffect()`, enlarging the goal post and playing a pickup SFX  
+- **Sound management:** background music, paddle hits, board bounces, goals, power-up pickups, and UI click-SFX are each toggleable in Settings  
+- **Responsive design (planned):** canvas and game objects resize dynamically on window resize via the `updateDimensions()` utility  
+
+---
 
 
-#### 3. User Stories🙋‍♂️
-Wewq defined the following user stories to guide development:
-As a player, I want to:
-- Move my paddle smoothly using keyboard controls so I can intercept the puck. 
-- Strike the puck with different angles and speeds to outmaneuver my opponent. 
-- Collect power-ups that provide temporary advantages to make gameplay more strategic. 
-- Score goals by getting the puck into the opponent’s goal area to win points. 
-- Play against a friend in a local multiplayer mode for a competitive experience. 
-- Restart the game easily after a match, so I can play multiple rounds without reloading.
+#### Non-Functional Requirements
+- **Compatibility:** runs smoothly in all major desktop browsers (Chrome, Firefox, Edge)  
+- **Audio responsiveness:** toggling music or SFX takes effect immediately without requiring a page reload  
 
-![](/docs/ppc/assets/images/Board.png)
-![](/docs/ppc/assets/images/Jira.png)
+---
 
-#### 4 .Next Steps 🚀🔜
+#### Use-Case Diagram
+The diagram below illustrates the Player’s interactions:
 
-With these requirements outlined, our next steps are:
-- Developing a prototype to test paddle movement and physics. 
-- Implementing core game mechanics before integrating power-ups. 
-- Refining UI design and adding visual effects for a polished look. 
-- Play-testing to gather feedback and adjust mechanics accordingly.
+![Use-Case Diagram for Power Puck Clash](/assets/images/UseCaseDiagram.png)  
+*UML Use-Case diagram detailing player flows from landing to match and winner screens.*
+
+---
+
+## Stakeholders
+Below is our stakeholder Onion Model (see accompanying image for layers):
+
+![Stakeholder Onion Model](/assets/images/stakeholder_onion.png)  
+
+- **Core Development Team**  
+  • You and your project teammates (design, implementation, testing, documentation)  
+
+- **End-Users & Community**  
+  • Classmates & peer reviewers (in-class demos)  
+  • Online players via GitHub Pages (public play-link)  
+
+- **Course Staff**  
+  • Instructor & Teaching Assistant (define requirements, provide feedback, and grade)
+
 
 ### Design 🏗️
 
