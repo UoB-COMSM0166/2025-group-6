@@ -198,6 +198,38 @@ The game features a range of engaging gameplay elements designed to enhance the 
 
 - Describe implementation of your game, in particular highlighting the three areas of challenge in developing your game.
 
+Throughout development, three systems required particular focus due to their impact on gameplay: refining the puck’s physics for responsive and realistic movement, implementing scalable AI that adjusts to player skill levels, and designing a power-up and obstacle system that introduces variety and keeps matches unpredictable. Each of these elements played a key role in shaping the game’s fast pace, competitive balance, and replayability.
+
+**Challenge 1:** Physics-Based Puck Interactions
+
+The heart of Puck Power Clash lies in the movement of the puck. It’s not just any ordinary puck—it’s powered by a physics engine that brings the action to life. The puck is a 2D circular entity, moving across the screen based on a velocity vector that updates every frame. The movement feels natural, thanks to gradual friction, which slows the puck down over time and gives the game a smooth but reactive feel.
+
+**Key mechanics include:**
+- **Velocity-Based Movement:** The puck moves based on a 2D velocity vector. As the puck slides across the field, friction kicks in and gradually reduces its speed, just like it would on an actual air hockey table.
+- **Wall Collision Logic:** When the puck hits the screen boundaries, it bounces back, thanks to an inverted velocity. This keeps the puck from leaving the playing area, maintaining that fast-paced, never-ending action.
+- **Player-Puck Collision:** When the puck collides with the player, its response depends on the player's speed and direction. This lets players angle their shots and rebounds, rewarding precise timing and skilful positioning.
+
+**Challenge 2:** AI Difficulty Scaling (Normal vs. Hard Modes)
+
+To keep the game challenging for players of all skill levels, we’ve built two AI difficulty modes—Normal and Hard—each with its own distinct behaviours. The AI is powered by a modular finite-state machine, which adapts its decision-making and responsiveness based on the situation in the game.
+
+**AI logic includes:**
+- **Finite-State Behaviour System:** The AI’s behaviour is determined by a set of states, such as Defend, Chase, and Intercept. Depending on where the puck is and what the player is doing, the AI will switch states, changing its approach in real-time to match the situation.
+- **Normal Mode AI:** In Normal mode, the AI reacts a little slower and focuses more on positioning and defence rather than aggression. This gives players the chance to outsmart it and make strategic plays.
+- **Hard Mode AI:** Switch to Hard mode, and things get intense. The AI becomes much quicker and more aggressive, predicting the puck’s movement and positioning itself to challenge the player more effectively. It’s a real test of skill!
+- **Behaviour Tuning:** The AI’s reaction speed, accuracy, and predictive abilities are fine-tuned between the two modes. Normal mode strikes a balance, ensuring it’s fun and fair, while Hard mode sharpens the AI’s skills, making it feel like you're playing against a true opponent, but without making it feel impossible.
+
+**Challenge 3:** Power-Up & Obstacle System
+
+To add a little extra fun and unpredictability to the game, we’ve included power-ups and obstacles that shake things up. These not only spice up the gameplay but also add strategic layers, forcing players to think ahead and plan their moves carefully.
+
+**System highlights:**
+- **Spawn Logic:** Power-ups and obstacles appear randomly across the field. This randomness ensures that no two matches are ever the same, keeping the game exciting and unpredictable.
+- **Activation Mechanism:** Once a player collects a power-up, it activates a timed effect. Players can strategise on when to use these power-ups for maximum impact—whether it’s for a quick burst of speed or to throw off the AI.
+- **Visual and Audio Feedback:** We made sure the game communicates clearly when power-ups are activated or about to expire. You’ll see icons and hear sound effects that let you know something important is happening, adding to the immersive feel of the game.
+- **State Management:** Power-ups and obstacles don’t last forever. Timers and flags are used to control how long they stay active, ensuring the gameplay doesn’t get too unbalanced. Every power-up has a limited window of opportunity, making them a strategic asset in the heat of the moment.
+
+
 ### Evaluation 📊
 
 To ensure that Puck Power Clash functions as intended and delivers a satisfying player experience, we employed both qualitative and quantitative evaluation methods. 
