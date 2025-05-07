@@ -114,7 +114,7 @@ Below is our stakeholder Onion Model (see accompanying image for layers):
 ![Stakeholder Onion Model](/assets/images/stakeholder_onion.png)  
 
 - **Core Development Team**  
-  • You and your project teammates (design, implementation, testing, documentation)  
+  • Project teammates (design, implementation, testing, documentation)  
 
 - **End-Users & Community**  
   • Classmates & peer reviewers (in-class demos)  
