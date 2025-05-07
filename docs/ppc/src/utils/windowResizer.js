@@ -5,10 +5,9 @@ import { constants } from "../core/config.js";
 /* Function to handle window resize event
 -p5.js function */
 function windowResized() {
-  const laptopWidth = 1366;
-  const laptopHeight = 768;
-  // Only resize if current dimensions are smaller than laptop dimensions
-  if (windowWidth < laptopWidth || windowHeight < laptopHeight) {
+  const laptopWidth = 1280;
+  const laptopHeight = 720;
+  if (windowWidth < laptopWidth && windowHeight < laptopHeight) {
     resizeCanvas(windowWidth, windowHeight);
     updateDimensions();
   }
