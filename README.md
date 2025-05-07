@@ -1,8 +1,5 @@
 # 2025-group-6
-
-2025 COMSM0166 group 6
-# Puck Power Clash
-
+# 🏒 **Welcome to Puck Power Clash!** 🏒
 
 ## Your Game
 
@@ -29,24 +26,16 @@ Include a demo video of your game here (you don't have to wait until the end, yo
 
 ### Introduction
 
-# 🏒 **Welcome to Puck Power Clash!** 🏒
 **Puck Power Clash** is an electrifying, fast-paced arcade game that takes the classic air hockey experience to the next level. You can choose from two difficulty levels: **Normal**, for a balanced gameplay experience, and **Hard**, where your reflexes will be tested and every decision counts. The game features a fun power-up system, including the **Fire power-up**, which temporarily increases your opponent’s goalpost🥅. This risk-reward mechanic allows aggressive players to take advantage of the expanded goalpost to score more easily. Random obstacles, like stones, further complicate the gameplay by throwing off the puck’s path, requiring quick reflexes and smart strategies to avoid them. The game also introduces minimal friction, ensuring smooth and continuous gameplay, much like how real-world surfaces interact, keeping the puck gliding without stopping completely.
 
 The adjustable goalpost 🥅 system adds an extra layer of strategy. If you score **three consecutive points**, your opponent’s goalpost temporarily grows larger, making it easier for you to score. This mechanic is tied to the **Fire power-up** 🔥🔥, rewarding aggressive play and putting pressure on defenders. With vibrant neon visuals and dynamic sound effects, **Puck Power Clash** immerses players in a futuristic, high-energy world, challenging both reflexes and strategic thinking. Every second on the table can make or break the game.🏆
 
 🎯[Puck Power Clash Gameplay]![Game GIF](./assets/gif/game1-ezgif.com-video-to-gif-converter.gif)
 
-
-
-
-
 ### Requirements
-
 
 #### Ideation & Concept Selection 🧠
 In Week 1 our team brainstormed several 2D game concepts—using hand-written notes and sketches to capture ideas and assess feasibility. We paper-prototyped two finalists: a ring-toss physics game and **Power Puck Clash** (an air-hockey variant with power-ups and obstacles). The ring-toss concept proved too complex to simulate within our timeline, so we selected Power Puck Clash for its immediately graspable rules and straightforward p5.js implementation.
-
----
 
 #### Early Stage Design & Paper Prototyping 🎨1
 Before writing any code, we mapped out core gameplay flow and UI layouts by hand:
@@ -70,11 +59,8 @@ In the early design phase, we focused on:
 2. Spawn zones just inside each half keep power-ups accessible but still challenging  
 3. Placing the scoreboard, pause, and quit controls above the playfield avoids obscuring the action  
 
----
-
 #### User Stories
 To keep development user-focused, we distilled the following stories:
-
 
 ![Gameplay components](/assets/images/Board.png)  
 ![Jira backlog overview](/assets/images/Jira.png)  
@@ -84,9 +70,7 @@ To keep development user-focused, we distilled the following stories:
 - **As a power-up enthusiast**, I want temporary goal-expansion boosts to add strategic depth  
 - **As a speed-runner**, I want to restart matches quickly without reloading the page  
 - **As an audio-driven user**, I want independent toggles for background music and click-SFX  
-- **As a local multiplayer player**, I want to challenge a friend on the same machine  
-
----
+- **As a local multiplayer player**, I want to challenge a friend on the same machine
 
 #### Functional Requirements
 - **Core gameplay:** two mallets vs. one puck on a resizable board; left mallet under player control, right mallet under CPU or second player  
@@ -97,22 +81,15 @@ To keep development user-focused, we distilled the following stories:
 - **Sound management:** background music, paddle hits, board bounces, goals, power-up pickups, and UI click-SFX are each toggleable in Settings  
 - **Responsive design (planned):** canvas and game objects resize dynamically on window resize via the `updateDimensions()` utility  
 
----
-
-
 #### Non-Functional Requirements
 - **Compatibility:** runs smoothly in all major desktop browsers (Chrome, Firefox, Edge)  
 - **Audio responsiveness:** toggling music or SFX takes effect immediately without requiring a page reload  
-
----
 
 #### Use-Case Diagram
 The diagram below illustrates the Player’s interactions:
 
 ![Use-Case Diagram for Power Puck Clash](/assets/images/UseCaseDiagram.png)  
 *UML Use-Case diagram detailing player flows from landing to match and winner screens.*
-
----
 
 ## Stakeholders
 Below is our stakeholder Onion Model (see accompanying image for layers):
@@ -129,7 +106,6 @@ Below is our stakeholder Onion Model (see accompanying image for layers):
 - **Course Staff**  
   • Instructor & Teaching Assistant (define requirements, provide feedback, and grade)
 
-
 ### Design 🏗️
 
 #### Core Architecture
@@ -142,14 +118,12 @@ The central controller that manages all game components and coordinates the over
 Serves as the brain of the application, managing game logic through specialized handlers for different aspects of functionality. This follows the delegation pattern, where the engine delegates specific responsibilities to specialized components. 
 
 ##### GameObject 
- Implements an inheritance hierarchy where all interactive elements (Mallet, Puck, PowerUp, Obstacle) inherit from a common GameObject base class. This helps us to implement polymorphism and reduce the usage of repetetive code and implies the behaviour
+Implements an inheritance hierarchy where all interactive elements (Mallet, Puck, PowerUp, Obstacle) inherit from a common GameObject base class. This helps us to implement polymorphism and reduce the usage of repetetive code and implies the behaviour
 of each and every object in the game.
 
 #### Class Diagram 
 
 ![](/assets/images/class-diagram-final-image.png)
-
-
 
 #### Sequence diagram
 
@@ -191,12 +165,39 @@ The game features a range of engaging gameplay elements designed to enhance the 
 *level box on top left corner*
 ![](/assets/images/levelbox.png)
 
-
 ### Implementation 🔧
 
-- 15% ~750 words
+Throughout development, three systems required particular focus due to their impact on gameplay: refining the puck’s physics for responsive and realistic movement, implementing scalable AI that adjusts to player skill levels, and designing a power-up and obstacle system that introduces variety and keeps matches unpredictable. Each of these elements played a key role in shaping the game’s fast pace, competitive balance, and replayability.
 
-- Describe implementation of your game, in particular highlighting the three areas of challenge in developing your game.
+**Challenge 1:** Physics-Based Puck Interactions
+
+The heart of Puck Power Clash lies in the movement of the puck. It’s not just any ordinary puck—it’s powered by a physics engine that brings the action to life. The puck is a 2D circular entity, moving across the screen based on a velocity vector that updates every frame. The movement feels natural, thanks to gradual friction, which slows the puck down over time and gives the game a smooth but reactive feel.
+
+**Key mechanics include:**
+- **Velocity-Based Movement:** The puck moves based on a 2D velocity vector. As the puck slides across the field, friction kicks in and gradually reduces its speed, just like it would on an actual air hockey table.
+- **Wall Collision Logic:** When the puck hits the screen boundaries, it bounces back, thanks to an inverted velocity. This keeps the puck from leaving the playing area, maintaining that fast-paced, never-ending action.
+- **Player-Puck Collision:** When the puck collides with the player, its response depends on the player's speed and direction. This lets players angle their shots and rebounds, rewarding precise timing and skilful positioning.
+
+**Challenge 2:** AI Difficulty Scaling (Normal vs. Hard Modes)
+
+To keep the game challenging for players of all skill levels, we’ve built two AI difficulty modes—Normal and Hard—each with its own distinct behaviours. The AI is powered by a modular finite-state machine, which adapts its decision-making and responsiveness based on the situation in the game.
+
+**AI logic includes:**
+- **Finite-State Behaviour System:** The AI’s behaviour is determined by a set of states, such as Defend, Chase, and Intercept. Depending on where the puck is and what the player is doing, the AI will switch states, changing its approach in real-time to match the situation.
+- **Normal Mode AI:** In Normal mode, the AI reacts a little slower and focuses more on positioning and defence rather than aggression. This gives players the chance to outsmart it and make strategic plays.
+- **Hard Mode AI:** Switch to Hard mode, and things get intense. The AI becomes much quicker and more aggressive, predicting the puck’s movement and positioning itself to challenge the player more effectively. It’s a real test of skill!
+- **Behaviour Tuning:** The AI’s reaction speed, accuracy, and predictive abilities are fine-tuned between the two modes. Normal mode strikes a balance, ensuring it’s fun and fair, while Hard mode sharpens the AI’s skills, making it feel like you're playing against a true opponent, but without making it feel impossible.
+
+**Challenge 3:** Power-Up & Obstacle System
+
+To add a little extra fun and unpredictability to the game, we’ve included power-ups and obstacles that shake things up. These not only spice up the gameplay but also add strategic layers, forcing players to think ahead and plan their moves carefully.
+
+**System highlights:**
+- **Spawn Logic:** Power-ups and obstacles appear randomly across the field. This randomness ensures that no two matches are ever the same, keeping the game exciting and unpredictable.
+- **Activation Mechanism:** Once a player collects a power-up, it activates a timed effect. Players can strategise on when to use these power-ups for maximum impact—whether it’s for a quick burst of speed or to throw off the AI.
+- **Visual and Audio Feedback:** We made sure the game communicates clearly when power-ups are activated or about to expire. You’ll see icons and hear sound effects that let you know something important is happening, adding to the immersive feel of the game.
+- **State Management:** Power-ups and obstacles don’t last forever. Timers and flags are used to control how long they stay active, ensuring the gameplay doesn’t get too unbalanced. Every power-up has a limited window of opportunity, making them a strategic asset in the heat of the moment.
+
 
 ### Evaluation 📊
 
