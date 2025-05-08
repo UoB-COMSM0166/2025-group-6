@@ -4,14 +4,14 @@ import { constants } from "../core/config.js";
 
 /* Function to handle window resize event
 -p5.js function */
-function windowResized() {
-  const laptopWidth = 1280;
-  const laptopHeight = 720;
-  if (windowWidth < laptopWidth && windowHeight < laptopHeight) {
-    resizeCanvas(windowWidth, windowHeight);
-    updateDimensions();
-  }
-}
+// function windowResized() {
+//   const laptopWidth = 1280;
+//   const laptopHeight = 720;
+//   if (windowWidth < laptopWidth && windowHeight < laptopHeight) {
+//     resizeCanvas(windowWidth, windowHeight);
+//     updateDimensions();
+//   }
+// }
 
 /* Function to update the game elements whenever browser windows is resized
 - Custom function */
@@ -29,4 +29,4 @@ export function updateDimensions() {
     game.winnerPage.reset();
 }
 
-window.windowResized = windowResized;
+// window.windowResized = windowResized;
