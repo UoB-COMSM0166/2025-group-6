@@ -19,7 +19,11 @@ export class Mallet extends GameObject {
   update() {
     // Handle keyboard input
     if (!this.isPlayerCpu) {
-      this.handleKeyboardInput();
+      if (this.game.mouseControl) {
+        this.move(mouseX, mouseY);
+      } else {
+        this.handleKeyboardInput();
+      }
     }
 
     this.x += this.velocity.x;

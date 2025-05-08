@@ -31,6 +31,7 @@ class Game {
     this.levelBox = undefined;
     this.winner=null;
     this.sounds = {};
+    this.mouseControl = false;
   }
 
   initializeGame() {

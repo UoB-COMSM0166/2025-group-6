@@ -95,6 +95,7 @@ class LandingPage {
       this.settingsButton.dialogBox.handleClick();
       this.settingsButton.musicButton.handleClick();
       this.settingsButton.clickSoundButton.handleClick();
+      this.settingsButton.mouseControlButton.handleClick();
     } else {
       this.startGameButton.dialogBox.handleClick();
       this.instructionsButton.dialogBox.handleClick();
