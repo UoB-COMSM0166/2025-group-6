@@ -13,7 +13,7 @@ let celebrationImg;
 let landingPageMusic;
 let buttonClickSound;
 let obstacleSound;
-let canvasWidth = 1300;
+let canvasWidth = 1280;
 let canvasHeight = 720;
 
 function preload() {
