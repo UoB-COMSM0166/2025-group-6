@@ -1,4 +1,5 @@
 import DialogBoxButton from "./DialogBoxButton.js";
+import game from "../../../../../core/Game.js";
 
 class CloseButton extends DialogBoxButton {
   constructor(x, y, w, h) {
@@ -17,6 +18,8 @@ class CloseButton extends DialogBoxButton {
 
   handleClick() {
     if (this.isMouseOver()) {
+   game.gameEngine.soundHandler.playSound("click");
+
       return true;
     }
   }

@@ -19,6 +19,8 @@ class MouseControlButton extends DialogBoxButton {
 
     handleClick() {
         if (this.isMouseOver()) {
+        game.gameEngine.soundHandler.playSound("click");
+
             game.mouseControl = !game.mouseControl
         }
     }

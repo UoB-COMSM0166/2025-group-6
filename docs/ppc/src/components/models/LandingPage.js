@@ -93,7 +93,6 @@ class LandingPage {
       this.settingsButton.handleClick();
     } else if (this.settingsButton.dialogBox.visible) {
       this.settingsButton.dialogBox.handleClick();
-      this.settingsButton.musicButton.handleClick();
       this.settingsButton.clickSoundButton.handleClick();
       this.settingsButton.mouseControlButton.handleClick();
     } else {

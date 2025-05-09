@@ -1,10 +1,10 @@
 import DialogBoxButton from "../dialogBoxButtons/DialogBoxButton.js";
-
+import game from "../../../../../core/Game.js";
 let isSFXOn = true;
 
 class ClickButton extends DialogBoxButton {
     constructor(x, y, w, h, game) {
-        super(x, y, w, h, "Click Sound");
+        super(x, y, w, h, " Sound");
         this.game = game; // Reference to the game object
     }
 
@@ -16,11 +16,13 @@ class ClickButton extends DialogBoxButton {
         fill(255);
         textSize(16);
         textAlign(CENTER, CENTER);
-        text(`Click Sound: ${isSFXOn ? "ON" : "OFF"}`, this.x, this.y);
+        text(` Sound: ${isSFXOn ? "ON" : "OFF"}`, this.x, this.y);
     }
 
     handleClick() {
         if (this.isMouseOver()) {
+        game.gameEngine.soundHandler.playSound("click");
+
             isSFXOn = !isSFXOn;
         }
 

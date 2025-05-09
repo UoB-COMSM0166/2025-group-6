@@ -14,6 +14,7 @@ export default class MouseHandler {
     }
 
     mousePressed() {
+          //this.game.gameEngine.soundHandler.playSound("click");
         if (this.game.gameState === "welcome") {
             landingScreen.checkButtonClicks();
         } else if (this.game.gameState === "gameboard") {

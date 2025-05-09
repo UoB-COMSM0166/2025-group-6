@@ -9,6 +9,8 @@ class ExitButton extends Button {
 
     handleClick () {
         if (this.isMouseOver()) {
+    game.gameEngine.soundHandler.playSound("click");
+
             game.resetGame();
             game.winner=null;
             game.gameState = "welcome";
