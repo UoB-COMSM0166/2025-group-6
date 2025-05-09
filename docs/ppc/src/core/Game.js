@@ -23,7 +23,7 @@ class Game {
     this.firePowerUp = undefined;
     this.landingPage = undefined;
     this.gamePage = undefined;
-    this.gamePaused = false;
+    this.gamePaused = true;
     this.winnerPage = undefined;
     this.gameBackImg = "";
     this.welcomeImg = "";

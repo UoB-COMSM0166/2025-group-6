@@ -12,6 +12,7 @@ class ExitButton extends Button {
     game.gameEngine.soundHandler.playSound("click");
 
             game.resetGame();
+            game.gamePaused=true;
             game.winner=null;
             game.gameState = "welcome";
         }

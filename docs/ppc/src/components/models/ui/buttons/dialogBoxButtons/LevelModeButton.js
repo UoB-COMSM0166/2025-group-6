@@ -66,8 +66,9 @@ class LevelModeButton extends DialogBoxButton {
   }
 
   handleClick() {
-    if (!this.isMouseOver()) return;
-
+    if (this.isMouseOver()) {
+    game.gamePaused = false;
+    game.gameState = "gameboard";
     // play once on click
     game.gameEngine.soundHandler.playSound("click");
 
@@ -77,7 +78,7 @@ class LevelModeButton extends DialogBoxButton {
     } else {
       game.level = "hard";
     }
-    game.gameState = "gameboard";
+   }
   }
 }
 
