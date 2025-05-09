@@ -78,13 +78,13 @@ class LevelModeButton extends DialogBoxButton {
   // temporary logic
   handleClick() {
     if (this.isMouseOver()) {
+        game.gamePaused = false;
+        game.gameState = "gameboard";
     if (this.label.toLowerCase().includes('normal')){
        game.level = "normal";
-       game.gameState = "gameboard";
-
+       
     }else{
        game.level = "hard";
-       game.gameState = "gameboard";
     }
   }
   }

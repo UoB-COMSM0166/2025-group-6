@@ -10,6 +10,7 @@ class ExitButton extends Button {
     handleClick () {
         if (this.isMouseOver()) {
             game.resetGame();
+            game.gamePaused=true;
             game.winner=null;
             game.gameState = "welcome";
         }
