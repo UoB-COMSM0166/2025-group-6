@@ -9,8 +9,13 @@
 ### ▶️ [PLAY THE GAME](https://uob-comsm0166.github.io/2025-group-6/)
 
 ### 📁 [Browse the Game Files](/docs/ppc)
+Github pages are deployed with a workflow created using github
+template [.github/workflows/jekyll-gh-pages.yml](.github/workflows/jekyll-gh-pages.yml).
 
-### 🎥 [Watch the Game Demo Video]()
+### 🎥 [Watch the Game Video Below 👇](https://youtu.be/ydO87DNYbCo) 
+[![Puck Power Clash](/assets/images/PlayImage.png)](https://www.youtube.com/watch?v=ydO87DNYbCo)
+
+[Microsoft Stream Link](https://uob-my.sharepoint.com/:v:/g/personal/jh24162_bristol_ac_uk/EbgwLkkjEFVMs9BvXptVfS4BXJwdVGjwaJHgLJgtBzR73w?e=ogvIaT)
 
 ---
 
@@ -26,6 +31,8 @@
 | 4            | Adwaith Syam Sundar      | ie24068@bristol.ac.uk | Developer/ Game Mechanics  | [@adwaith911](https://github.com/adwaith911)             |
 | 5            | Nilay Murlidhar Bhaisare | dh24552@bristol.ac.uk | Developer/ Scrum Master    | [@NMB99](https://github.com/NMB99)                       |
 | 6            | Nishtha Singh            | ga23124@bristol.ac.uk | Developer/ UI/UX Designer  | [@ananish](https://github.com/ananish)                   |
+
+> **Note:** Everyone contributed to coding and debugging, ensuring shared ownership of the development effort.
 
 ---
 ## Project Report
@@ -340,17 +347,6 @@ evolve through an agile, iterative development process.
 
 We began by mapping out each of our six team members’ individual strengths, ranging from big‑picture vision to meticulous detail work, and deliberately assigned roles that played to those talents. As a result, everyone contributed equally to the creation of our game: one served as product owner, another as scrum master, two focused on graphic design, and the remaining two handled sound engineering and quality assurance. By aligning responsibilities with expertise, we not only balanced the workload but also maximised creativity and efficiency across the project.
 
-| Team Member | Strength                        | Assigned Role    |
-| ---------- |---------------------------------|------------------|
-| Saquib Sayeed Kazi   | Visionary & Product Strategy    | Product Owner    |
-| Nilay Murlidhar Bhaisare   | Process Facilitation            | Scrum Master     |
-| Adwaith Syam Sundar  | Coding                          | Game Mechanics   |
-| Nishtha Singh   | UI/UX & 2D Illustration         | Graphic Designer |
-| Balachander Raja  | Audio Production & Sound Design | Sound Engineer   |
-| Rohit Bhagatkar   | Technical                       | Game Mechanics   |
-
-> **Note:** Everyone contributed to coding and debugging, ensuring shared ownership of the development effort.
-
 ### Tools & Technologies
 
 | Category             | Tool                                  |
@@ -415,8 +411,13 @@ All in all, Puck Power Clash was more than a technical project, it was a full le
 
 ---
 
-## Contribution Statement 👥
+## Contribution Statement 🫂
 
-Provide a table of everyone's contribution, which may be used to weight individual grades. We expect that the contribution will be split evenly across team-members in most cases. Let us know as soon as possible if there are any issues with teamwork as soon as they are apparent.
-
----
+| Team Member              | Contribution Points |
+|--------------------------|---------------------|
+| Saquib Sayeed Kazi       | 20                  |
+| Nilay Murlidhar Bhaisare | 20                  |
+| Adwaith Syam Sundar      | 20                  |
+| Nishtha Singh            | 20                  |
+| Balachander Raja         | 20                  |
+| Rohit Bhagatkar          | 20                  |
