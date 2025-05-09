@@ -1,14 +1,12 @@
 export default class SoundHandler {
   constructor(game) {
-    this.sounds = game.sounds; // Store all sounds in an object
+    this.sounds = game.sounds; 
   }
 
-  // Method to load a sound
   loadSound(name, path) {
     this.sounds[name] = path;
   }
 
-  // Method to play a sound
   playSound(name) {
     if (this.sounds[name] && this.sounds[name].isLoaded()) {
       this.sounds[name].play();
@@ -17,38 +15,34 @@ export default class SoundHandler {
     }
   }
 
-  // Method to stop a sound
   stopSound(name) {
     if (this.sounds[name]) {
       this.sounds[name].stop();
     }
   }
 
-  // Method to set volume for a sound
   setVolume(name, volume) {
     if (this.sounds[name] && this.sounds[name].isLoaded()) {
       this.sounds[name].setVolume(volume);
     } 
   }
 
-  // Method to loop a sound
   loopSound(name) {
     if (this.sounds[name] && this.sounds[name].isLoaded()) {
       this.sounds[name].loop();
     }
   }
 
-  // Set volume for all sounds
   setVolumeAll() {
-    this.setVolume("backgroundSound", 0.3); // 50% volume
-    this.setVolume("paddle", 0.2); // 50% volume
-    this.setVolume("board", 1); // 100% volume
-    this.setVolume("goal", 0.5); // 50% volume
-    this.setVolume("powerup", 0.5); // 50% volume
-    this.setVolume("obstacleSound", 0.5); // 50% volume
+    this.setVolume("backgroundSound", 0.3); 
+    this.setVolume("paddle", 0.2); 
+    this.setVolume("board", 1);
+    this.setVolume("goal", 0.5);
+    this.setVolume("powerup", 0.5); 
+    this.setVolume("obstacleSound", 0.5); 
+    this.setVolume("clickSound",0.5);
   }
 
-  // Pause all sounds
   pauseAll() {
     Object.keys(this.sounds).forEach(soundName => {
       const sound = this.sounds[soundName];
@@ -58,7 +52,6 @@ export default class SoundHandler {
     });
   }
 
-  // Resume all sounds
   resumeAll() {
     Object.keys(this.sounds).forEach(soundName => {
       const sound = this.sounds[soundName];
