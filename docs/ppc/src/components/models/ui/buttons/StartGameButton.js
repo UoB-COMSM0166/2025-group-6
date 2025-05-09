@@ -9,6 +9,7 @@ class StartGameButton extends Button {
   
   handleClick() {
     if (this.isMouseOver()) {
+      game.gameEngine.soundHandler.playSound("click");
       this.dialogBox.visible=true;
     }
     if (this.dialogBox.visible) {

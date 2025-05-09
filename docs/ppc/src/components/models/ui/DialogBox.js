@@ -51,6 +51,7 @@ class DialogBox {
   }
 
   reset() {
+    this.visible = false;
     this.boxW = width * 0.4;
     this.boxH = height * 0.5;
     this.boxX = width / 2;
