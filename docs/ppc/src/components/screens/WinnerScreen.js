@@ -1,11 +1,9 @@
 import game from "../../core/Game.js";
 
-
+/**
+ * This class is responsible for displaying the winner screen and handles button interactions.
+ */
 export class WinnerScreen {
-    constructor() {
-        this.backgroundColor = 255; // white background
-    }
-
     draw() {
         game.winnerPage.draw();
     }
@@ -13,7 +11,7 @@ export class WinnerScreen {
     checkButtonClicks(){
         game.winnerPage.checkButtonClicks();
     }
-
 }
+
 const winnerScreen = new WinnerScreen();
 export default winnerScreen;

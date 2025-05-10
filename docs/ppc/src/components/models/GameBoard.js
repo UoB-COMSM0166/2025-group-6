@@ -2,7 +2,9 @@ import { constants } from "../../core/config.js";
 import GoalPost from "./GoalPost.js";
 import game from "../../core/Game.js";
 
-
+/**
+ * This class is responsible for generating game board.
+ */
 export class GameBoard {
   constructor() {
     // Board dimensions
@@ -16,9 +18,6 @@ export class GameBoard {
 
     // Goal post Object
     this.goalPost = new GoalPost();
-
-    // Background image
-    
   }
 
   draw() {

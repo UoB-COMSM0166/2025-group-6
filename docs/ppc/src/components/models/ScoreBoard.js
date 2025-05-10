@@ -1,6 +1,9 @@
 import { constants } from "../../core/config.js";
 import  StreakTracker  from "./StreakTracker.js";
 
+/**
+ * This class displays player and CPU scores and play/pause button at the top-center of the game screen.
+ */
 export class ScoreBoard {
   constructor(game) {
     this.x = width / 2;
@@ -8,52 +11,51 @@ export class ScoreBoard {
     this.fontSize = 32;
     this.textColor = '#FFFFFF';
     this.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    // this.padding = 10;
     this.width = game.board.boardWidth * 0.25;
     this.height = constants.margin;
     this.game = game;
     this.streakTracker = new StreakTracker();
   }
 
+  /**
+   * Renders the scoreboard UI with current scores.
+   */
   draw() {
-    // Save current state
     push();
     
-    // Draw background
     fill(this.backgroundColor);
     noStroke();
     rect(this.x, this.y, this.width, this.height, 5);
     
-    // Draw text
     fill(this.textColor);
     textSize(this.fontSize);
     textAlign(CENTER, CENTER);
-    
-    // Draw scores
+
     const centerX = this.x ;
     const centerY = this.y ;
-    text(`${this.game.player1.score.toString().padStart(2, '0')}`, centerX - this.width / 7, centerY);
-    text(`${this.game.player2.score.toString().padStart(2, '0')}`, centerX + this.width / 7, centerY);
+    text(`${this.game.player1.score.toString().padStart(2, '0')}`, centerX - this.width / 6, centerY);
+    text(`${this.game.player2.score.toString().padStart(2, '0')}`, centerX + this.width / 6, centerY);
 
-    // Draw player labels
-    textSize(this.fontSize * 0.5);
-    text("Player 1", centerX - this.width / 3, centerY);
-    text("Player 2", centerX + this.width / 3, centerY);
+    textSize(this.fontSize * 0.6);
+    text("Player", centerX - this.width / 2.75, centerY);
+    text("CPU", centerX + this.width / 2.75, centerY);
 
-    // Restore state
     pop();
   }
 
+  /**
+   * Re-centers the scoreboard, if the screen resized.
+   */
   update() {
-    // Update the scores
     this.x = width / 2;
     this.y = constants.margin / 2 ;
     // this.width = this.game.board.boardWidth * 0.25;
     // this.height = constants.margin;
   }
-  
-  // Method to increment scores
-  // Method to reset scores
+
+  /**
+   * Resetting the score board.
+   */
   resetScores() {
     this.game.player1.score = 0;
     this.game.player2.score = 0;

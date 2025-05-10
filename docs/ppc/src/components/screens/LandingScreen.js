@@ -1,11 +1,9 @@
 import game from "../../core/Game.js";
 
-// Game screen will be a singleton class
+/**
+ * This class is responsible for displaying the game's landing page and handles button interactions.
+ */
 class LandingScreen {
-  constructor() {
-    this.backgroundColor = 255; // white background
-  }
-
   draw() {
     game.landingPage.draw();
   }
@@ -13,7 +11,6 @@ class LandingScreen {
   checkButtonClicks(){
     game.landingPage.checkButtonClicks();
   }
-  
 }
 
 const landingScreen = new LandingScreen();
