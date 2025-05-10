@@ -2,6 +2,10 @@ import StartGameButton from "./ui/buttons/StartGameButton.js";
 import InstructionsButton from "./ui/buttons/InstructionsButton.js";
 import SettingsButton from "./ui/buttons/SettingsButton.js";
 
+/**
+ * This class is responsible for rendering the main landing screen of the game,
+ * including animated title and UI buttons.
+ */
 export default class LandingPage {
   constructor(game) {
     this.game = game;
@@ -10,6 +14,10 @@ export default class LandingPage {
     this.settingsButton     = new SettingsButton(width/2, height/2 + 2*height*0.07 + 30, width*0.15, height*0.07, "Settings");
   }
 
+  /**
+   * This draw function handles the layout, button rendering, and dynamic visual effects
+   * (e.g., glowing animated title text with chromatic aberration and depth)
+   */
   draw() {
     if (this.game.welcomeImg) {
       image(this.game.welcomeImg, 0, 0, width, height);
@@ -25,21 +33,18 @@ export default class LandingPage {
       let shakeX = random(-2, 2);
       let shakeY = random(-2, 2);
 
-      // Enhanced glow effects for depth
+      // setting glow effects for depth
       let glowIntensity = map(sin(frameCount * 0.08), -1, 1, 30, 50);
       let glowAlpha = map(sin(frameCount * 0.08), -1, 1, 0.7, 1.0);
 
-      // Chromatic aberration offset
       let blueOffset = map(sin(frameCount * 0.08), -1, 1, 2, 4);
-
-      // Dynamic color for depth effect
       let mainColor = map(sin(frameCount * 0.06), -1, 1, 150, 255);
 
       push();
       translate(width / 2 + shakeX, height / 3 + shakeY);
       scale(scaleEffect);
 
-      // Create depth layers
+      // Creating depth layers
       for (let i = 5; i >= 0; i--) {
         let layerOffset = i * 2;
         let alpha = map(i, 0, 5, 1, 0.2);
@@ -53,14 +58,14 @@ export default class LandingPage {
 
       // Draw blue chromatic aberration
       drawingContext.shadowBlur = 0;
-      fill(0, 150, 255, 180); // Blue channel
+      fill(0, 150, 255, 180);
       text("PUCK POWER CLASH", blueOffset, zoomOffset + blueOffset);
 
       // Draw red chromatic aberration (subtle)
-      fill(255, 50, 50, 120); // Red channel
+      fill(255, 50, 50, 120);
       text("PUCK POWER CLASH", -blueOffset / 2, zoomOffset - blueOffset / 2);
 
-      // Draw main text on top
+      // Drawing main display text on top.
       drawingContext.shadowBlur = glowIntensity;
       drawingContext.shadowColor = `rgba(0, 255, 255, ${glowAlpha})`;
       fill(255);
@@ -85,19 +90,21 @@ export default class LandingPage {
     const ib = this.instructionsButton.dialogBox.visible;
     const sbx= this.settingsButton.dialogBox.visible;
 
-    // No dialogs open → root buttons
+    // When no dialog is open, it will handle root buttons.
     if (!sb && !ib && !sbx) {
       this.startGameButton.handleClick();
       this.instructionsButton.handleClick();
       this.settingsButton.handleClick();
     }
-    // Settings dialog open → only settings toggles & close
+
+    // When settings dialog box is open, it will handle only settings toggles & close.
     else if (sbx) {
       this.settingsButton.dialogBox.handleClick();
       this.settingsButton.clickSoundButton.handleClick();
       this.settingsButton.mouseControlButton.handleClick();
     }
-    // Start‐Game or Instructions dialog open → only that dialog
+
+    // When Start‐Game or Instructions dialog box is open, then respective will be handled.
     else {
       if (sb) {
         this.startGameButton.dialogBox.handleClick();

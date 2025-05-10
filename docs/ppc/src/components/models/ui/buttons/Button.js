@@ -31,11 +31,10 @@ class Button {
       noStroke();
       fill(255);
       textAlign(CENTER, CENTER);
-      textSize(width*0.02);
+      textSize(width*0.015);
       text(this.label, this.x, this.y);
     }
 
-  
     isMouseOver() {
       return (
         mouseX > this.x - this.w / 2 &&

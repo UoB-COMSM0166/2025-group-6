@@ -1,9 +1,11 @@
 import { constants } from "../../core/config.js";
 
-
+/**
+ * This class displays the current game level on the screen.
+ */
 export class LevelBox {
   constructor(game) {
-    this.x = width / 4; // Reset x position
+    this.x = 100; // Reset x position
     this.y = constants.margin/2; // Reset y position
     this.game = game;
     this.textColor = '#FFFFFF';
@@ -12,36 +14,25 @@ export class LevelBox {
     this.width = width * 0.2; 
   }
 
-
-
+  // Renders the text.
   draw() {
-    // Save current state
     push();
-    
-    // Draw background
-    fill(this.backgroundColor);
-    noStroke();
-    rect(this.x, this.y, this.width, this.height, 5);
-    
-    // Draw text
+
     fill(this.textColor);
     textSize(18);
     textAlign(CENTER, CENTER);
     
-    // Draw level
     const centerX = this.x;
     const centerY = this.y;
     text(`Level: ${this.game.level}`, centerX, centerY);
     
-    // Restore state
     pop();
   }
 
+  // Resets position and width based on screen size.
   reset() {
-    this.x = width / 4; // Reset x position
+    this.x = 100; // Reset x position
     this.y = constants.margin/2; // Reset y position
     this.width = width * 0.2; 
   }
-
-  
 } 

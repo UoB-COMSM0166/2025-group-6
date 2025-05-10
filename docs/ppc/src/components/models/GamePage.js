@@ -2,6 +2,9 @@ import PauseButton from "./ui/buttons/PauseButton.js";
 import ExitButton from "./ui/buttons/ExitButton.js";
 import { constants } from "../../core/config.js";
 
+/**
+ * This class handles the creation of the play-pause and quit buttons displayed during gameplay on game screen.
+ */
 class GamePage {
     constructor(game) {
       this.game = game;

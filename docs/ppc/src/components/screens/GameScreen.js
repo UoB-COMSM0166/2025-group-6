@@ -2,38 +2,44 @@ import game from "../../core/Game.js";
 import PauseButton  from "../models/ui/buttons/PauseButton.js";
 import { constants } from "../../core/config.js";
 
-// Game screen will be a singleton class
+/**
+ * This class integrates GameBoard and GamePageButton to create the main gameplay interface.
+ */
 export class GameScreen {
   constructor() {
     this.backgroundColor = 255; // white background
   }
 
-
+  /**
+   * Renders the full game interface.
+   */
   draw() {
     // Clear and set background
     background(this.backgroundColor);
 
-    // Draw game board
+    // Drawing game board
     game.board.draw();
 
-    // Draw player 1 (red)
+    // Drawing player 1 (red)
     fill(255, 0, 0);
     game.player1.draw();
 
-    // Draw player 2 (blue)
+    // Drawing player 2 (blue)
     fill(0, 0, 255);
     game.player2.draw();
 
-    // Draw puck
+    // Drawing puck
     fill(255);
     ellipseMode(RADIUS);
     game.puck.draw();
 
-    // Draw Scoreboard
+    // Drawing Scoreboard
     game.scoreBoard.draw();
 
+    // Drawing level at game screen.
     game.levelBox.draw();
 
+    // Drawing gamePage buttons.
     game.gamePage.draw();
 
     if (game.firePowerUp.active) {
