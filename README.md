@@ -1,14 +1,16 @@
 # 2025 Group-6
 
 ---
+
 # 🏒 **Welcome to Puck Power Clash!** 🏒
 
 ---
 
-Link to your game [PLAY HERE](https://uob-comsm0166.github.io/2025-group-6/)
+### ▶️ [PLAY THE GAME](https://uob-comsm0166.github.io/2025-group-6/)
 
-The game lives in the [/docs/ppc](/docs/ppc) folder, and is published using Github pages with a workflow created using github 
-template [.github/workflows/jekyll-gh-pages.yml](.github/workflows/jekyll-gh-pages.yml).
+### 📁 [Browse the Game Files](/docs/ppc)
+
+### 🎥 [Watch the Game Demo Video]()
 
 ---
 
@@ -28,9 +30,19 @@ template [.github/workflows/jekyll-gh-pages.yml](.github/workflows/jekyll-gh-pag
 ---
 ## Project Report
 
+> ### Table of Content
+> * [Introduction](#introduction)
+> * [Requirements](#requirements-)
+> * [Design](#design-)
+> * [Implementation](#implementation-)
+> * [Evaluation](#evaluation-)
+> * [Process](#process)
+> * [Conclusion](#conclusion-)
+> * [Contribution Statement](#contribution-statement-)
+
 ---
 
-### Introduction
+## Introduction
 
 **Puck Power Clash** is an electrifying, fast-paced arcade game that takes the classic air hockey experience to the next level. You can choose from two difficulty levels: **Normal**, for a balanced gameplay experience, and **Hard**, where your reflexes will be tested and every decision counts. The game features a fun power-up system, including the **Fire power-up**, which temporarily increases your opponent’s goalpost🥅. This risk-reward mechanic allows aggressive players to take advantage of the expanded goalpost to score more easily. Random obstacles, like stones, further complicate the gameplay by throwing off the puck’s path, requiring quick reflexes and smart strategies to avoid them. The game also introduces minimal friction, ensuring smooth and continuous gameplay, much like how real-world surfaces interact, keeping the puck gliding without stopping completely.
 
@@ -39,9 +51,8 @@ The adjustable goalpost 🥅 system adds an extra layer of strategy. If you scor
 🎯[Puck Power Clash Gameplay]![Game GIF](./assets/gif/game1-ezgif.com-video-to-gif-converter.gif)
 
 ---
-## Requirements
 
----
+## Requirements 📋
 
 ### Ideation & Concept Selection 🧠
 In Week 1 our team brainstormed several 2D game concepts—using hand-written notes and sketches to capture ideas and assess feasibility. We paper-prototyped two finalists: a ring-toss physics game and **Power Puck Clash** (an air-hockey variant with power-ups and obstacles). The ring-toss concept proved too complex to simulate within our timeline, so we selected Power Puck Clash for its immediately graspable rules and straightforward p5.js implementation.
@@ -100,10 +111,8 @@ The diagram below illustrates the Player’s interactions:
 ![Use-Case Diagram for Power Puck Clash](/assets/images/UseCaseDiagram.png)  
 *UML Use-Case diagram detailing player flows from landing to match and winner screens.*
 
----
-## Stakeholders
+### Stakeholders
 
----
 Below is our stakeholder Onion Model (see accompanying image for layers):
 
 ![Stakeholder Onion Model](/assets/images/stakeholder_onion.png)  
@@ -119,9 +128,8 @@ Below is our stakeholder Onion Model (see accompanying image for layers):
   • Instructor & Teaching Assistant (define requirements, provide feedback, and grade)
 
 ---
-## Design 🏗️
 
----
+## Design 🏗️
 
 ### Core Architecture
 The game follows a classic game-loop/component-based architecture with clear separation of concerns:
@@ -183,8 +191,6 @@ The game features a range of engaging gameplay elements designed to enhance the 
 ---
 ## Implementation 🔧
 
----
-
 Throughout development, three systems required particular focus due to their impact on gameplay: refining the puck’s physics for responsive and realistic movement, implementing scalable AI that adjusts to player skill levels, and designing a power-up and obstacle system that introduces variety and keeps matches unpredictable. Each of these elements played a key role in shaping the game’s fast pace, competitive balance, and replayability.
 
 **Challenge 1:** Physics-Based Puck Interactions
@@ -217,9 +223,8 @@ To add a little extra fun and unpredictability to the game, we’ve included pow
 - **State Management:** Power-ups and obstacles don’t last forever. Timers and flags are used to control how long they stay active, ensuring the gameplay doesn’t get too unbalanced. Every power-up has a limited window of opportunity, making them a strategic asset in the heat of the moment.
 
 ---
-## Evaluation 📊
 
----
+## Evaluation 📊
 
 To ensure that Puck Power Clash functions as intended and delivers a satisfying player experience, we employed both qualitative and quantitative evaluation methods. 
 These approaches allowed us to gather in-depth feedback on user interaction, gameplay mechanics, and overall usability.
@@ -262,8 +267,6 @@ By using the SUS, we were able to quantify user perceptions of the game's ease o
 | P9          | 57.5              | 52.5            |
 | P10         | 37.5              | 62.5            |
 
-
-
 ![](/assets/images/barchart.png)
 
 Our first method of quantitative analysis was the System Usability Scale (SUS). After interacting with both difficulty levels of the game, participants were asked to complete the SUS questionnaire, where they rated their agreement with ten standardized usability statements. These statements include perceptions of system complexity, ease of use, integration of functions, and user confidence, among others.
@@ -272,7 +275,6 @@ Our first method of quantitative analysis was the System Usability Scale (SUS). 
 The results indicated a slight difference in usability perception between the Normal and Hard modes. On average, the SUS score for Normal mode was 54.75, while the Hard mode had a slightly higher average of 56.75. Although this was contrary to our initial assumption that increased difficulty might reduce usability, the data suggested that the gameplay challenges in Hard mode did not significantly impact user satisfaction or experience. This could be attributed to the consistent UI design and responsive feedback mechanisms maintained across both modes. Overall, while both modes scored slightly below the general SUS benchmark of 68, the results highlighted areas for improvement and confirmed that users found the interface reasonably consistent, regardless of difficulty. The SUS analysis provided a solid foundation for iterative UI enhancements.
 
 Together, these two methods enabled a comprehensive assessment of both user experience and system performance, ensuring that the game met our design goals and provided meaningful, enjoyable gameplay.
-
 
 ### How code was tested.
 We adopted both black-box and white-box testing methodologies to ensure that the game behaved as expected and was free from major bugs.
@@ -284,9 +286,8 @@ White-box testing was performed during development by the team, focusing on inte
 By combining both testing approaches, we achieved a robust, reliable game experience and were able to identify and fix critical issues early in the development process.
 
 ---
-## Process
 
----
+## Process ⏳
 
 ### Initial Thoughts
 Our focus was to develop something unique, 
@@ -303,11 +304,9 @@ significant extensibility and scalability,
 numerous new features can be added, and the game can 
 evolve through an agile, iterative development process.
 
-
 ### Game Concepts
 
 ### 3D Ring‑and‑Cone Air Blower Game
-
 * **Concept**: Players use two air‑blowing buttons to propel 3D rings onto two vertical cones.
 * **Inspiration**: Modeled on a beloved childhood tabletop game.
 * **Core Mechanics**:
@@ -325,8 +324,7 @@ evolve through an agile, iterative development process.
   * **Multiplayer Modes**: Potential to add local co‑op, online matchmaking, and tournament brackets.
   * **Custom Arenas**: Themed boards, adjustable friction, and dynamic obstacles.
   * **Power‑Ups & Upgrades**: Speed boosts, puck modifiers, and player cosmetics.
-* **Agile Potential**: Suited for iterative sprints, start with a bare‑bones MVP, then layer in new features based on player feedback.
-
+  * **Agile Potential**: Suited for iterative sprints, start with a bare‑bones MVP, then layer in new features based on player feedback.
 
 ### Identifying our strengths
 
@@ -343,7 +341,6 @@ We began by mapping out each of our six team members’ individual strengths, ra
 
 > **Note:** Everyone contributed to coding and debugging, ensuring shared ownership of the development effort.
 
-
 ### Tools & Technologies
 
 | Category             | Tool                                  |
@@ -353,7 +350,6 @@ We began by mapping out each of our six team members’ individual strengths, ra
 | **Agile Management** | Jira, Confluence                      |
 | **IDE & Editors**    | Visual Studio Code, IntelliJ WebStorm |
 | **UI/UX Design**     | Canva                                 |
-
 
 ### Development & Reflection
 
@@ -391,33 +387,26 @@ early and progressive improve the game.
 
 ---
 
-## 6. Conclusion
+## Conclusion 🎯
 
-By leveraging our collective expertise, clear role assignments, and an agile framework, we successfully laid the groundwork for two distinct, scalable game experiences. Moving forward, our plan is to select the concept with the strongest user engagement metrics and continue expanding its feature set in subsequent sprints.
+Working on Puck Power Clash was an exciting and challenging experience that taught us a lot about game development, usability, and the importance of user feedback. From day one, our goal was to create something fun, dynamic, and easy to play—but making that happen involved much more than just writing code.
 
+One of the most valuable parts of the project was how we evaluated the game. Using the Think Aloud protocol, we were able to observe players in real time as they voiced their thoughts and reactions. Hearing their immediate feedback helped us understand not just what they did, but why. This guided many of our design decisions, from tweaking power-up timing and placement to improving the clarity of visuals and sound cues. These changes made the game feel more responsive and intuitive.
 
-### Conclusion 🎯
+In addition to real-time feedback, we used the System Usability Scale (SUS) to gather structured data on how users perceived the game’s ease of use and overall experience. Surprisingly, Hard mode scored slightly higher than Normal mode. That told us players weren’t necessarily discouraged by difficulty, as long as the interface remained consistent and fair. While the scores were slightly below the general benchmark, they gave us a solid baseline and showed that the game’s design held up across modes.
 
-- 10% ~500 words
+We also focused heavily on testing, combining black-box and white-box techniques. Black-box testing helped us catch unexpected behaviors during gameplay, while white-box testing gave us insight into how the internal logic performed. This helped us track down bugs early—especially in areas like collision detection, power-up effects, and state transitions—and made the game feel stable and reliable.
 
-- Reflect on project as a whole. Lessons learned. Reflect on challenges. Future work.
+We faced a fair share of challenges along the way. Balancing the intensity of visuals and neon effects without overwhelming the player was tricky. Managing the frequency and placement of power-ups and obstacles to ensure fairness required constant tuning. We also had to rethink some of our early design assumptions based on actual player behavior, which was a humbling but useful learning process.
 
-### Contribution Statement 👥
+Looking ahead, there are plenty of ways Puck Power Clash can evolve. We’d love to explore online multiplayer, smarter AI opponents, new types of power-ups and obstacles, and more customizable difficulty settings. Improving accessibility and adapting the game for mobile or controller-based play are also strong possibilities.
 
-- Provide a table of everyone's contribution, which may be used to weight individual grades. We expect that the
-  contribution will be split evenly across team-members in most cases. Let us know as soon as possible if there are any
-  issues with teamwork as soon as they are apparent.
+All in all, Puck Power Clash was more than a technical project—it was a full learning experience. It helped us grow as developers, designers, and testers, and gave us a strong foundation for future interactive and user-centered projects.
 
-### Additional Marks 📜
+---
 
-You can delete this section in your own repo, it's just here for information. in addition to the marks above, we will be
-marking you on the following two points:
+## Contribution Statement 👥
 
-- **Quality** of report writing, presentation, use of figures and visual material (5%)
-    - Please write in a clear concise manner suitable for an interested layperson. Write as if this repo was publicly
-      available.
+Provide a table of everyone's contribution, which may be used to weight individual grades. We expect that the contribution will be split evenly across team-members in most cases. Let us know as soon as possible if there are any issues with teamwork as soon as they are apparent.
 
-- **Documentation** of code (5%)
-
-    - Is your repo clearly organised?
-    - Is code well commented throughout?
+---
