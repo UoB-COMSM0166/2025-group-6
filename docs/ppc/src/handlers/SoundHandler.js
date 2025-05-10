@@ -1,10 +1,14 @@
+/**
+ * Manages game audio functionality with controls for playing,
+ * stopping, looping sounds and global audio toggling.
+ */
+
 export default class SoundHandler {
   constructor(game) {
-    this.sounds  = game.sounds;   // map of p5.SoundFile objects
-    this.enabled = true;          // master on/off switch
+    this.sounds = game.sounds;
+    this.enabled = true;
   }
 
-  // Play any sound only if enabled === true
   playSound(name) {
     if (!this.enabled) return;
     const s = this.sounds[name];
@@ -13,7 +17,6 @@ export default class SoundHandler {
     }
   }
 
-  // Stop a specific sound
   stopSound(name) {
     const s = this.sounds[name];
     if (s) s.stop();
@@ -37,7 +40,7 @@ export default class SoundHandler {
 
   // Pause everything except the UI click channel
   pauseAll() {
-    Object.keys(this.sounds).forEach(name => {
+    Object.keys(this.sounds).forEach((name) => {
       if (name === "click") return;
       const s = this.sounds[name];
       if (s && s.isPlaying()) {
@@ -48,7 +51,7 @@ export default class SoundHandler {
 
   // Resume everything except the UI click channel
   resumeAll() {
-    Object.keys(this.sounds).forEach(name => {
+    Object.keys(this.sounds).forEach((name) => {
       if (name === "click") return;
       const s = this.sounds[name];
       if (s && s.isPaused()) {

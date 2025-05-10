@@ -1,7 +1,6 @@
 html, body {
   margin: 0;
-  padding-top: 2em;
-  padding-bottom: 2em;
+  padding: 2em 0;
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -9,13 +8,14 @@ html, body {
   justify-content: center;
   align-items: center;
   background-color: black;
+  box-sizing: border-box;
 }
 
 canvas {
-  width: 100%;
-  height: auto;
   max-width: 1280px;
-  max-height: 720px;
+  max-height: calc(100vh - 4em); 
+  width: min(100vw, calc((100vh - 4em) * 16 / 9));
+  height: auto;
   aspect-ratio: 16 / 9;
   display: block;
 }

@@ -1,5 +1,4 @@
 import game from "./src/core/Game.js";
-import { updateDimensions } from "./src/utils/windowResizer.js";
 
 let gameBackImg;
 let paddleSound;
@@ -29,6 +28,10 @@ function preload() {
 }
 
 function setup() {
+  const availableHeight = window.innerHeight - 64; 
+  const maxWidth = window.innerWidth;
+  const canvasWidth = Math.min(maxWidth, (availableHeight * 16) / 9);
+  const canvasHeight = canvasWidth * 9 / 16;
   createCanvas(canvasWidth, canvasHeight);
   game.initializeGame();
 
@@ -45,8 +48,6 @@ function setup() {
   game.sounds.backgroundSound = backgroundSound;
   game.sounds.obstacleSound   = obstacleSound;
   game.sounds.click       = clickSound;
-
-  updateDimensions();
 }
 
 function draw() {
