@@ -47,7 +47,7 @@ class Game {
   }
 
   resetGame(){
-    this.initObjects();
+    //this.initObjects();
     this.scoreBoard.resetScores();
     this.scoreBoard.streakTracker.reset();
     this.player1.reset();

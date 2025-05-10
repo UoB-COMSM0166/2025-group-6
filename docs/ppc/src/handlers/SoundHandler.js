@@ -1,62 +1,58 @@
 export default class SoundHandler {
   constructor(game) {
-    this.sounds = game.sounds; 
+    this.sounds  = game.sounds;   // map of p5.SoundFile objects
+    this.enabled = true;          // master on/off switch
   }
 
-  loadSound(name, path) {
-    this.sounds[name] = path;
-  }
-
+  // Play any sound only if enabled === true
   playSound(name) {
-    if (this.sounds[name] && this.sounds[name].isLoaded()) {
-      this.sounds[name].play();
-    } else {
-      console.warn(`Sound "${name}" not loaded or not found.`);
+    if (!this.enabled) return;
+    const s = this.sounds[name];
+    if (s && s.isLoaded()) {
+      s.play();
     }
   }
 
+  // Stop a specific sound
   stopSound(name) {
-    if (this.sounds[name]) {
-      this.sounds[name].stop();
-    }
+    const s = this.sounds[name];
+    if (s) s.stop();
   }
 
-  setVolume(name, volume) {
-    if (this.sounds[name] && this.sounds[name].isLoaded()) {
-      this.sounds[name].setVolume(volume);
-    } 
-  }
-
+  // Loop a sound (e.g. background music)
   loopSound(name) {
-    if (this.sounds[name] && this.sounds[name].isLoaded()) {
-      this.sounds[name].loop();
+    const s = this.sounds[name];
+    if (s && s.isLoaded()) {
+      s.loop();
     }
   }
 
-  setVolumeAll() {
-    this.setVolume("backgroundSound", 0.3); 
-    this.setVolume("paddle", 0.2); 
-    this.setVolume("board", 1);
-    this.setVolume("goal", 0.5);
-    this.setVolume("powerup", 0.5); 
-    this.setVolume("obstacleSound", 0.5); 
-    this.setVolume("clickSound",0.5);
+  // Set volume if loaded
+  setVolume(name, volume) {
+    const s = this.sounds[name];
+    if (s && s.isLoaded()) {
+      s.setVolume(volume);
+    }
   }
 
+  // Pause everything except the UI click channel
   pauseAll() {
-    Object.keys(this.sounds).forEach(soundName => {
-      const sound = this.sounds[soundName];
-      if (sound && sound.isPlaying()) {
-        sound.pause();
+    Object.keys(this.sounds).forEach(name => {
+      if (name === "click") return;
+      const s = this.sounds[name];
+      if (s && s.isPlaying()) {
+        s.pause();
       }
     });
   }
 
+  // Resume everything except the UI click channel
   resumeAll() {
-    Object.keys(this.sounds).forEach(soundName => {
-      const sound = this.sounds[soundName];
-      if (sound && sound.isPaused()) {
-        sound.play();
+    Object.keys(this.sounds).forEach(name => {
+      if (name === "click") return;
+      const s = this.sounds[name];
+      if (s && s.isPaused()) {
+        s.play();
       }
     });
   }
