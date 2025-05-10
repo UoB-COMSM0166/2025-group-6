@@ -12,9 +12,12 @@ class MouseControlButton extends DialogBoxButton {
         rect(this.x, this.y, this.w, this.h, 10);
 
         fill(255);
-        textSize(15);
+        const dynamicTextSize = min(this.w / 8, this.h / 2);
+        textSize(dynamicTextSize);
+        const maxTextWidth = this.w * 0.8; 
         textAlign(CENTER, CENTER);
-        text(`Mouse Control: ${game.mouseControl ? "ON" : "OFF"}`, this.x, this.y);
+        const buttonText = `Mouse: ${game.mouseControl ? "ON" : "OFF"}`;
+        text(buttonText, this.x, this.y, maxTextWidth);
     }
 
     handleClick() {
