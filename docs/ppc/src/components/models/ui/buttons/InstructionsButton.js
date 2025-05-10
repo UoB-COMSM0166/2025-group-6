@@ -20,7 +20,7 @@ class InstructionsButton extends Button {
 
   loadInstructions() {
     this.dialogBox.content =[
-    "Use the arrow keys or the mosue to move your paddle.",
+    "Use the arrow keys or the mouse to move your paddle.",
     "Press SPACE to pause the game.",
     "First to 10 goals wins!",
     "Score three in a row to spawn a Fire Power-Up.",
