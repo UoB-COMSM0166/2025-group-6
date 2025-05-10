@@ -17,9 +17,13 @@ export default class ClickButton extends DialogBoxButton {
 
     // Draw the label
     fill(255);
-    textSize(16);
+  ;
     textAlign(CENTER, CENTER);
-    text(`Sound: ${isSoundOn ? "ON" : "OFF"}`, this.x, this.y);
+    const dynamicTextSize = min(this.w / 8, this.h / 2);
+    textSize(dynamicTextSize);
+    const maxTextWidth = this.w * 0.8; 
+    const buttonText = `Sound: ${isSoundOn ? "ON" : "OFF"}`;
+    text(buttonText, this.x, this.y, maxTextWidth);
   }
 
   handleClick() {

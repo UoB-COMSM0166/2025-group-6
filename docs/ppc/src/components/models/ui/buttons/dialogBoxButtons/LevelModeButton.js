@@ -30,8 +30,6 @@ class LevelModeButton extends DialogBoxButton {
     
     const isHardMode = this.label.toLowerCase().includes("hard");
     const scheme     = isHardMode ? colors.hard : colors.normal;
-    
-    // Choose fill & stroke based on hover
     if (this.isMouseOver()) {
       fill(...scheme.fill, pulseAmount);
       stroke(...scheme.hover);
@@ -47,21 +45,17 @@ class LevelModeButton extends DialogBoxButton {
 
     strokeWeight(3);
     rect(this.x, this.y, this.w, this.h, 15);
-
-    // Subtle gradient overlay
     noStroke();
     fill(255, 255, 255, 30);
     rect(this.x, this.y - this.h / 4, this.w * 0.9, this.h / 3, 10);
-
-    // Label
     noStroke();
     fill(255);
     textAlign(CENTER, CENTER);
-    textSize(min(this.w * 0.15, 24));
+    const dynamicTextSize = min(this.w * 0.12, this.h * 0.4, 24);
+    textSize(dynamicTextSize);
     textStyle(BOLD);
-    text(this.label, this.x, this.y);
-
-    // Reset shadow
+    const maxTextWidth = this.w * 0.85;   
+    text(this.label, this.x, this.y, maxTextWidth);
     drawingContext.shadowBlur = 0;
   }
 
