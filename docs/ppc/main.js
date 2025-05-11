@@ -48,6 +48,7 @@ function setup() {
   game.sounds.click       = clickSound;
 }
 
+
 function draw() {
   game.updateGame();
 }
