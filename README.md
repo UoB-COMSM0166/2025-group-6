@@ -135,14 +135,24 @@ Below is our stakeholder Onion Model (see accompanying image for layers):
 The game follows a classic game-loop/component-based architecture with clear separation of concerns:
 
 ### Game Class 
-The central controller that manages all game components and coordinates the overall game flow. It maintains references to core game objects (players, puck, board) , game features like powerups,obstacles and UI elemenst like (landing page, game page, winning page, butons etc).
+The central controller that manages all game components and coordinates the overall game flow. It maintains references to core game objects (players, puck, board) , game features like powerups,obstacles and UI elemenst like (landing page, game page, winning page, buttons etc).
 
-### GameEngine
+### Game Engine
 Serves as the brain of the application, managing game logic through specialized handlers for different aspects of functionality. This follows the delegation pattern, where the engine delegates specific responsibilities to specialized components. 
 
-### GameObject 
-Implements an inheritance hierarchy where all interactive elements (Mallet, Puck, PowerUp, Obstacle) inherit from a common GameObject base class. This helps us to implement polymorphism and reduce the usage of repetetive code and implies the behaviour
-of each and every object in the game.
+### Game Object 
+All interactive elements in the game such as the Mallet, Puck, PowerUp, and Obstacle inherit from a common GameObject base class. This inheritance hierarchy enables polymorphism and helps eliminate repetitive code by defining shared behavior and properties in one place. Each specific object can then implement or override functionality as needed.
+
+### Handlers
+
+There are separate handlers for each of the main entities in the game like CPU player, powerup , obstacle etc. These handlers update the state 
+of these entities during each frame. eg: ObstacleHandler, PowerUpHandler.
+
+### UI Classes
+
+All the buttons used in the game inherit from the same button class and share common behavior with overriding wherever needed. The same applies for the dialog box and dialog box buttons used in the game.
+
+The hierarchy and relations between these classes can be seen in the class diagram below:
 
 ### Class Diagram 
 
@@ -157,7 +167,7 @@ of the game
 
 ### User Interface Design🎵
 
-The UI follows a screen-based approach with separate page classes for different game states:
+The UI follows a screen based approach with separate page classes for different game states:
 
 ### Landing Page 
 The entry point with options to start the game, view instructions, or adjust settings.
@@ -177,7 +187,7 @@ Displays when a player wins, with options to restart or quit and go back to main
 The UI elements use an inheritance hierarchy for buttons, creating a consistent interaction model.
 
 ### Gameplay Features
-The game features a range of engaging gameplay elements designed to enhance the player experience. The CPUHandler provides AI-controlled opponents with adjustable difficulty settings such as reaction delay and aggressiveness. When a player achieves a three-goal streak, the Fire PowerUp activates, temporarily enlarging the opponent’s goalpost for 10 seconds to give the streaking player an advantage. The ObstacleHandler introduces dynamic obstacles during gameplay, adding unpredictability and challenge. A SoundHandler manages various audio effects and background music to create an immersive environment. Additionally, the game includes a level system with two difficulty modes (i.e, normal and hard) indicated by a level box in the top-left corner of the screen.
+The game features a range of engaging gameplay elements designed to enhance the player experience. The CPUHandler provides AI-controlled opponents with adjustable difficulty settings such as reaction delay and aggressiveness. When a player achieves a three-goal streak, the Fire PowerUp activates, temporarily enlarging the opponent’s goalpost for 10 seconds to give the streaking player an advantage. The ObstacleHandler introduces dynamic obstacles during gameplay, adding unpredictability and challenge. A SoundHandler manages various audio effects to create an immersive environment. Additionally, the game includes a level system with two difficulty modes (i.e, normal and hard) indicated by a level box in the top-left corner of the screen.
 
 *the enlarged goalpost highlighted in red when firepowerup is activated*
 ![](/assets/images/firepowerup.png)
