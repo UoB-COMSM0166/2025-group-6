@@ -30,7 +30,7 @@
 ---
 ## Project Report
 
-> ### Table of Content
+> ### Table of Contents
 > * [Introduction](#introduction)
 > * [Requirements](#requirements-)
 > * [Design](#design-)
