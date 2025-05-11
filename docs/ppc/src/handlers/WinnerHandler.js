@@ -1,6 +1,6 @@
-/**
- * Handles game win conditions and winner determination.
- */
+
+// Handles game win conditions and winner determination.
+
 export default class WinnerHandler {
     constructor(game) {
         this.game = game;

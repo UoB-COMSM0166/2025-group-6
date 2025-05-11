@@ -1,13 +1,15 @@
-import CPUHandler  from './CPUHandler.js';
+import CPUHandler         from './CPUHandler.js';
 import  CollisionHandler  from './CollisionHandler.js';
-import MouseHandler from './MouseHandler.js';
-import PowerupHandler from './PowerUpHandler.js';
-import ScreenHandler from './ScreenHandler.js';
-import SoundHandler from './SoundHandler.js';
-import WinnerHandler from './WinnerHandler.js';
-import LevelHandler from './LevelHandler.js';
-import ObstacleHandler from "./ObstacleHandler.js";
+import MouseHandler       from './MouseHandler.js';
+import PowerupHandler     from './PowerUpHandler.js';
+import ScreenHandler      from './ScreenHandler.js';
+import SoundHandler       from './SoundHandler.js';
+import WinnerHandler      from './WinnerHandler.js';
+import LevelHandler       from './LevelHandler.js';
+import ObstacleHandler    from "./ObstacleHandler.js";
 
+
+// Entire game how it works, what it needs for the game to run all the mechanics part is in this class
 export class GameEngine {
     constructor(game) {
         this.game = game
