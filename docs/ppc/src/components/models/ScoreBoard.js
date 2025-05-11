@@ -11,7 +11,7 @@ export class ScoreBoard {
     this.fontSize = 32;
     this.textColor = '#FFFFFF';
     this.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    this.width = game.board.boardWidth * 0.25;
+    this.width = game.board.boardWidth * 0.35;
     this.height = constants.margin;
     this.game = game;
     this.streakTracker = new StreakTracker();
@@ -37,8 +37,8 @@ export class ScoreBoard {
     text(`${this.game.player2.score.toString().padStart(2, '0')}`, centerX + this.width / 6, centerY);
 
     textSize(this.fontSize * 0.6);
-    text("Player", centerX - this.width / 2.75, centerY);
-    text("CPU", centerX + this.width / 2.75, centerY);
+    text("Player", centerX - this.width / 2.5, centerY);
+    text("CPU", centerX + this.width / 2.5, centerY);
 
     pop();
   }
