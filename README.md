@@ -66,7 +66,7 @@ The adjustable goalpost 🥅 system adds an extra layer of strategy. If you scor
 | **Mallets**        | ![Mallet](/assets/images/mallet.png)     | **Mallets** are used by players to strike the puck, allowing for control and strategic gameplay.                         |
 | **Goalpost**       | ![Goalpost](/assets/images/goalpost.png) | The **goalpost** is the target area where players must score, with its size changing based on performance and power-ups. |
 | **Puck**           | ![Puck](/assets/images/puck1.png)        | The **puck** is the main object in play that players strike with mallets to score points.                                |
-| **Timer**          | ![Timer](/assets/images/timer.png)       | The **scoreboard** keeps track of the points scored, adding pressure to the game.                                        |
+| **Scoreboard**          | ![Timer](/assets/images/timer.png)       | The **scoreboard** keeps track of the points scored, adding pressure to the game.                                        |
 
 
 ---
