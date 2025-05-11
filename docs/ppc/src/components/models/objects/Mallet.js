@@ -10,8 +10,7 @@ export class Mallet extends GameObject {
     this.score = 0;
     this.leftSide = leftSide;
     this.isPlayerCpu = true;
-    this.moveSpeed = 20;
-
+    this.updateMoveSpeed();
   }
 
   /* overriding update method since mallet needs to constrained
@@ -89,5 +88,11 @@ export class Mallet extends GameObject {
       this.x = width*0.75;
     }
     this.y = height / 2;
+  }
+
+  updateMoveSpeed() {
+    const screenScale = (width + height) / 2;
+    this.moveSpeed = screenScale * 0.020;
+    console.log(this.moveSpeed);
   }
 }
