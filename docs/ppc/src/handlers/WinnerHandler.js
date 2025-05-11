@@ -4,7 +4,7 @@
 export default class WinnerHandler {
     constructor(game) {
         this.game = game;
-        this.winningScore = 10;
+        this.winningScore = 1;
         this.winner = null;
     }
 

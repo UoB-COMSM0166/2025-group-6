@@ -8,13 +8,15 @@ let powerupSound;
 let backgroundSound;
 let welcomeImg;
 let celebrationImg;
+let losingImg;
 let clickSound;
 let obstacleSound;
 let canvasWidth = 1280;
 let canvasHeight = 720;
 
 function preload() {
-  celebrationImg = loadImage("./assets/images/bg10.jpg");
+  celebrationImg = loadImage("./assets/images/newbg1.png");
+  losingImg      = loadImage("./assets/images/newbg2.png");
   welcomeImg     = loadImage("./assets/images/welcome.jpg");
   gameBackImg    = loadImage("./assets/images/bg12.jpg");
 
@@ -36,6 +38,7 @@ function setup() {
 
   game.landingPage.welcomeImg   = welcomeImg;
   game.winnerPage.celebrationImg = celebrationImg;
+  game.winnerPage.losingImg     = losingImg;
   game.gameBackImg              = gameBackImg;
   game.welcomeImg               = welcomeImg;
 
