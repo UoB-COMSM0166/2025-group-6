@@ -10,7 +10,7 @@
 
 ### 📁 [Browse the Game Files](/docs/ppc)
 Github pages are deployed with a workflow created using github
-template [.github/workflows/jekyll-gh-pages.yml](.github/workflows/jekyll-gh-pages.yml).
+template [jekyll-gh-pages.yml](.github/workflows/jekyll-gh-pages.yml).
 
 ### 🎥 [Watch the Game Video Below 👇](https://youtu.be/ydO87DNYbCo) 
 [![Puck Power Clash](/assets/images/PlayImage.png)](https://www.youtube.com/watch?v=ydO87DNYbCo)
