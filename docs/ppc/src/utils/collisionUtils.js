@@ -18,13 +18,12 @@ export const collisionUtils = {
   },
 
   rectToRect(x1, y1, vel1, rect1, x2, y2, rect2, vel2) {
-    // Calculate edges of first rectangle
+
     let rect1Left = x1 - rect1.width / 2;
     let rect1Right = x1 + rect1.width / 2;
     let rect1Top = y1 - rect1.height / 2;
     let rect1Bottom = y1 + rect1.height / 2;
 
-    // Calculate edges of second rectangle
     let rect2Left = x2 - rect2.width / 2;
     let rect2Right = x2 + rect2.width / 2;
     let rect2Top = y2 - rect2.height / 2;
@@ -42,7 +41,6 @@ export const collisionUtils = {
   circleToCircle(x1, y1, vel1, circle1, x2, y2, circle2, vel2) {
     let subSteps = 6;
 
-    // Fast collision check - first check current position
     let distance = dist(x1, y1, x2, y2);
     let radiiSum = circle1.radius + circle2.radius;
 
@@ -68,19 +66,12 @@ export const collisionUtils = {
     let prevX2 = x2 - vel2.x;
     let prevY2 = y2 - vel2.y;
 
-    let denominator =
-      (prevX1 - x1) * (prevY2 - y2) - (prevY1 - y1) * (prevX2 - x2);
+    let denominator = (prevX1 - x1) * (prevY2 - y2) - (prevY1 - y1) * (prevX2 - x2);
 
     if (denominator !== 0) {
-      let t =
-        ((prevX1 - prevX2) * (prevY2 - y2) -
-          (prevY1 - prevY2) * (prevX2 - x2)) /
-        denominator;
-      let u =
-        -(
-          (prevX1 - x1) * (prevY1 - prevY2) -
-          (prevY1 - y1) * (prevX1 - prevX2)
-        ) / denominator;
+      let t = ((prevX1 - prevX2) * (prevY2 - y2) - (prevY1 - prevY2) * (prevX2 - x2)) / denominator;
+
+      let u = -((prevX1 - x1) * (prevY1 - prevY2) - (prevY1 - y1) * (prevX1 - prevX2)) / denominator;
 
       // Check if intersection occurs within the movement lines
       if (t >= 0 && t <= 1 && u >= 0 && u <= 1) {
@@ -88,12 +79,7 @@ export const collisionUtils = {
         let intersectY = prevY1 + t * (y1 - prevY1);
 
         // Check if circles overlap at intersection point
-        let intersectDist = dist(
-          intersectX,
-          intersectY,
-          prevX2 + u * (x2 - prevX2),
-          prevY2 + u * (y2 - prevY2)
-        );
+        let intersectDist = dist(intersectX, intersectY, prevX2 + u * (x2 - prevX2), prevY2 + u * (y2 - prevY2));
 
         if (intersectDist <= radiiSum) return true;
       }
