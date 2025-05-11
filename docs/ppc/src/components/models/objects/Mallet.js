@@ -93,6 +93,5 @@ export class Mallet extends GameObject {
   updateMoveSpeed() {
     const screenScale = (width + height) / 2;
     this.moveSpeed = screenScale * 0.020;
-    console.log(this.moveSpeed);
   }
 }
