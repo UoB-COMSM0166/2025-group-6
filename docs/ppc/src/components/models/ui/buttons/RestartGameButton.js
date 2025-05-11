@@ -10,6 +10,7 @@ class RestartGameButton extends Button {
     if (this.isMouseOver()) {
       game.gameEngine.soundHandler.playSound("click");
       game.winner = null;
+      game.gamePaused = false;
       game.gameState = "gameboard";
     }
     if (this.dialogBox.visible) {
