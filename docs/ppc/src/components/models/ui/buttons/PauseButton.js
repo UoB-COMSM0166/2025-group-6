@@ -5,7 +5,7 @@ import game from "../../../../core/Game.js";
 export default class PauseButton extends Button {
   constructor(x, y, w, h, label = "Pause") {
     super(x, y, w, h, label);
-    this.isPaused = false;
+
   }
 
   draw() {
@@ -26,7 +26,7 @@ export default class PauseButton extends Button {
     // draw play/pause icon
     noStroke();
     fill(255);
-    if (this.isPaused) {
+    if (game.gamePaused) {
       const tri = this.h * 0.3;
       triangle(this.x - tri/1.5, this.y - tri, this.x - tri/1.5, this.y + tri, this.x + tri, this.y);
     } else {
@@ -41,9 +41,8 @@ export default class PauseButton extends Button {
 
   // central pause/resume logic
   togglePause() {
-    this.isPaused = !this.isPaused;
-    this.label    = this.isPaused ? "Play" : "Pause";
-    game.gamePaused = this.isPaused;
+    game.gamePaused = !game.gamePaused;
+    this.label    = game.gamePaused ? "Play" : "Pause";
 
     if (this.isPaused) {
       game.gameEngine.soundHandler.pauseAll();

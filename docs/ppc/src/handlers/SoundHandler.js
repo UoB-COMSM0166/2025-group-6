@@ -43,6 +43,7 @@ export default class SoundHandler {
     Object.keys(this.sounds).forEach((name) => {
       if (name === "click") return;
       const s = this.sounds[name];
+      console.log(s.isPlaying())
       if (s && s.isPlaying()) {
         s.pause();
       }
@@ -54,6 +55,7 @@ export default class SoundHandler {
     Object.keys(this.sounds).forEach((name) => {
       if (name === "click") return;
       const s = this.sounds[name];
+      console.log(s.isPaused())
       if (s && s.isPaused()) {
         s.play();
       }

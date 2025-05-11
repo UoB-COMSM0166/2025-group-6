@@ -7,11 +7,9 @@ export default class ClickButton extends DialogBoxButton {
   }
 
   draw() {
-    // Read the master on/off flag
-    const isSoundOn = game.gameEngine.soundHandler.enabled;
 
     // Green if ON, Red if OFF
-    fill(isSoundOn ? color(76, 175, 80) : color(211, 47, 47));
+    fill(game.soundEnabled ? color(76, 175, 80) : color(211, 47, 47));
     rectMode(CENTER);
     rect(this.x, this.y, this.w, this.h, 10);
 
@@ -22,7 +20,7 @@ export default class ClickButton extends DialogBoxButton {
     const dynamicTextSize = min(this.w / 8, this.h / 2);
     textSize(dynamicTextSize);
     const maxTextWidth = this.w * 0.8; 
-    const buttonText = `Sound: ${isSoundOn ? "ON" : "OFF"}`;
+    const buttonText = `Sound: ${game.soundEnabled  ? "ON" : "OFF"}`;
     text(buttonText, this.x, this.y, maxTextWidth);
   }
 
@@ -31,14 +29,18 @@ export default class ClickButton extends DialogBoxButton {
 
     // Toggle the handler’s master switch
     const sh = game.gameEngine.soundHandler;
-    sh.enabled = !sh.enabled;
-
+    game.soundEnabled =!game.soundEnabled;
+    console.log(game.soundEnabled);
     // Immediately pause or resume all other sounds
-    if (sh.enabled) sh.resumeAll();
-    else            sh.pauseAll();
+    if (game.soundEnabled) {
+      sh.resumeAll();
+    }
+    else {
+      sh.pauseAll();
+    }           
 
     // Play the click feedback only if now unmuted
-    if (sh.enabled) sh.playSound("click");
+    if (game.soundEnabled) sh.playSound("click");
   }
 
   reset() {

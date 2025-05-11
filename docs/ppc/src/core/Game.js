@@ -32,6 +32,7 @@ class Game {
     this.winner=null;
     this.sounds = {};
     this.mouseControl = false;
+    this.soundEnabled = true;
   }
 
   initializeGame() {

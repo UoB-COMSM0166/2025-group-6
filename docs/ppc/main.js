@@ -22,7 +22,6 @@ function preload() {
   powerupSound  = loadSound("./assets/sounds/powerup3.mp3");
   goalSound     = loadSound("./assets/sounds/goal_1.wav");
   boardSound    = loadSound("./assets/sounds/puck_board.mp3");
-  backgroundSound = loadSound("./assets/sounds/backgound.mp3");
   obstacleSound = loadSound("./assets/sounds/obstacle.mp3");
   clickSound    = loadSound("./assets/sounds/button.mp3");
 }
@@ -45,7 +44,6 @@ function setup() {
   game.sounds.board       = boardSound;
   game.sounds.goal        = goalSound;
   game.sounds.powerup     = powerupSound;
-  game.sounds.backgroundSound = backgroundSound;
   game.sounds.obstacleSound   = obstacleSound;
   game.sounds.click       = clickSound;
 }
