@@ -14,7 +14,6 @@ export class LevelBox {
     this.width = width * 0.2; 
   }
 
-  // Renders the text.
   draw() {
     push();
 
@@ -29,10 +28,9 @@ export class LevelBox {
     pop();
   }
 
-  // Resets position and width based on screen size.
   reset() {
-    this.x = 100; // Reset x position
-    this.y = constants.margin/2; // Reset y position
+    this.x = 100; 
+    this.y = constants.margin/2; 
     this.width = width * 0.2; 
   }
 } 

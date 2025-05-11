@@ -31,17 +31,14 @@ export class CircleShape extends Shape {
             // Since the outermost element was at 2.8 * this.radius, we need to scale down
             const scaleFactor = 1 / 2.8;
 
-            // ** Base Circle (Dark Background) **
             noStroke();
             fill(50, 90, 120); // Deep teal color for contrast
             circle(0, 0, this.radius * 1.4 * scaleFactor * 2);
 
-            // ** Apply Glow Effect **
-            // Reduce glow blur to keep visual within radius boundaries
+           
             drawingContext.shadowBlur = (15 + sin(millis() / 500) * 5) * scaleFactor;
             drawingContext.shadowColor = this.currentColor;
 
-            // ** Outer Glow Layers (Segmented Rings) **
             noFill();
             strokeWeight(6 * scaleFactor);
             stroke(
@@ -50,7 +47,6 @@ export class CircleShape extends Shape {
                 this.currentColor.levels[2],
                 this.glowAlpha - 50
             );
-            // This was the outermost element at 2.8 * radius, now scaled to fit within radius
             this.drawSegmentedRing(0, 0, this.radius * 2, 8, PI / 6);
 
             strokeWeight(5 * scaleFactor);
@@ -62,7 +58,6 @@ export class CircleShape extends Shape {
             );
             this.drawSegmentedRing(0, 0, this.radius * 1.8, 10, PI / 10);
 
-            // ** Inner Glow Rings (Neon Flicker Effect) **
             strokeWeight(3 * scaleFactor);
             stroke(
                 this.currentColor.levels[0],
@@ -73,7 +68,6 @@ export class CircleShape extends Shape {
             circle(0, 0, this.radius * 1.6);
             circle(0, 0, this.radius * 1.3);
 
-            // ** Rotating Arc Segments **
             strokeWeight(2 * scaleFactor);
             let numArcs = 6;
             for (let i = 0; i < numArcs; i++) {
@@ -88,10 +82,8 @@ export class CircleShape extends Shape {
                 arc(0, 0, arcRadius * 2, arcRadius * 2, angle, angle + PI / 10);
             }
 
-            // ** Glowing Central Hexagon Core **
             this.drawGlowingHexagon(0, 0, this.radius * 0.4);
 
-            // ** Radial Energy Lines **
             strokeWeight(1 * scaleFactor);
             stroke(
                 this.currentColor.levels[0],
@@ -110,24 +102,18 @@ export class CircleShape extends Shape {
             }
         } else if (this.type == "obstacle") {
             let pulseFactor = 0;
-            // ** Pulsing Glow Effect **
-            pulseFactor = sin(frameCount * 0.05) * 10; // Pulses between -10 and 10
-
-            push();
+            pulseFactor = sin(frameCount * 0.05) * 10; 
             translate(x, y);
 
-            // ** Outer Glow (Neon Pink & Blue Blend) **
-            drawingContext.shadowBlur = 50 + pulseFactor; // Glow intensity pulses
-            drawingContext.shadowColor = color(180, 0, 255, 200 + pulseFactor * 2); // Neon purple-pink glow
-
-            fill(0, 200, 255, 180); // Neon blue inner glow
+            drawingContext.shadowBlur = 50 + pulseFactor; 
+            drawingContext.shadowColor = color(180, 0, 255, 200 + pulseFactor * 2);
+            fill(0, 200, 255, 180); 
             stroke(255, 0, 200);
             strokeWeight(4);
-            circle(0, 0, (this.radius * 2) + pulseFactor); // Core pulses in size
+            circle(0, 0, (this.radius * 2) + pulseFactor); 
 
-            // ** Inner Core (Darker Neon Center) **
             drawingContext.shadowBlur = 20;
-            fill(20, 20, 60, 220); // Dark purple-blue
+            fill(20, 20, 60, 220); 
             noStroke();
             circle(0, 0, this.radius * 1.2);
 
@@ -136,30 +122,26 @@ export class CircleShape extends Shape {
             push();
             translate(x, y);
 
-            // ** Set Glow Effect Based on Player **
-            let malletColor = this.leftSide ? color(255, 0, 150) : color(150, 0, 255); // Red for P1, Blue for P2
-            let glowColor = this.leftSide ? color(255, 100, 200) : color(180, 100, 255); // Softer glow variation
+            let malletColor = this.leftSide ? color(255, 0, 150) : color(150, 0, 255); 
+            let glowColor = this.leftSide ? color(255, 100, 200) : color(180, 100, 255); 
 
-            drawingContext.shadowBlur = 40; // Adjust glow intensity
+            drawingContext.shadowBlur = 40; 
             drawingContext.shadowColor = glowColor;
 
-            // ** Base Mallet Circle **
             strokeWeight(4);
             stroke(malletColor);
-            fill(malletColor.levels[0], malletColor.levels[1], malletColor.levels[2], 180); // Slightly transparent
+            fill(malletColor.levels[0], malletColor.levels[1], malletColor.levels[2], 180); 
             circle(0, 0, this.radius * 1.6);
 
-            // ** Inner Mallet Core (Grip Section) **
-            drawingContext.shadowBlur = 20; // Reduce glow for the core
-            fill(30, 30, 30, 200); // Darker inner circle
+            drawingContext.shadowBlur = 20; 
+            fill(30, 30, 30, 200);
             noStroke();
             circle(0, 0, this.radius * 1);
 
-            // ** Radial Energy Lines (Glowing Effect) **
             strokeWeight(2);
             stroke(malletColor.levels[0], malletColor.levels[1], malletColor.levels[2], 150);
 
-            let numLines = 8; // Number of energy lines
+            let numLines = 8; 
             for (let i = 0; i < numLines; i++) {
                 let angle = (TWO_PI / numLines) * i;
                 let x1 = cos(angle) * this.radius * 0.4;
@@ -169,11 +151,9 @@ export class CircleShape extends Shape {
                 line(x1, y1, x2, y2);
             }
 
-            // ** Raised Center Cap (Highlighting the Mallet Grip) **
             fill(100, 100, 100, 220);
             circle(0, 0, this.radius * 0.8);
 
-            // ** Reset Glow Effect **
             drawingContext.shadowBlur = 0;
 
 
@@ -184,7 +164,6 @@ export class CircleShape extends Shape {
         pop();
     }
 
-    // ** Function to Draw Segmented Rings **
     drawSegmentedRing(x, y, diameter, segments, gap) {
         for (let i = 0; i < segments; i++) {
             let startAngle = (TWO_PI / segments) * i + gap;
@@ -194,7 +173,6 @@ export class CircleShape extends Shape {
         }
     }
 
-    // ** Function to Draw a Glowing Hexagon **
     drawGlowingHexagon(x, y, hexRadius) {
         push();
         translate(x, y);

@@ -25,12 +25,12 @@ class InstructionsButton extends Button {
     "First to 10 goals wins!",
     "Score three in a row to spawn a Fire Power-Up.",
     "Watch out for spinning obstacles!"
-  ].join("\n");; // Synchronous file read
+  ].join("\n");; 
   }
 
   reset() {
     this.x = width / 2;
-    this.y = height / 2 + height * 0.07 + 10; // Original positioning from LandingPage
+    this.y = height / 2 + height * 0.07 + 10; 
     this.w = width * 0.15;
     this.h = height * 0.07;
     this.dialogBox.reset();

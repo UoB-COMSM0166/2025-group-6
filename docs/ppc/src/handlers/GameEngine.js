@@ -9,7 +9,7 @@ import LevelHandler       from './LevelHandler.js';
 import ObstacleHandler    from "./ObstacleHandler.js";
 
 
-// Entire game how it works, what it needs for the game to run all the mechanics part is in this class
+/*  Entire game how it works, what it needs for the game to run all the mechanics part is in this class */
 export class GameEngine {
     constructor(game) {
         this.game = game

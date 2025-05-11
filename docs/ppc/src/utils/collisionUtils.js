@@ -29,7 +29,6 @@ export const collisionUtils = {
     let rect2Top = y2 - rect2.height / 2;
     let rect2Bottom = y2 + rect2.height / 2;
 
-    // Check for collision (if no gap exists between rectangles)
     return !(
       rect1Left > rect2Right ||
       rect1Right < rect2Left ||
@@ -46,21 +45,15 @@ export const collisionUtils = {
 
     if (distance <= radiiSum) return true;
 
-    // Fast sweep test - check if collision is even possible
-    // If the circles are moving away from each other, they won't collide
     let dx = x2 - x1;
     let dy = y2 - y1;
     let dvx = vel2.x - vel1.x;
     let dvy = vel2.y - vel1.y;
 
-    // Dot product - if negative, they're moving toward each other
     let dotProduct = dx * dvx + dy * dvy;
 
-    // If they're moving away from each other, no collision possible
     if (dotProduct >= 0) return false;
 
-    // Line segment intersection approach (continuous collision detection)
-    // Calculate previous positions by subtracting velocity from current positions
     let prevX1 = x1 - vel1.x;
     let prevY1 = y1 - vel1.y;
     let prevX2 = x2 - vel2.x;
@@ -73,45 +66,36 @@ export const collisionUtils = {
 
       let u = -((prevX1 - x1) * (prevY1 - prevY2) - (prevY1 - y1) * (prevX1 - prevX2)) / denominator;
 
-      // Check if intersection occurs within the movement lines
       if (t >= 0 && t <= 1 && u >= 0 && u <= 1) {
         let intersectX = prevX1 + t * (x1 - prevX1);
         let intersectY = prevY1 + t * (y1 - prevY1);
 
-        // Check if circles overlap at intersection point
         let intersectDist = dist(intersectX, intersectY, prevX2 + u * (x2 - prevX2), prevY2 + u * (y2 - prevY2));
 
         if (intersectDist <= radiiSum) return true;
       }
     }
 
-    // Calculate velocity magnitudes
     let vel1Speed = Math.sqrt(vel1.x * vel1.x + vel1.y * vel1.y);
     let vel2Speed = Math.sqrt(vel2.x * vel2.x + vel2.y * vel2.y);
 
-    // If not colliding right now, check sub-steps as a fallback
-    // Only do sub-step checks if either object is moving
     if (vel1Speed > 0 || vel2Speed > 0) {
-      // Calculate movement per sub-step
       let dx1 = vel1.x / subSteps;
       let dy1 = vel1.y / subSteps;
       let dx2 = vel2.x / subSteps;
       let dy2 = vel2.y / subSteps;
 
-      // Check each sub-step position
       let tempX1 = x1;
       let tempY1 = y1;
       let tempX2 = x2;
       let tempY2 = y2;
 
       for (let i = 0; i < subSteps; i++) {
-        // Move both circles by their sub-step amount
         tempX1 += dx1;
         tempY1 += dy1;
         tempX2 += dx2;
         tempY2 += dy2;
 
-        // Check collision at this sub-step
         let subDistance = dist(tempX1, tempY1, tempX2, tempY2);
         if (subDistance <= radiiSum) {
           return true;

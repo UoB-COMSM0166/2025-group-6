@@ -1,6 +1,4 @@
-import { constants } from "../../../../core/config.js";
-import game from "../../../../core/Game.js";
-import { RectShape } from "../../shapes/RectShape.js";
+
 import { PowerUps } from "./PowerUps.js";
 
 export class FirePowerUp extends PowerUps {

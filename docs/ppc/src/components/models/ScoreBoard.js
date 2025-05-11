@@ -49,8 +49,7 @@ export class ScoreBoard {
   update() {
     this.x = width / 2;
     this.y = constants.margin / 2 ;
-    // this.width = this.game.board.boardWidth * 0.25;
-    // this.height = constants.margin;
+
   }
 
   /**

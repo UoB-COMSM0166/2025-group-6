@@ -14,22 +14,20 @@ class WinnerPage {
     this.exitButton = new ExitButton(width - width/3 - 10, height/2, width*0.15,height*0.07,"Quit");
   }
 
-  /**
-   * Rendering the background, winner message, and buttons.
-   */
+
   draw() {
     if(this.game.winner != "CPU"){
       if (this.celebrationImg) {
         image(this.celebrationImg, 0, 0, width, height);
       } else {
-        background(50, 150, 50); // Green winner background as a fallback
+        background(50, 150, 50); 
       }
     }else
     {
       if (this.losingImg) {
         image(this.losingImg, 0, 0, width, height);
       } else {
-        background(50, 150, 50); // Green winner background as a fallback
+        background(50, 150, 50); 
       }
     }
 
@@ -48,22 +46,17 @@ class WinnerPage {
       text(`${this.game.winner} wins!`, width/2, height * 0.4);
     }
     
-    // Drawing the buttons.
     this.restartgameButton.draw();
     this.exitButton.draw();
   }
 
-  /**
-   * Handling the buttons interaction.
-   */
+ 
   checkButtonClicks() {
       this.restartgameButton.handleClick();
       this.exitButton.handleClick();
   }
 
-  /**
-   * Resetting the buttons state.
-   */
+ 
   reset() {
     this.restartgameButton.reset();
     this.exitButton.resetWinnerPage();

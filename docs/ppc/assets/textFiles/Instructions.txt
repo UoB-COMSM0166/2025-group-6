@@ -1,9 +1,0 @@
-Use the arrow keys or the mouse to move your paddle
-
-Collect power-ups that appear after a 3-goal streak.
-
-Press SPACE to pause the game.
-
-Beware of spinning obstacles!
-
-First to 10 goals wins!

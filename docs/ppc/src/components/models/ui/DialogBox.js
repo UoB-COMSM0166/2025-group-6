@@ -1,6 +1,6 @@
 import CloseButton from "./buttons/dialogBoxButtons/CloseButton.js";
 
-// DialogBox Blueprint
+/** DialogBox Blueprint  it is the bass for all the pop-up dialogue box**/
 class DialogBox {
   constructor() {
     this.content = undefined;
@@ -16,27 +16,25 @@ class DialogBox {
   draw() {
     if (!this.visible) return;
 
-    // Draw dialog background
     rectMode(CENTER);
-    fill(30, 30, 30, 220); // Dark semi-transparent background
+    fill(30, 30, 30, 220); 
     stroke(255);
     strokeWeight(2);
     rect(this.boxX, this.boxY, this.boxW, this.boxH, 20);
 
-    // Draw content text - centered in the dialog box
     fill(255);
     noStroke();
     textAlign(CENTER, CENTER);
     textSize(18);
     text(
       this.content,
-      this.boxX, // Use center X coordinate
-      this.boxY, // Use center Y coordinate
+      this.boxX,
+      this.boxY, 
       this.boxW - this.margin * 2,
       this.boxH - this.margin * 2
     );
 
-    // Draw close button
+    
     this.closeButton.draw();
   }
 
