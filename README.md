@@ -183,7 +183,7 @@ The main gameplay screen with pause and exit functionality.
 Displays when a player wins, with options to restart or quit and go back to main page.
 
 *winner page*
-![](/assets/images/winnerscreen.png)
+![](/assets/images/winningpage.png)
 The UI elements use an inheritance hierarchy for buttons, creating a consistent interaction model.
 
 ### Gameplay Features
