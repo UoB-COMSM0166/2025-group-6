@@ -23,48 +23,49 @@ export default class LandingPage {
       image(this.game.welcomeImg, 0, 0, width, height);
       textAlign(CENTER);
       textStyle(BOLD);
-
-      // 3D pop-out animation with chromatic aberration
-      textSize(55);
-
+    
+      // Set text size relative to canvas size (e.g. 6% of width or 8% of height)
+      let titleSize = min(width * 0.06, height * 0.08);
+      textSize(titleSize);
+    
       // More aggressive scaling and movement
       let scaleEffect = map(sin(frameCount * 0.08), -1, 1, 0.95, 1.15);
-      let zoomOffset = sin(frameCount * 0.06) * 25;
+      let zoomOffset = sin(frameCount * 0.06) * (height * 0.03); // relative offset
       let shakeX = random(-2, 2);
       let shakeY = random(-2, 2);
-
+    
       // setting glow effects for depth
       let glowIntensity = map(sin(frameCount * 0.08), -1, 1, 30, 50);
       let glowAlpha = map(sin(frameCount * 0.08), -1, 1, 0.7, 1.0);
-
+    
       let blueOffset = map(sin(frameCount * 0.08), -1, 1, 2, 4);
       let mainColor = map(sin(frameCount * 0.06), -1, 1, 150, 255);
-
+    
       push();
       translate(width / 2 + shakeX, height / 3 + shakeY);
       scale(scaleEffect);
-
+    
       // Creating depth layers
       for (let i = 5; i >= 0; i--) {
         let layerOffset = i * 2;
         let alpha = map(i, 0, 5, 1, 0.2);
-
+    
         drawingContext.shadowBlur = glowIntensity - i * 5;
         drawingContext.shadowColor = `rgba(0, 200, 255, ${glowAlpha * alpha})`;
-
+    
         fill(mainColor - i * 20, 200 - i * 20, 255 - i * 20);
         text("PUCK POWER CLASH", layerOffset, layerOffset + zoomOffset);
       }
-
+    
       // Draw blue chromatic aberration
       drawingContext.shadowBlur = 0;
       fill(0, 150, 255, 180);
       text("PUCK POWER CLASH", blueOffset, zoomOffset + blueOffset);
-
+    
       // Draw red chromatic aberration (subtle)
       fill(255, 50, 50, 120);
       text("PUCK POWER CLASH", -blueOffset / 2, zoomOffset - blueOffset / 2);
-
+    
       // Drawing main display text on top.
       drawingContext.shadowBlur = glowIntensity;
       drawingContext.shadowColor = `rgba(0, 255, 255, ${glowAlpha})`;
