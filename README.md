@@ -59,14 +59,14 @@ The adjustable goalpost 🥅 system adds an extra layer of strategy. If you scor
 
 ### Table: **Puck Power Clash Game Objects**
 
-| **Category**       | **Image**                                | **Description**                                                                                                          |
-|--------------------|------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| **Power-ups**      | ![Fire](/assets/images/fire.png)         | The **Fire power-up** temporarily increases the opponent's goalpost, creating a risk-reward situation.                   |
-| **Obstacles**      | ![Stone](/assets/images/obstacle.png)    | **Obstacles** randomly appear on the table, throwing off the puck’s path and making it harder to score.                  |
-| **Mallets**        | ![Mallet](/assets/images/mallet.png)     | **Mallets** are used by players to strike the puck, allowing for control and strategic gameplay.                         |
+| **Category**       | **Image**                               | **Description**                                                                                                          |
+|--------------------|-----------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| **Power-ups**      | ![Fire](/assets/images/fire.png)        | The **Fire power-up** temporarily increases the opponent's goalpost, creating a risk-reward situation.                   |
+| **Obstacles**      | ![Stone](/assets/images/obstacle.png)   | **Obstacles** randomly appear on the table, throwing off the puck’s path and making it harder to score.                  |
+| **Mallets**        | ![Mallet](/assets/images/mallet.png)    | **Mallets** are used by players to strike the puck, allowing for control and strategic gameplay.                         |
 | **Goalpost**       | ![Goalpost](/assets/images/goalpost.png) | The **goalpost** is the target area where players must score, with its size changing based on performance and power-ups. |
-| **Puck**           | ![Puck](/assets/images/puck1.png)        | The **puck** is the main object in play that players strike with mallets to score points.                                |
-| **Timer**          | ![Timer](/assets/images/timer.png)       | The **scoreboard** keeps track of the points scored, adding pressure to the game.                                        |
+| **Puck**           | ![Puck](/assets/images/puck1.png)       | The **puck** is the main object in play that players strike with mallets to score points.                                |
+| **Timer**          | ![Timer](/assets/images/timer.png)      | The **scoreboard** keeps track of the points scored, adding pressure to the game.                                        |
 
 
 ---
