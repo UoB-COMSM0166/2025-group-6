@@ -8,11 +8,11 @@ export class ScoreBoard {
   constructor(game) {
     this.x = width / 2;
     this.y = constants.margin / 2 ;
-    this.fontSize = 32;
+    this.fontSize = game.board.boardHeight * 0.05;
     this.textColor = '#FFFFFF';
     this.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    this.width = game.board.boardWidth * 0.35;
-    this.height = constants.margin;
+    this.width = game.board.boardWidth * 0.30;
+    this.height = this.fontSize;
     this.game = game;
     this.streakTracker = new StreakTracker();
   }
