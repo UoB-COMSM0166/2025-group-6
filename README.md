@@ -6,7 +6,9 @@
 
 ---
 
-### ▶️ [PLAY THE GAME](https://uob-comsm0166.github.io/2025-group-6/)
+<p align="center">
+  <a href="https://uob-comsm0166.github.io/2025-group-6/" style="font-size: 1.5em; text-decoration: none;">▶️ <strong>PLAY THE GAME</strong></a>
+</p>
 
 ### 📁 [Browse the Game Files](/docs/ppc)
 Github pages are deployed with a workflow created using github
