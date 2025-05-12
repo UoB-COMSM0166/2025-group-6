@@ -66,7 +66,7 @@ The adjustable goalpost 🥅 system adds an extra layer of strategy. If you scor
 | **Mallets**        | ![Mallet](/assets/images/mallet.png)     | **Mallets** are used by players to strike the puck, allowing for control and strategic gameplay.                         |
 | **Goalpost**       | ![Goalpost](/assets/images/goalpost.png) | The **goalpost** is the target area where players must score, with its size changing based on performance and power-ups. |
 | **Puck**           | ![Puck](/assets/images/puck1.png)        | The **puck** is the main object in play that players strike with mallets to score points.                                |
-| **Scoreboard**          | ![Timer](/assets/images/timer.png)       | The **scoreboard** keeps track of the points scored, adding pressure to the game.                                        |
+| **Scoreboard**     | ![Timer](/assets/images/timer.png)       | The **scoreboard** keeps track of the points scored, adding pressure to the game.                                        |
 
 
 ---
@@ -411,7 +411,7 @@ Working on Puck Power Clash was an exciting and challenging experience that taug
 
 One of the most valuable parts of the project was how we evaluated the game. Using the Think Aloud protocol, we were able to observe players in real time as they voiced their thoughts and reactions. Hearing their immediate feedback helped us understand not just what they did, but why. This guided many of our design decisions, from tweaking power-up timing and placement to improving the clarity of visuals and sound cues. These changes made the game feel more responsive and intuitive.
 
-In addition to real-time feedback, we used the System Usability Scale (SUS) to gather structured data on how users perceived the game’s ease of use and overall experience. Surprisingly, Hard mode scored slightly higher than Normal mode. That told us players weren’t necessarily discouraged by difficulty, as long as the interface remained consistent and fair. While the scores were slightly below the general benchmark, they gave us a solid baseline and showed that the game’s design held up across modes.
+In addition to real-time feedback, we used the System Usability Scale (SUS) to gather structured data on how users perceived the game’s ease of use and overall experience. Surprisingly, players rated Hard mode slightly higher than Normal mode. This suggested that difficulty wasn't discouraging, as long as the interface remained consistent and fair. While the average scores were slightly below the general benchmark, they provided us with a solid baseline and confirmed that the game’s design was effective across both modes.
 
 We also focused heavily on testing, combining black-box and white-box techniques. Black-box testing helped us catch unexpected behaviors during gameplay, while white-box testing gave us insight into how the internal logic performed. This helped us track down bugs early, especially in areas like collision detection, power-up effects, and state transitions and made the game feel stable and reliable.
 
