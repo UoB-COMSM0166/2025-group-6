@@ -2,6 +2,15 @@ import { constants } from "../../../core/config.js";
 import { CircleShape } from "../shapes/CircleShape.js";
 import { GameObject } from "./GameObject.js";
 
+
+/**
+ * Includes: 
+ * method for updating mallet position in game play
+ * method for handling keyboard and mouse input for mallet
+ * method for reseting mallet positions based on different game states
+ * method for updating mallet speed based on different canvas sizes
+ */
+
 export class Mallet extends GameObject {
 
   constructor(x, y,leftSide, game) {

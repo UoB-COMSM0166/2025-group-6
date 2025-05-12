@@ -2,8 +2,12 @@ import { constants } from "../../core/config.js";
 import { GameObject } from "./objects/GameObject.js";
 
 /**
- * This class handles the creation and positioning of the goal posts.
+ * This class handles the creation and positioning of the goal posts
+ * includes:
+ * method to draw goal post
+ * method to get dimensions of goal post
  */
+
 export default class GoalPost {
   constructor() {
     // Goal post dimensions

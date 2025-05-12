@@ -2,6 +2,16 @@ import { Obstacle }    from "../components/models/objects/Obstacle.js";
 import { CircleShape } from "../components/models/shapes/CircleShape.js";
 
 
+/**
+ * Class handling spawning, updating, and rendering of in-game obstacles
+ * includes:
+ * method to spawn obstacles at random intervals and locations
+ * method to update obstacle list based on game state and score
+ * method to draw active obstacles on the game board
+ *
+ */
+
+
 export default class ObstacleHandler {
   constructor(game) {
     this.game = game;

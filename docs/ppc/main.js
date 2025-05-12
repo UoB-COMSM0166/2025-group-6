@@ -1,5 +1,18 @@
 import game from "./src/core/Game.js";
 
+
+/**
+ * Main game initialization and rendering script
+ * includes:
+ * preload function to load all game assets (images and sounds)
+ * setup function to create canvas, initialize game, and assign assets
+ * draw function to continuously update the game loop
+ * keyboard event listener to toggle pause on spacebar press during gameplay
+ *
+ *
+*/
+
+
 let gameBackImg;
 let paddleSound;
 let boardSound;

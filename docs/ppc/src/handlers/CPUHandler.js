@@ -1,4 +1,15 @@
 import { constants } from "../core/config.js";
+/**
+ * Class responsible for cpu player behaviour
+ * 
+ * cpu player characteristics like error percentage and aggresiveness can be adjusted 
+ * by tuning fields in this class
+ * 
+ * includes:
+ * method to update cpu position
+ * method to move towards target
+ * 
+ */
 
 export default class CPUHandler {
   constructor(game) {

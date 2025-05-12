@@ -5,6 +5,7 @@ import SettingsButton from "./ui/buttons/SettingsButton.js";
 /**
  * This class is responsible for rendering the main landing screen of the game,
  * including animated title and UI buttons.
+ * includes
  */
 export default class LandingPage {
   constructor(game) {

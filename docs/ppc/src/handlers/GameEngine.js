@@ -8,8 +8,16 @@ import WinnerHandler      from './WinnerHandler.js';
 import LevelHandler       from './LevelHandler.js';
 import ObstacleHandler    from "./ObstacleHandler.js";
 
+/**
+ * The GameEngine class coordinates the core update logic for the game
+ * It manages various subsystems like CPU, collision, power-ups, sound, and more
+ * Each frame, it updates all game elements and handlers unless the game is paused
+ * 
+ * includes:
+ * method to call and update all game handlers
+ */
 
-/*  Entire game how it works, what it needs for the game to run all the mechanics part is in this class */
+
 export class GameEngine {
     constructor(game) {
         this.game = game

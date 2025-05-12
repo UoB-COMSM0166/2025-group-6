@@ -1,5 +1,11 @@
 import game from "../../core/Game.js";
 
+/**
+ * Class for game screen containing all functional and non functional elements in the game screen
+ * includes:
+ * method to draw entire game screen including game page, scoreboard, level box etc
+ * method to check for button clicks
+ */
 
 export class GameScreen {
   constructor() {

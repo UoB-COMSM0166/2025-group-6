@@ -1,5 +1,14 @@
 import { constants } from "../core/config.js";
 
+/**
+ * Class handling power-up activation, effects, and timing
+ * includes:
+ * method to spawn and activate power-ups based on player streaks
+ * methods to apply and later disable power-up effects on goalposts
+ * timers to control duration of active power-up and its effect
+ *
+ */
+
 export default class PowerupHandler {
   constructor(game) {
     this.game = game;
