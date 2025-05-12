@@ -17,7 +17,7 @@ export default class ObstacleHandler {
   spawnObstacle() {
     let x = random(100, this.game.board.boardWidth - 100); 
     let y = random(100, this.game.board.boardHeight - 100);
-    let radius = random(20, 25);
+    let radius = random(width * 0.013, width * 0.015);
     this.obstacles.push(new Obstacle(x, y, new CircleShape(radius, "obstacle")));
     this.nextSpawnTime = this.getRandomSpawnTime();
   }

@@ -6,9 +6,10 @@ import { GameObject } from "./objects/GameObject.js";
  */
 export default class GoalPost {
   constructor() {
-    this.goalWidth = 10;
+    // Goal post dimensions
     this.goalHeightOne = height * 0.25;
     this.goalHeightTwo = height * 0.25;
+    this.goalWidth = this.goalHeightOne * 0.05;
     this.goalY = height / 2;
     this.colorOne = "white";
     this.colorTwo = "white";
@@ -17,9 +18,9 @@ export default class GoalPost {
   draw() {
     push();
     if (this.colorOne === "red") {
-      fill(255, 0, 0); 
+      fill(255, 0, 0);
     } else {
-      fill(255); 
+      fill(255);
     }
 
     stroke(0);
@@ -31,11 +32,11 @@ export default class GoalPost {
       this.goalHeightOne
     );
     if (this.colorTwo === "red") {
-      fill(255, 0, 0); 
+      fill(255, 0, 0);
     } else {
-      fill(255); 
+      fill(255);
     }
-    
+
     rect(
       width - constants.margin - this.goalWidth / 2,
       this.goalY,

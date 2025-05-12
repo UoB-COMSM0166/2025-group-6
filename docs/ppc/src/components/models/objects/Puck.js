@@ -3,7 +3,7 @@ import { CircleShape } from '../shapes/CircleShape.js';
 
 export class Puck extends GameObject {
     constructor() {
-        super(width / 2, height / 2, new CircleShape(15,"puck")); 
+        super(width / 2, height / 2, new CircleShape(width * 0.012,"puck"));
         this.reset();
     }
 
