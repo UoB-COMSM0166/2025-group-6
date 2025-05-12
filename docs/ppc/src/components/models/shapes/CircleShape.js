@@ -1,5 +1,3 @@
-// Circle shape implementation
-
 import {Shape} from "./Shape.js";
 import {collisionUtils} from "../../../utils/collisionUtils.js";
 
@@ -11,10 +9,10 @@ export class CircleShape extends Shape {
         this.height = radius * 2;
         this.type = type;
         this.leftSide = leftSide;
-        this.rotationSpeed = 0.02; // Default rotation speed
+        this.rotationSpeed = 0.02; 
         this.rotationAngle = 0;
-        this.glowAlpha = 200; // Glow intensity
-        this.currentColor = color(0, 255, 255); // Default Neon Cyan
+        this.glowAlpha = 200; 
+        this.currentColor = color(0, 255, 255);
     }
 
     draw(x, y) {
@@ -22,17 +20,14 @@ export class CircleShape extends Shape {
         if (this.type == "puck") {
             translate(x, y);
 
-            // Update glow intensity dynamically
             this.glowAlpha = map(sin(millis() / 800), -1, 1, 100, 255);
-            this.rotationAngle += this.rotationSpeed; // Rotate puck dynamically
-            rotate(this.rotationAngle); // Apply rotation
+            this.rotationAngle += this.rotationSpeed; 
+            rotate(this.rotationAngle); 
 
-            // Calculate scaling factor to ensure all elements fit within radius
-            // Since the outermost element was at 2.8 * this.radius, we need to scale down
             const scaleFactor = 1 / 2.8;
 
             noStroke();
-            fill(50, 90, 120); // Deep teal color for contrast
+            fill(50, 90, 120); 
             circle(0, 0, this.radius * 1.4 * scaleFactor * 2);
 
            

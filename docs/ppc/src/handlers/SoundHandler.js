@@ -19,7 +19,6 @@ export default class SoundHandler {
     if (s) s.stop();
   }
 
-  // Set volume if loaded
   setVolume(name, volume) {
     const s = this.sounds[name];
     if (s && s.isLoaded()) {
@@ -27,7 +26,6 @@ export default class SoundHandler {
     }
   }
 
-  // Set volume for all sounds
   setVolumeForAllSounds(volume) {
     Object.keys(this.sounds).forEach((name) => {
       this.setVolume(name, volume);  

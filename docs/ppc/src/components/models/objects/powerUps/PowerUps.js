@@ -13,6 +13,5 @@ export class PowerUps extends GameObject {
 
   draw() {
   }
-// Later we'll need custom methods to update/draw the fire or any powerup
 
 }
