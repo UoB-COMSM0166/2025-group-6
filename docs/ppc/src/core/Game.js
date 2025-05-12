@@ -17,7 +17,6 @@ import { LevelBox }     from "../components/models/LevelBox.js";
  * This is the class which won't be changed unless the game is reloaded
  */
 
-// All the objects, configurations that need for the game to be setup is mentioned below
 class Game {
   constructor() {
     this.gameState = "welcome";
@@ -42,8 +41,6 @@ class Game {
     this.soundEnabled = true;
   }
 
-  // 2 players
-  // player 2 being CPU, along with puck, game Page, all the objects, winner page, scoreboard and levelbox
   initializeGame() {
     this.player1 = new Mallet(width * 0.25, height / 2, true, this);
     this.player1.isPlayerCpu = false;
@@ -56,8 +53,6 @@ class Game {
     this.levelBox = new LevelBox(this);
   }
 
-  // Resetting the game to back to initial state but not reload.
-  // We are not re-initialising the game, we are resetting the game
   resetGame(){
     this.initObjects();
     this.scoreBoard.resetScores();
@@ -67,13 +62,10 @@ class Game {
     this.puck.reset();
   }
 
-  // For updating the game state 
-  // This will update the game 60 times in 1 second (60fps)
   updateGame() {
       this.gameEngine.updateGame();
   }
 
-  // The objects that it need like board, game-engine and landing page
   initObjects(){
     this.board = new GameBoard();
     this.gameEngine = new GameEngine(this);

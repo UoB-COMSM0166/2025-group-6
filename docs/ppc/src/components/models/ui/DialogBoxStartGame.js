@@ -1,7 +1,6 @@
 import LevelModeButton from "./buttons/dialogBoxButtons/LevelModeButton.js";
 import DialogBox from "./DialogBox.js";
 
-// DialogBox Blueprint
 class DialogBoxStartGame extends DialogBox {
   constructor() {
     super();

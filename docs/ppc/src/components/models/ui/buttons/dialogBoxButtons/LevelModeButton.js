@@ -9,10 +9,8 @@ class LevelModeButton extends DialogBoxButton {
   draw() {
     rectMode(CENTER);
     
-    // Create a pulsing glow effect
     let pulseAmount = sin(frameCount * 0.05) * 20;
     
-    // Color schemes
     const colors = {
       normal: {
         fill:   [30, 144, 255, 180],
@@ -63,10 +61,8 @@ class LevelModeButton extends DialogBoxButton {
     if (this.isMouseOver()) {
     game.gamePaused = false;
     game.gameState = "gameboard";
-    // play once on click
     game.gameEngine.soundHandler.playSound("click");
 
-    // switch mode and start game
     if (this.label.toLowerCase().includes("normal")) {
       game.level = "normal";
     } else {

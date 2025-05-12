@@ -23,8 +23,7 @@ class ExitButton extends Button {
     resetGameScreen() {
         this.x = width - 50;
         this.y = constants.margin / 2;
-        // this.w = width * 0.05;
-        // this.h = height * 0.04;
+
     }
 
     resetWinnerPage(){

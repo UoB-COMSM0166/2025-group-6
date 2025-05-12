@@ -1,11 +1,9 @@
-// Class which handles the shifting between levels
 
 export default class LevelHandler {
   constructor(game) {
     this.game = game;
   }
 
-  // For normal and hard difficulty, how the CPU should perform in each case
   update() {
     if (this.game.level === "normal") {
       this.game.gameEngine.cpuHandler.errorFactorX = 0.15;

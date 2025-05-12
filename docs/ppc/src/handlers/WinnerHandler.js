@@ -1,5 +1,4 @@
 
-// Handles game win conditions and winner determination.
 
 export default class WinnerHandler {
     constructor(game) {
@@ -14,14 +13,17 @@ export default class WinnerHandler {
             this.game.winner = "Player";
             this.game.resetGame();
             this.game.gamePaused = true;
+          this.game.gameEngine.soundHandler.playSound("victory");    
+
         }
         else if (this.game.player2.score >= this.winningScore) {
-
             this.game.gameState = "winnerpage";
             this.game.winner = "CPU";
             this.game.resetGame();
             this.game.gamePaused = true;
+        this.game.gameEngine.soundHandler.playSound("loose");    
 
         }
     }
+    
 }

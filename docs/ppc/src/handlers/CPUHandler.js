@@ -1,6 +1,5 @@
 import { constants } from "../core/config.js";
 
-// How the CPU plays the game and how does it moves towards the puck and perform the collision
 export default class CPUHandler {
   constructor(game) {
     this.game = game;
@@ -49,7 +48,6 @@ export default class CPUHandler {
         targetY = height / 2;
       }
 
-      // For the ensuring the paddle stays within bounds
       targetX = constrain(targetX, width / 2, width - constants.margin - this.game.player2.shape.width / 2);
       targetY = constrain(targetY, constants.margin + this.game.player2.shape.height/2, height - constants.margin - this.game.player2.shape.height/2);
 

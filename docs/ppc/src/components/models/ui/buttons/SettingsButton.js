@@ -19,13 +19,11 @@ class SettingsButton extends Button {
   }
 
   handleClick() {
-    // Open the settings dialog & play click
     if (this.isMouseOver()) {
       game.gameEngine.soundHandler.playSound("click");
       this.dialogBox.visible = true;
     }
 
-    // Delegate to the toggles & close-X
     if (this.dialogBox.visible) {
       this.dialogBox.handleClick();
       this.clickSoundButton.handleClick();

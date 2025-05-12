@@ -2,10 +2,6 @@ import { Obstacle }    from "../components/models/objects/Obstacle.js";
 import { CircleShape } from "../components/models/shapes/CircleShape.js";
 
 
-// Class to handle obstacle logic
-// Obstacle spawn, expiry, draw handled in this class
- 
-
 export default class ObstacleHandler {
   constructor(game) {
     this.game = game;
@@ -33,11 +29,9 @@ export default class ObstacleHandler {
       }
       this.spawnObstacle();
     }
-    // Remove obstacles that have expired (after 10 seconds)
     this.obstacles = this.obstacles.filter((obstacle) => !obstacle.isExpired());
   }
 
-  // For drawing obstacles
   drawObstacles() {
     for (let obstacle of this.obstacles) {
       obstacle.draw();

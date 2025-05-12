@@ -1,6 +1,6 @@
 import DialogBox from "../DialogBox.js";
 
-// Default Button Blueprint
+/** Base class for all the buttons **/
 class Button {
     constructor(x, y, w, h, label) {
       this.x = x;
@@ -10,24 +10,20 @@ class Button {
       this.label = label;
       this.dialogBox = new DialogBox();
     }
-    // default button layout
     draw() {
       rectMode(CENTER);
-      
-      // Check if the mouse is over the button
-      if (this.isMouseOver()) {
-        fill(80, 80, 80, 180); // Slightly lighter and more visible on hover
-        stroke(60); // Brighter border on hover
+            if (this.isMouseOver()) {
+        fill(80, 80, 80, 180); 
+        stroke(60); 
       } else {
-        fill(50, 50, 50, 150); // Default background
-        stroke(30); // Default dark border
+        fill(50, 50, 50, 150); 
+        stroke(30); 
       }
   
       stroke(255);
       strokeWeight(2);
       rect(this.x, this.y, this.w, this.h, 10);
       
-      // Draw the button label in white
       noStroke();
       fill(255);
       textAlign(CENTER, CENTER);

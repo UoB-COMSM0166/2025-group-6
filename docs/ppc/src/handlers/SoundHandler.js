@@ -1,9 +1,8 @@
-// Class for handling all sounds that the game will create and how and when it will be triggered
 
 export default class SoundHandler {
   constructor(game) {
     this.sounds = game.sounds;
-    this.enabled = true;  // Initially, sounds are enabled
+    this.enabled = true;  
   }
 
   playSound(name) {

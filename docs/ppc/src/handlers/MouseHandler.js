@@ -2,7 +2,6 @@ import landingScreen from "../components/screens/LandingScreen.js";
 import gameScreen    from "../components/screens/GameScreen.js";
 import winnerScreen  from "../components/screens/WinnerScreen.js";
 
-// Class to handle the mouse actions
 export default class MouseHandler {
   constructor(game) {
     this.game = game;

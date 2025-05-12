@@ -16,7 +16,6 @@ export class Mallet extends GameObject {
   /* overriding update method since mallet needs to constrained
   to either half the board */
   update() {
-    // Handle keyboard input
     if (!this.isPlayerCpu) {
       if (this.game.mouseControl) {
         this.move(mouseX, mouseY);
@@ -50,7 +49,6 @@ export class Mallet extends GameObject {
   }
 
   handleKeyboardInput() {
-    // Reset velocities by default
     this.velocity.x = 0;
     this.velocity.y = 0;
 

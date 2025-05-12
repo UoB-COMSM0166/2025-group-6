@@ -11,7 +11,6 @@ export default class PauseButton extends Button {
   draw() {
     push();
     ellipseMode(CENTER);
-    // hover styling
     if (this.isMouseOver()) {
       fill(80, 80, 80, 180);
       stroke(60);
@@ -23,7 +22,6 @@ export default class PauseButton extends Button {
     strokeWeight(3);
     ellipse(this.x, this.y, this.w, this.h);
 
-    // draw play/pause icon
     noStroke();
     fill(255);
     if (game.gamePaused) {
@@ -39,7 +37,6 @@ export default class PauseButton extends Button {
     pop();
   }
 
-  // central pause/resume logic
   togglePause() {
     game.gamePaused = !game.gamePaused;
     this.label    = game.gamePaused ? "Play" : "Pause";
