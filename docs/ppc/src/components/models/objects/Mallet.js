@@ -5,7 +5,7 @@ import { GameObject } from "./GameObject.js";
 export class Mallet extends GameObject {
 
   constructor(x, y,leftSide, game) {
-    super(x, y, new CircleShape(x,"mallet", leftSide));
+    super(x, y, new CircleShape(width * 0.015,"mallet", leftSide));
     this.game = game;
     this.score = 0;
     this.leftSide = leftSide;
