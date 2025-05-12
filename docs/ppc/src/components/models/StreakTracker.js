@@ -2,7 +2,7 @@
  * This class is responsible for keeping the track of score streaks, updating it and resetting it
  * includes:
  * method to add score to a player
- * methdo to get current streak of player
+ * method to get current streak of player
  * method to reset score history and current score streak
  * 
  */

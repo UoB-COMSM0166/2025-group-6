@@ -4,7 +4,7 @@ import { GameObject } from "./GameObject.js";
 
 
 /**
- * Includes: 
+ * includes: 
  * method for updating mallet position in game play
  * method for handling keyboard and mouse input for mallet
  * method for reseting mallet positions based on different game states
