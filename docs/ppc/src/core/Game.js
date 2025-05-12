@@ -42,9 +42,9 @@ class Game {
   }
 
   initializeGame() {
-    this.player1 = new Mallet(width * 0.015, height / 2, true, this);
+    this.player1 = new Mallet(width * 0.25, height / 2, true, this);
     this.player1.isPlayerCpu = false;
-    this.player2 = new Mallet(width * 0.015, height / 2, false, this);
+    this.player2 = new Mallet(width * 0.75, height / 2, false, this);
     this.puck = new Puck();
     this.gamePage = new GamePage(this);
     this.initObjects();
