@@ -15,6 +15,11 @@ import { LevelBox }     from "../components/models/LevelBox.js";
  *Singleton class which serves as the central hub of the game. 
  * Like Initializing the game, resetting and updating. 
  * This is the class which won't be changed unless the game is reloaded
+ * includes:
+ *  method to initialise game
+ *  method to reset game based on different game modes
+ *  method to re-initialise objects when coming back from restart game state or quit state etc
+ *  method to call game engine to update all major game objects in every frame
  */
 
 class Game {

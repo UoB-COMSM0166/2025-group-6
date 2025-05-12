@@ -1,7 +1,10 @@
 import { constants } from "../../core/config.js";
 
 /**
- * This class displays the current game level on the screen.
+ * This class displays the current game level on the screen
+ * includes:
+ * method to draw level box on game page
+ * method to reset level box when game ends
  */
 export class LevelBox {
   constructor(game) {

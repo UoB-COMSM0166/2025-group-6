@@ -1,6 +1,15 @@
 import {Shape} from "./Shape.js";
 import {collisionUtils} from "../../../utils/collisionUtils.js";
 
+/**
+ * All objects having circle shape wil be using this class to draw circle shape
+ * These are injected into object claases and has a composition relation with object classes
+ * includes:
+ * method to draw the shape
+ * method to check collisions between circle shaped objects
+ * method to get bounds of circle shaped objects
+ */
+
 export class CircleShape extends Shape {
     constructor(radius, type, leftSide) {
         super();

@@ -1,6 +1,13 @@
 import DialogBox from "../DialogBox.js";
 
-/** Base class for all the buttons **/
+/**
+ * Base class for all buttons in the game
+ * includes:
+ * method to draw  basic button which will be overridden in buttons with distinct styliing
+ * method to check whether mouse position is over a button which can be used by all button objects 
+ * in the game
+ */
+
 class Button {
     constructor(x, y, w, h, label) {
       this.x = x;

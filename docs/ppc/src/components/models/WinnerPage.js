@@ -3,8 +3,13 @@ import RestartGameButton from "./ui/buttons/RestartGameButton.js";
 
 /**
  * This class handles the display shown after a player wins.
- * It shows a celebration background, winner message, and buttons to restart or quit.
+ * It shows a celebration background, winner message, and buttons to restart or quit
+ * includes:
+ * method to draw winning page
+ * method to check for button clicks in winning page
+ * method to reset buttons in winning page
  */
+
 class WinnerPage {
   constructor(game) {
     this.game = game;

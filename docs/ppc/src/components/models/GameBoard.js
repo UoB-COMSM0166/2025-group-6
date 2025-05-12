@@ -3,7 +3,10 @@ import GoalPost from "./GoalPost.js";
 import game from "../../core/Game.js";
 
 /**
- * This class is responsible for generating game board.
+ * This class is responsible for generating game board
+ * includes:
+ * method to draw game board
+ * method to get dimensions of the game board
  */
 export class GameBoard {
   constructor() {

@@ -1,6 +1,12 @@
 /**
- * This class is responsible for keeping the track of score streaks, updating it and resetting it.
+ * This class is responsible for keeping the track of score streaks, updating it and resetting it
+ * includes:
+ * method to add score to a player
+ * method to get current streak of player
+ * method to reset score history and current score streak
+ * 
  */
+
 export default class StreakTracker {
     constructor() {
         this.scoreHistory = [];

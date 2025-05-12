@@ -1,5 +1,13 @@
 import { constants } from "../core/config.js";
-
+/**
+ * Class handling all collision logic
+ * includes:
+ * method to check collision between mallet and puck
+ * method to check collision between puck and wall
+ * method to check collision between powerup and puck
+ * method to check collision between puck and obstacle
+ *
+ */
 
 export default class CollisionHandler {
   constructor(game) {

@@ -1,5 +1,11 @@
 
-// Handles game win conditions and winner determination.
+/**
+ * Class handling win condition detection and endgame state transition
+ * includes:
+ * method to check if player or CPU has reached the winning score
+ * updates game state, sets the winner, plays appropriate sound, and resets game
+ *
+ */
 
 export default class WinnerHandler {
     constructor(game) {

@@ -1,6 +1,9 @@
 import CloseButton from "./buttons/dialogBoxButtons/CloseButton.js";
 
-/** DialogBox Blueprint  it is the bass for all the pop-up dialogue box**/
+/** DialogBox Blueprint  
+ * it is the base class for all the pop-up dialogue boxes in the game
+ */
+
 class DialogBox {
   constructor() {
     this.content = undefined;

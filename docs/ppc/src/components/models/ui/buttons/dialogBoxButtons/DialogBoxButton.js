@@ -1,4 +1,6 @@
-// Base class for button 0bjects to be used inside dialog box
+/**
+ *  Base class for button 0bjects to be used inside dialog box
+ */
 class DialogBoxButton {
     constructor(x, y, w, h, label) {
         this.x = x;

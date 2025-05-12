@@ -1,6 +1,11 @@
 
 import { PowerUps } from "./PowerUps.js";
 
+/**
+ * This class is responsible for fire powerip object that spawns upon 3 score streak
+ * Includes logic for drawing fire powerup
+ */
+
 export class FirePowerUp extends PowerUps {
   constructor(x, y, width, height, shape) {
     super(x, y, width, height, shape);

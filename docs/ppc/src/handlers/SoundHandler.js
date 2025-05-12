@@ -1,3 +1,12 @@
+/**
+ * Class handling all sound-related functionality in the game
+ * includes:
+ * methods to play, stop, and adjust volume for individual or all sounds
+ * methods to pause and resume all currently playing sounds
+ * respects sound enabled/disabled state before playing audio
+ *
+ */
+
 
 export default class SoundHandler {
   constructor(game) {

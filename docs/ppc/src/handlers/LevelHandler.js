@@ -1,4 +1,14 @@
 
+
+/**
+ * Class handling level-based difficulty adjustments for the CPU opponent
+ * includes:
+ * method to set CPU behavior parameters for "normal" and "hard" levels
+ * modifies error factors, reaction delay, speed boost, and minimum tracking distance
+ *
+ */
+
+
 export default class LevelHandler {
   constructor(game) {
     this.game = game;
