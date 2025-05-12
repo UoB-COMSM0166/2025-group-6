@@ -13,8 +13,7 @@ export class Mallet extends GameObject {
     this.updateMoveSpeed();
   }
 
-  /* overriding update method since mallet needs to constrained
-  to either half the board */
+
   update() {
     if (!this.isPlayerCpu) {
       if (this.game.mouseControl) {
@@ -52,7 +51,6 @@ export class Mallet extends GameObject {
     this.velocity.x = 0;
     this.velocity.y = 0;
 
-    // Only set velocity when keys are pressed
     if (keyIsDown(UP_ARROW)) {
         this.velocity.y = -this.moveSpeed;
     } else if (keyIsDown(DOWN_ARROW)) {
@@ -66,7 +64,6 @@ export class Mallet extends GameObject {
     }
 }
 
-  // for cpu controlled mallet
   move(targetX, targetY) {
 
       let dx = targetX - this.x;
